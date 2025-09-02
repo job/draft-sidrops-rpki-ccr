@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE rfc [
+ <!ENTITY nbsp "&#160;">
+]>
+
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="no"?>
+<?rfc symrefs="yes"?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no"?>
+
+<rfc xmlns:xi="http://www.w3.org/2001/XInclude"
+     category="std"
+     docName="draft-spaghetti-sidrops-rpki-ccr-00"
+     ipr="trust200902"
+     xml:lang="en"
+     sortRefs="true"
+     submissionType="IETF"
+     consensus="true"
+     version="3">
+
+  <front>
+
+    <title abbrev="RPKI Canonical Cache Representation">
+      A Profile for Resource Public Key Infrastructure (RPKI) Canonical Cache Representation (CCR)
+    </title>
+
+    <author fullname="Job Snijders" initials="J." surname="Snijders">
+      <organization />
+      <address>
+        <postal>
+          <street/>
+          <code/>
+          <city>Amsterdam</city>
+          <country>Netherlands</country>
+        </postal>
+        <email>job@sobornost.net</email>
+      </address>
+    </author>
+
+    <author fullname="Bart Bakker" initials="B." surname="Bakker">
+      <organization>RIPE NCC</organization>
+      <address>
+        <postal>
+          <country>Netherlands</country>
+        </postal>
+        <email>bbakker@ripe.net</email>
+      </address>
+    </author>
+
+    <author fullname="Tim Bruijnzeels" initials="T." surname="Bruijnzeels">
+      <organization>RIPE NCC</organization>
+      <address>
+        <postal>
+          <country>Netherlands</country>
+        </postal>
+        <email>tbruijnzeels@ripe.net</email>
+      </address>
+    </author>
+
+    <date />
+
+    <area>ops</area>
+    <workgroup>SIDROPS</workgroup>
+
+    <keyword>security</keyword>
+    <keyword>cryptography</keyword>
+    <keyword>X.509</keyword>
+
+    <abstract>
+      <t>
+        This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
+        CCR is a flexible DER-encoded data interchange format which can be used to represent various aspects of the state of a validated cache.
+      </t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section anchor="intro">
+      <name>Introduction</name>
+      <t>
+        This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
+        A validated cache contains all RPKI objects that the Relying Party (RP) has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
+        CCR is a flexible DER-encoded file format which can be used to represent various aspects of the state of a validated cache.
+       </t>
+
+      <section anchor="requirements">
+        <name>Requirements Language</name>
+        <t>
+          The key words "<bcp14>MUST</bcp14>", "<bcp14>MUST NOT</bcp14>", "<bcp14>REQUIRED</bcp14>", "<bcp14>SHALL</bcp14>", "<bcp14>SHALL NOT</bcp14>", "<bcp14>SHOULD</bcp14>", "<bcp14>SHOULD NOT</bcp14>", "<bcp14>RECOMMENDED</bcp14>", "<bcp14>NOT RECOMMENDED</bcp14>", "<bcp14>MAY</bcp14>", and "<bcp14>OPTIONAL</bcp14>" in this document are to be interpreted as described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/> when, and only when, they appear in all capitals, as shown here.
+        </t>
+      </section>
+    </section>
+
+    <section>
+      <name>The Canonical Cache Representation content type</name>
+      <t>
+        The contentType for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
+      </t>
+      <t>
+        As part of the standardization process the aforementioned contentType value change from a Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
+      </t>
+    </section>
+
+    <section anchor="content">
+      <name>The Canonical Cache Representation content</name>
+      <t>
+        The content of a Canonical Cache Representation is formally defined as follows:
+      </t>
+
+      <sourcecode anchor="ASN.1" type="asn.1" src="CCR-2025.asn"/>
+
+      <section>
+        <name>version</name>
+        <t>
+          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure, in this version of the specification it <bcp14>MUST</bcp14> be 0.
+        </t>
+      </section>
+
+      <section>
+        <name>hashAlg</name>
+        <t>
+          The <tt>hashAlg</tt> field specifies the algorithm used to construct the message digests.
+          This profile uses SHA-256 <xref target="SHS"/>, therefore the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt>.
+        </t>
+      </section>
+
+      <section>
+        <name>producedAt</name>
+        <t>
+          The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time the CCR was generated.
+        </t>
+      </section>
+
+      <section>
+        <name>State aspect fields</name>
+        <t>
+          Each CCR contains one or more fields representing particular aspects of the cache's state.
+          Implementers should note the ellipsis extension marker in the ASN.1 notation and anticipate future changes as new signed object types are standardized.
+        </t>
+        <t>
+          The general structure for each state aspect is a composition of a SEQUENCE of payloads  of a particular Signed Object type (<xref target="RFC6488"/>) followed by a digest which is calculated by hashing the DER-encoded payloads sequence.
+        </t>
+
+        <section>
+          <name>ManifestState</name>
+          <t>
+            An instance of <tt>ManifestState</tt> represents the set of valid, current Manifests (<xref target="RFC9286"/>) in the cache.
+            It contains three fields:
+          </t>
+          <t>
+            The <tt>mftrefs</tt> field contains a SEQUENCE of <tt>ManifestRef</tt> structures (see <xref target="I-D.spaghetti-sidrops-rpki-erik-protocol" section="3" />) sorted in ascending order by hash value.
+          </t>
+          <t>
+            The <tt>mostRecentUpdate</tt> field contains the most recent <tt>thisUpdate</tt> amongst all Manifests.
+          </t>
+          <t>
+            The <tt>hash</tt> field contains a message digest computed using the <tt>mftrefs</tt> value (encoded in DER format) as input message.
+          </t>
+        </section>
+
+        <section>
+          <name>ROAPayloadState</name>
+          <t>
+            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (<xref target="RFC6811" section="2" />) encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances.
+          </t>
+          <t>
+            The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
+            The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form as defined in <xref target="RFC9582" section="4.3.3"/>.
+          </t>
+          <t>
+            The <tt>hash</tt> field contains a message digest computed using the <tt>rps</tt> value (encoded in DER format) as input message.
+          </t>
+        </section>
+
+        <section>
+          <name>ASPAPayloadState</name>
+          <t>
+            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances.
+          </t>
+          <t>
+            The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />)
+          </t>
+          <t>
+            The <tt>hash</tt> field contains a message digest computed using the <tt>aps</tt> value (encoded in DER format) as input message.
+          </t>
+        </section>
+
+      </section>
+
+    </section>
+
+    <section>
+      <name>Operational Considerations</name>
+      <t>
+        Given the absence of public keys and the repetitive content in RPKI AccessDescription instances, CCR content compresses very well.
+      </t>
+      <section>
+        <name>Verifying CCR file integrity</name>
+        <t>
+          The integrity of a CCR object can be checked by confirming whether the hash values embedded inside state aspects match the computed hash value of the respective state aspect payload structure.
+        </t>
+      </section>
+    </section>
+ 
+    <section anchor="security">
+      <name>Security Considerations</name>
+      <t>
+        foo bar...
+      </t>
+    </section>
+
+    <section anchor="iana">
+      <name>IANA Considerations</name>
+
+      <section>
+        <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
+        <t>
+          <em>NOTE: unclear which registry this actually should go...</em>
+        </t>
+        <t>
+          IANA is requested to allocate the following in the "SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)" registry:
+        </t>
+
+        <table anchor="cms-content-type" align="center">
+          <name></name>
+          <thead>
+            <tr>
+              <th rowspan="1" colspan="1">Decimal</th>
+              <th rowspan="1" colspan="1">Description</th>
+              <th rowspan="1" colspan="1">References</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TBD</td>
+                <td>id-ct-rpkiCanonicalCacheRepresentation</td>
+                <td>draft-spaghetti-sidrops-rpki-ccr</td>
+              </tr>
+            </tbody>
+        </table>
+      </section>
+
+      <section>
+        <name>RPKI Repository Name Schemes</name>
+        <t>
+          IANA is requested to add the Canonical Cache Representation file extension to the "RPKI Repository Name Schemes" registry <xref target="RFC6481"/> as follows:
+        </t>
+
+        <table anchor="rpki-repository-name-schemes" align="center">
+          <name></name>
+          <thead>
+            <tr>
+              <th rowspan="1" colspan="1">Filename Extension</th>
+              <th rowspan="1" colspan="1">RPKI Object</th>
+              <th rowspan="1" colspan="1">Reference</th>
+            </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>.ccr</td>
+              <td>Canonical Cache Representation</td>
+              <td>draft-spaghetti-sidrops-rpki-ccr</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <name>SMI Security for S/MIME Module Identifier (1.2.840.113549.1.9.16.0)</name>
+        <t>
+          IANA is requested to allocate the following in the "SMI Security for S/MIME Module Identifier (1.2.840.113549.1.9.16.0)" registry:
+        </t>
+
+        <table anchor="smi-security-identifier" align="center">
+          <name></name>
+          <thead>
+            <tr>
+              <th rowspan="1" colspan="1">Decimal</th>
+              <th rowspan="1" colspan="1">Description</th>
+              <th rowspan="1" colspan="1">References</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>TBD</td>
+              <td>id-mod-rpkiCCR-2025</td>
+              <td>draft-spaghetti-sidrops-rpki-ccr</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <name>Media Types</name>
+        <t>
+          IANA is requested to register the media type "application/rpki-prefixlist" in the "Media Types" registry as follows:
+        </t>
+        <section>
+        <name>Canonical Cache Representation Media Type</name>
+        <dl spacing="compact">
+           <dt>Type name:</dt><dd>application</dd>
+           <dt>Subtype name:</dt><dd>rpki-ccr</dd>
+           <dt>Required parameters:</dt><dd>N/A</dd>
+           <dt>Optional parameters:</dt><dd>N/A</dd>
+           <dt>Encoding considerations:</dt><dd>binary</dd>
+           <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
+           <dt>Interoperability considerations:</dt><dd>N/A</dd>
+           <dt>Published specification:</dt><dd>draft-spaghetti-sidrops-rpki-ccr</dd>
+           <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
+           <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
+           <dt>Additional information:</dt>
+           <dd>
+           <dl spacing="compact">
+             <dt><br/></dt><dd/>
+             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in draft-spaghetti-sidrops-rpki-ccr.</dd>
+             <dt>Magic number(s):</dt><dd>N/A</dd>
+             <dt>File extension(s):</dt><dd>.ccr</dd>
+             <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
+           </dl>
+           </dd>
+           <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@sobornost.net)</dd>
+           <dt>Intended usage:</dt><dd>COMMON</dd>
+           <dt>Restrictions on usage:</dt><dd>N/A</dd>
+           <dt>Author:</dt><dd>Job Snijders (job@sobornost.net)</dd>
+           <dt>Change controller:</dt><dd>IETF</dd>
+        </dl>
+        </section>
+      </section>
+    </section>
+  </middle>
+
+  <back>
+
+    <references>
+      <name>References</name>
+
+      <references>
+        <name>Normative References</name>
+
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6488.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6811.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
+
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-aspa-profile.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.spaghetti-sidrops-rpki-erik-protocol.xml"/>
+
+        <reference anchor="SHS" target="https://csrc.nist.gov/publications/fips/fips180-4/fips-180-4.pdf">
+          <front>
+            <title>Secure Hash Standard</title>
+            <author>
+              <organization>National Institute of Standards and Technology</organization>
+            </author>
+            <date month="March" year="2012" />
+          </front>
+        </reference>
+
+      </references>
+
+      <references>
+        <name>Informative References</name>
+
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9371.xml"/>
+
+        <reference anchor="rpki-client" target="https://www.rpki-client.org/">
+          <front>
+            <title>rpki-client</title>
+            <author fullname="Claudio Jeker"/>
+            <author fullname="Kristaps Dzonsons"/>
+            <author fullname="Theo Buehler"/>
+            <author fullname="Job Snijders"/>
+            <date month="August" year="2025" />
+          </front>
+        </reference>
+
+      </references>
+
+    </references>
+
+    <section anchor="acknowledgements">
+      <name>Acknowledgements</name>
+      <t>
+        The authors wish to thank
+        <contact fullname="Theo Buehler" />
+        for their generous feedback on this specification.
+      </t>
+    </section>
+
+    <section removeInRFC="true">
+      <name>Implementation status</name>
+      <t>
+        This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft, and is based on a proposal described in RFC 7942.
+        The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs.
+        Please note that the listing of any individual implementation here does not imply endorsement by the IETF.
+        Furthermore, no effort has been spent to verify the information presented here that was supplied by IETF contributors.
+        This is not intended as, and must not be construed to be, a catalog of available implementations or their features.
+        Readers are advised to note that other implementations may exist.
+      </t>
+      <t>
+        According to RFC 7942, "this will allow reviewers and working groups to assign due consideration to documents that have the benefit of running code, which may serve as evidence of valuable experimentation and feedback that have made the implemented protocols more mature.
+        It is up to the individual working groups to use this information as they see fit".
+      </t>
+
+      <ul>
+        <li>
+          Example .ccr files were created by Job Snijders.
+          A current example CCR (regenerated every few minutes) is available here:
+<![CDATA[
+https://console.rpki-client.org/rpki.ccr
+]]>
+        </li>
+        <li>
+          A CCR serializer and deserializer implementation based on <xref target="rpki-client"/> was provided by Job Snijders.
+        </li>
+      </ul>
+    </section>
+
+  </back>
+
+</rfc>
