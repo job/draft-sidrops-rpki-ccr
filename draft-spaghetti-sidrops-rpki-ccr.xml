@@ -142,7 +142,7 @@
           Implementers should note the ellipsis extension marker in the ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
         <t>
-          The general structure for each state aspect is a composition of a SEQUENCE of payloads  of a particular Signed Object type (<xref target="RFC6488"/>) followed by a digest which is calculated by hashing the DER-encoded payloads sequence.
+          The general structure for each state aspect is a composition of a SEQUENCE of payloads  of a particular Signed Object type (<xref target="RFC6488"/>) and a digest which is calculated by hashing the DER-encoded payloads sequence, and possibly some metadata.
         </t>
 
         <section>
@@ -155,7 +155,7 @@
             The <tt>mftrefs</tt> field contains a SEQUENCE of <tt>ManifestRef</tt> structures (see <xref target="I-D.spaghetti-sidrops-rpki-erik-protocol" section="3" />) sorted in ascending order by hash value.
           </t>
           <t>
-            The <tt>mostRecentUpdate</tt> field contains the most recent <tt>thisUpdate</tt> amongst all Manifests.
+            The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all Manifests.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>mftrefs</tt> value (encoded in DER format) as input message.
@@ -196,7 +196,10 @@
     <section>
       <name>Operational Considerations</name>
       <t>
-        Given the absence of public keys and the repetitive content in RPKI AccessDescription instances, CCR content compresses very well.
+        Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI supply chain.
+      </t>
+      <t>
+        Given the absence of public keys and fairly repetitive content in RPKI AccessDescription instances, it should be noted CCR content compresses well.
       </t>
       <section>
         <name>Verifying CCR file integrity</name>
