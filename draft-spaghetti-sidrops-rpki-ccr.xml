@@ -141,9 +141,6 @@
           Each CCR contains one or more fields representing particular aspects of the cache's state.
           Implementers should note the ellipsis extension marker in the ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
-        <t>
-          The general structure for each state aspect is a composition of a SEQUENCE of payloads  of a particular Signed Object type (<xref target="RFC6488"/>) and a digest which is calculated by hashing the DER-encoded payloads sequence, and possibly some metadata.
-        </t>
 
         <section>
           <name>ManifestState</name>
