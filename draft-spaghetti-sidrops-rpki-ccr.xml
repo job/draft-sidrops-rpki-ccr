@@ -187,12 +187,16 @@
         </section>
 
         <section>
-          <name>Trust Anchor SubjectKeyIdentifiers</name>
+          <name>TrustAnchorState</name>
           <t>
-            The <tt>taskis</tt> field contains a sequence of Subject Key Identifiers (SKI) sorted in ascending order representing the set of valid Trust Anchor (TA) Certification Authority (CA) resource certificates used by the relying party when producing the CCR.
+            An instance of <tt>TrustAnchorState</tt> represents the set of valid Trust Anchor (TA) Certification Authority (CA) resource certificates used by the relying party when producing the CCR.
           </t>
           <t>
+            The <tt>skis</tt> field contains a sequence of Subject Key Identifiers (SKI) sorted in ascending order.
             Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the TA's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
+          </t>
+          <t>
+            The <tt>hash</tt> field contains a message digest computed using the <tt>skis</tt> value (encoded in DER format) as input message.
           </t>
         </section>
 

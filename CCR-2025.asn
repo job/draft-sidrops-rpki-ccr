@@ -38,13 +38,13 @@ RpkiCanonicalCacheRepresentation ::= SEQUENCE {
   mfts        [1] ManifestState OPTIONAL,
   vrps        [2] ROAPayloadState OPTIONAL,
   vaps        [3] ASPAPayloadState OPTIONAL,
-  taskis      [4] SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier OPTIONAL,
+  tas         [4] TrustAnchorState OPTIONAL,
   ... }
-  -- at least one of mfts, vrps, vaps, or taskis MUST be present
+  -- at least one of mfts, vrps, vaps, or tas MUST be present
   ( WITH COMPONENTS { ..., mfts PRESENT } |
     WITH COMPONENTS { ..., vrps PRESENT } |
     WITH COMPONENTS { ..., vaps PRESENT } |
-    WITH COMPONENTS { ..., taskis PRESENT } )
+    WITH COMPONENTS { ..., tas PRESENT } )
 
 ManifestState ::= SEQUENCE {
   mftrefs           SEQUENCE OF ManifestRef,
@@ -66,5 +66,9 @@ ASPAPayloadState ::= SEQUENCE {
 ASPAPayloadSet ::= SEQUENCE {
   asID              ASID
   providers         SEQUENCE (SIZE(1..MAX)) OF ASID }
+
+TrustAnchorState ::= SEQUENCE {
+  skis              SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier,
+  hash              Digest }
 
 END
