@@ -84,7 +84,7 @@
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
         A validated cache contains all RPKI objects that the Relying Party (RP) has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
-        CCR is a flexible DER-encoded file format which can be used to represent various aspects of the state of a validated cache.
+        CCR is a flexible data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache.
        </t>
 
       <section anchor="requirements">
@@ -186,6 +186,16 @@
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>aps</tt> value (encoded in DER format) as input message.
+          </t>
+        </section>
+
+        <section>
+          <name>Trust Anchor SubjectKeyIdentifiers</name>
+          <t>
+            The <tt>taskis</tt> field contains a sequence of Subject Key Identifiers (SKI) sorted in ascending order representing the set of valid Trust Anchor (TA) Certification Authority (CA) resource certificates used by the relying party when producing the CCR.
+          </t>
+          <t>
+            Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the TA's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
           </t>
         </section>
 
@@ -364,6 +374,19 @@
             </author>
             <date month="March" year="2012" />
           </front>
+        </reference>
+
+        <reference anchor="X.690" target="https://www.itu.int/rec/T-REC-X.690-202102-I/en">
+          <front>
+            <title>Information technology - ASN.1 encoding rules: Specification of Basic Encoding Rules (B
+ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</title>
+            <author>
+              <organization showOnFrontPage="true">ITU-T</organization>
+            </author>
+            <date month="February" year="2021"/>
+          </front>
+          <seriesInfo name="ITU-T Recommendation" value="X.690"/>
+          <seriesInfo name="ISO/IEC" value="8825-1:2021"/>
         </reference>
 
       </references>
