@@ -141,6 +141,9 @@
           Each CCR contains one or more fields representing particular aspects of the cache's state.
           Implementers should note the ellipsis extension marker in the ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
+        <t>
+          Each state aspect generally consists of a sequence of details extracted from RPKI Objects of a specific type, along with a digest computed by hashing the aforementioned DER-encoded sequence, optionally including some metadata.
+        </t>
 
         <section>
           <name>ManifestState</name>
