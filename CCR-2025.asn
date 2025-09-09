@@ -64,7 +64,7 @@ ASPAPayloadState ::= SEQUENCE {
   hash              Digest }
 
 ASPAPayloadSet ::= SEQUENCE {
-  asID              ASID
+  customerASID      ASID
   providers         SEQUENCE (SIZE(1..MAX)) OF ASID }
 
 TrustAnchorState ::= SEQUENCE {

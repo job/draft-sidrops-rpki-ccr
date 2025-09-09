@@ -144,7 +144,7 @@
         <name>State aspect fields</name>
         <t>
           Each CCR contains one or more fields representing particular aspects of the cache's state.
-          Implementers should note the ellipsis extension marker in the ASN.1 notation and anticipate future changes as new signed object types are standardized.
+          Implementers should note the ellipsis extension marker in the <tt>RpkiCanonicalCacheRepresentation</tt> ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
         <t>
           Each state aspect generally consists of a sequence of details extracted from RPKI Objects of a specific type, along with a digest computed by hashing the aforementioned DER-encoded sequence, optionally including some metadata.
@@ -184,7 +184,7 @@
         <section>
           <name>ASPAPayloadState</name>
           <t>
-            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances.
+            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) ordered by ascending <tt>customerASID</tt> value encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances.
           </t>
           <t>
             The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />)
