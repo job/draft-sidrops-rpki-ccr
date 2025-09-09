@@ -176,7 +176,7 @@
           </t>
           <t>
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
-            The <tt>asID</tt> value in each instance of <tt>ROAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instancse of <tt>ROAPayloadSet</tt>.
+            The <tt>asID</tt> value in each instance of <tt>ROAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ROAPayloadSet</tt>.
             The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form and ordered as defined in <xref target="RFC9582" section="4.3.3"/>.
           </t>
           <t>
