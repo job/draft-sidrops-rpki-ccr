@@ -73,7 +73,8 @@
     <abstract>
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
-        CCR is a flexible DER-encoded data interchange format which can be used to represent various aspects of the state of a validated cache.
+        CCR is a DER-encoded data interchange format which can be used to represent various aspects of the state of a validated cache at a particular point in time.
+        The CCR profile is a compact and versatile format well-suited for a diverse set of applications such as audit trail keeping, validated payload dissemination, and analytics pipelines.
       </t>
     </abstract>
   </front>
@@ -84,7 +85,11 @@
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
         A validated cache contains all RPKI objects that the Relying Party (RP) has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
-        CCR is a flexible data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache.
+        CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time.
+        The CCR profile is a compact and versatile format well-suited for a diverse set of applications such as audit record keeping, validated payload dissemination, and analytics pipelines.
+       </t>
+       <t>
+         The format was primarily designed to support comparative analysis of uniformities and differences among multiple RP instances using different RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.spaghetti-sidrops-rpki-erik-protocol"/>).
        </t>
 
       <section anchor="requirements">
@@ -98,10 +103,10 @@
     <section>
       <name>The Canonical Cache Representation content type</name>
       <t>
-        The contentType for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
+        The <tt>contentType</tt> for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
       </t>
       <t>
-        As part of the standardization process the aforementioned contentType value change from a Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
+        Note: as part of the standardization process, the aforementioned contentType value should be changed from its current Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
       </t>
     </section>
 
@@ -226,7 +231,7 @@
     <section anchor="security">
       <name>Security Considerations</name>
       <t>
-        foo bar...
+        CCR objects are not signed objects.
       </t>
     </section>
 
@@ -398,6 +403,8 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
       <references>
         <name>Informative References</name>
 
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5781.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8182.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9371.xml"/>
 
         <reference anchor="rpki-client" target="https://www.rpki-client.org/">
