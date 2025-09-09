@@ -158,9 +158,11 @@
           </t>
           <t>
             The <tt>mftrefs</tt> field contains a SEQUENCE of <tt>ManifestRef</tt> structures (see <xref target="I-D.spaghetti-sidrops-rpki-erik-protocol" section="3" />) sorted in ascending order by hash value.
+            The <tt>hash</tt> value in each instance of <tt>ManifestRef</tt> <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestRef</tt>.
           </t>
           <t>
             The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all Manifests.
+            If the <tt>mftrefs</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>mftrefs</tt> value (encoded in DER format) as input message.
@@ -174,7 +176,8 @@
           </t>
           <t>
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
-            The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form as defined in <xref target="RFC9582" section="4.3.3"/>.
+            The <tt>asID</tt> value in each instance of <tt>ROAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instancse of <tt>ROAPayloadSet</tt>.
+            The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form and ordered as defined in <xref target="RFC9582" section="4.3.3"/>.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>rps</tt> value (encoded in DER format) as input message.
@@ -185,9 +188,10 @@
           <name>ASPAPayloadState</name>
           <t>
             An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) ordered by ascending <tt>customerASID</tt> value encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances.
+            The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>.
           </t>
           <t>
-            The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />)
+            The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />).
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>aps</tt> value (encoded in DER format) as input message.
