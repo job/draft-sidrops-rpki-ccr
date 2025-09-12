@@ -103,10 +103,10 @@
     <section>
       <name>The Canonical Cache Representation content type</name>
       <t>
-        The <tt>contentType</tt> for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
+        The <tt>contentType</tt> for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with temporary Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
       </t>
       <t>
-        Note: as part of the standardization process, the aforementioned contentType value should be changed from its current Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
+        Note: as part of the standardization process, at a future point in time, the aforementioned contentType value will change from the current Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
       </t>
     </section>
 
@@ -244,9 +244,6 @@
 
       <section>
         <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
-        <t>
-          <em>NOTE: unclear which registry this actually should go...</em>
-        </t>
         <t>
           IANA is requested to allocate the following in the "SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)" registry:
         </t>
@@ -431,7 +428,9 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
       <t>
         The authors wish to thank
         <contact fullname="Theo Buehler" />
-        for their generous feedback on this specification.
+        and
+        <contact fullname="Russ Housley" />
+        for their generous feedback on this specification,
       </t>
     </section>
 

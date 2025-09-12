@@ -19,7 +19,7 @@ IMPORTS
 
   ASID, ROAIPAddressFamily
   FROM RPKI-ROA-2023 -- in [RFC9582]
-    { so(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+    { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs9(9) smime(16) mod(0) id-mod-rpkiROA-2023(75) }
   ;
 
@@ -64,7 +64,7 @@ ASPAPayloadState ::= SEQUENCE {
   hash              Digest }
 
 ASPAPayloadSet ::= SEQUENCE {
-  customerASID      ASID
+  customerASID      ASID,
   providers         SEQUENCE (SIZE(1..MAX)) OF ASID }
 
 TrustAnchorState ::= SEQUENCE {
