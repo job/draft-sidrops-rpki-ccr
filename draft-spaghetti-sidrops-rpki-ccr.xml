@@ -212,6 +212,19 @@
           </t>
         </section>
 
+        <section>
+          <name>RouterKeyState</name>
+          <t>
+            An instance of <tt>RouterKeyState</tt> contains an <tt>rks</tt> field which represents the current set of valid BGPsec Router Keys <xref target="RFC8205" /> encoded as a SEQUENCE of <tt>RouterKeySet</tt> instances.
+            The <tt>asID</tt> value in each instance of <tt>RouterKeySet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>RouterKeySet</tt>.
+            Instances of <tt>RouterKeySet</tt> are ordered by ascending value of <tt>asID</tt>.
+            Instances of <tt>RouterKey</tt> are ordered by ascending value of <tt>ski</tt>.
+          </t>
+          <t>
+            The <tt>hash</tt> field contains a message digest computed using the <tt>rks</tt> value (encoded in DER format) as input message.
+          </t>
+        </section>
+
       </section>
 
     </section>
@@ -415,7 +428,7 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
             <author fullname="Kristaps Dzonsons"/>
             <author fullname="Theo Buehler"/>
             <author fullname="Job Snijders"/>
-            <date month="August" year="2025" />
+            <date month="September" year="2025" />
           </front>
         </reference>
 

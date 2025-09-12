@@ -21,6 +21,11 @@ IMPORTS
   FROM RPKI-ROA-2023 -- in [RFC9582]
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs9(9) smime(16) mod(0) id-mod-rpkiROA-2023(75) }
+
+  SubjectPublicKeyInfo
+  FROM PKIX1Explicit-2009
+    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
+      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
   ;
 
 ct-rpkiCanonicalCacheRepresentation CONTENT-TYPE ::=
@@ -39,12 +44,14 @@ RpkiCanonicalCacheRepresentation ::= SEQUENCE {
   vrps        [2] ROAPayloadState OPTIONAL,
   vaps        [3] ASPAPayloadState OPTIONAL,
   tas         [4] TrustAnchorState OPTIONAL,
+  rks         [5] RouterKeyState OPTIONAL,
   ... }
   -- at least one of mfts, vrps, vaps, or tas MUST be present
   ( WITH COMPONENTS { ..., mfts PRESENT } |
     WITH COMPONENTS { ..., vrps PRESENT } |
     WITH COMPONENTS { ..., vaps PRESENT } |
-    WITH COMPONENTS { ..., tas PRESENT } )
+    WITH COMPONENTS { ..., tas PRESENT } |
+    WITH COMPONENTS { ..., rks PRESENT } )
 
 ManifestState ::= SEQUENCE {
   mftrefs           SEQUENCE OF ManifestRef,
@@ -70,5 +77,17 @@ ASPAPayloadSet ::= SEQUENCE {
 TrustAnchorState ::= SEQUENCE {
   skis              SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier,
   hash              Digest }
+
+RouterKeyState ::= SEQUENCE {
+  rks               SEQUENCE OF RouterKeySet,
+  hash              Digest }
+
+RouterKeySet ::= SEQUENCE {
+  asID              ASID,
+  routerkeys        SEQUENCE (SIZE(1..MAX)) OF RouterKey }
+
+RouterKey ::= SEQUENCE {
+  ski               SubjectKeyIdentifier,
+  spki              SubjectPublicKeyInfo }
 
 END
