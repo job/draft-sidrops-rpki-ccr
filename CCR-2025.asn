@@ -84,7 +84,7 @@ RouterKeyState ::= SEQUENCE {
 
 RouterKeySet ::= SEQUENCE {
   asID              ASID,
-  routerkeys        SEQUENCE (SIZE(1..MAX)) OF RouterKey }
+  routerKeys        SEQUENCE (SIZE(1..MAX)) OF RouterKey }
 
 RouterKey ::= SEQUENCE {
   ski               SubjectKeyIdentifier,
