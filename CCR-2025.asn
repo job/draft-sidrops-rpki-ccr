@@ -79,7 +79,7 @@ TrustAnchorState ::= SEQUENCE {
   hash              Digest }
 
 RouterKeyState ::= SEQUENCE {
-  rks               SEQUENCE OF RouterKeySet,
+  rksets            SEQUENCE OF RouterKeySet,
   hash              Digest }
 
 RouterKeySet ::= SEQUENCE {
