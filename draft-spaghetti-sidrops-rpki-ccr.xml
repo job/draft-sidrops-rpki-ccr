@@ -204,8 +204,8 @@
             An instance of <tt>TrustAnchorState</tt> represents the set of valid Trust Anchor (TA) Certification Authority (CA) resource certificates used by the relying party when producing the CCR.
           </t>
           <t>
-            The <tt>skis</tt> field contains a sequence of Subject Key Identifiers (SKI) sorted in ascending order.
             Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the TA's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
+            The <tt>skis</tt> field contains a sequence of Subject Key Identifiers (SKI) sorted in ascending order by interpreting the SKI value as an unsigned 160-bit integer.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>skis</tt> value (encoded in DER format) as input message.
@@ -217,8 +217,8 @@
           <t>
             An instance of <tt>RouterKeyState</tt> contains an <tt>rks</tt> field which represents the current set of valid BGPsec Router Keys <xref target="RFC8205" /> encoded as a SEQUENCE of <tt>RouterKeySet</tt> instances.
             The <tt>asID</tt> value in each instance of <tt>RouterKeySet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>RouterKeySet</tt>.
-            Instances of <tt>RouterKeySet</tt> are ordered by ascending value of <tt>asID</tt>.
-            Instances of <tt>RouterKey</tt> are ordered by ascending value of <tt>ski</tt>.
+            Instances of <tt>RouterKeySet</tt> are sorted by ascending value of <tt>asID</tt>.
+            Instances of <tt>RouterKey</tt> are sorted by ascending value of <tt>ski</tt> by interpreting the SKI value as an unsigned 160-bit integer.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>rks</tt> value (encoded in DER format) as input message.
