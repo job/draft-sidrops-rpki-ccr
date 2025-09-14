@@ -1,0 +1,61 @@
+File:                     /var/db/rpki-client/rpki.ccr
+Hash identifier:          2I/Z4CJxz1uFzeCzNrVI0z0mwNWmjJr5rfIthoSSe/o=
+CCR produced at:          Sun 14 Sep 2025 15:01:00 +0000
+Manifest state hash:      RTkyNzcyQTREM0U0OEVFM0JCOTY1NDAzRThFRjk5MTE=
+Manifest last update:     Sun 14 Sep 2025 08:46:11 +0000
+Manifest references:
+                          hash:AAJkHxAacbug2d9I3RgA68J03dSvcGL/plSvfOGMjNM= size:1998 aki:F5882F33F7480DCC7B87637AEA76368289D75C2D seqnum:039D sia:rsync://rpki.ripe.net/repository/DEFAULT/58/92ff2a-a16a-4a78-99b2-a95105f16e66/1/9YgvM_dIDcx7h2N66nY2gonXXC0.mft
+                          hash:AAMVpLc55h0gauVh2mWZZEJz9v+8ghnjXHZxggMH3y0= size:1924 aki:E22501D9A401709838F33D1AE279BCE7100B3CCF seqnum:10FB sia:rsync://rpki.ripe.net/repository/DEFAULT/73/63fae9-499f-43d5-8768-f9811ee3fa87/1/4iUB2aQBcJg48z0a4nm85xALPM8.mft
+                          hash:AAZftcBOmqiZF5kf+QUnNG9OKz5llBRS/LjIe0igyXg= size:1998 aki:6D164D9B6B3C7CBD1E9D279C6C867BAD397D1E17 seqnum:0ABD sia:rsync://rpki.ripe.net/repository/DEFAULT/6f/aeb23a-f8d8-4a1b-a232-3d7e4b496b23/1/bRZNm2s8fL0enSecbIZ7rTl9Hhc.mft
+                          hash:AAr7w8/up/PZUntkxbfvXZrYVA4lbhaZdyLqBn573/U= size:1998 aki:BBBC3DBD1A4F224AB84AD609C268079FB624B5BD seqnum:02A7 sia:rsync://rpki.ripe.net/repository/DEFAULT/2f/54b006-6809-441b-84d7-a24cb572298e/1/u7w9vRpPIkq4StYJwmgHn7Yktb0.mft
+                          hash:AAsF2PWNxkTeZQ/qxn0i4yX62+4mhxcHa6lXXFiqd1Y= size:2113 aki:B13832FCA4934496236AC3894998C3DD513D7C09 seqnum:01D1 sia:rsync://rpki.apnic.net/member_repository/A91D4A16/BAE7EFFECC5311ED81F4C515C4F9AE02/sTgy_KSTRJYjasOJSZjD3VE9fAk.mft
+                          hash:AAxQt4RXXbQqLedjYi+JKCgiiPFzR9jhBhssdbVG8Ig= size:2072 aki:0AEEAEE0863D1DCA624F61F39B2181C7DB6CBA3F seqnum:1682 sia:rsync://rpki.ripe.net/repository/DEFAULT/6b/b62878-ccc8-4d57-9fe0-7a104b80cd71/1/Cu6u4IY9HcpiT2HzmyGBx9tsuj8.mft
+                          hash:AA9bMXbx8zKdwLHXaprPuRCKgQWpBQOVEQiyQN6Xfus= size:2192 aki:578C8D02AEF0B43E29FECEA1895DCC9D10663535 seqnum:9A sia:rsync://rpki.apnic.net/member_repository/A91D4786/34598C70A7C311EFB511E053C4F9AE02/V4yNAq7wtD4p_s6hiV3MnRBmNTU.mft
+                          hash:AA/iSfH0yo2LRxfvL9RkIEo0+NAtgdM5BK8pIGwcltA= size:2084 aki:12301D400962DD987A3C7B83A3366287D47F86FD seqnum:019E sia:rsync://rpki-repository.nic.ad.jp/ap/A91A73810000/1164/EjAdQAli3Zh6PHuDozZih9R_hv0.mft
+                          hash:AB2L58delmHldffkzMc6QDJ9F31+PEJaau9u7cHxjLY= size:2172 aki:B1F0A7585ED1882783C6AF802B826607ABB92671 seqnum:A4 sia:rsync://repo-rpki.idnic.net/repo/38913893-5f64-4a5e-a8d2-5d51ebde473f/0/B1F0A7585ED1882783C6AF802B826607ABB92671.mft
+                          hash:ACDy+jFe4pphixrHj/sLz2f6X9aNOHiEcFseRYKJQPI= size:1998 aki:39E4059E519E7CAD0536BD54D91BC97875644CDB seqnum:1614 sia:rsync://rpki.ripe.net/repository/DEFAULT/d0/ef9221-c354-4e67-a32f-84e596a3c121/1/OeQFnlGefK0FNr1U2RvJeHVkTNs.mft
+                          hash:ACLbiX5uyswdLWeu1TBH8p9kVqH49Cy/jShdzyJQ/hA= size:2113 aki:1D492FA3F3B29580495A6880D404EE0C370AD925 seqnum:07BF sia:rsync://rpki.apnic.net/member_repository/A915D963/90E80BC897E211EB9B39D531C4F9AE02/HUkvo_OylYBJWmiA1ATuDDcK2SU.mft
+ROA payload state hash:   MDI1RjhBMTc2NkE1RkM0RjA2NUExRUJFNzNBQUI4OEE=
+ROA payload entries:
+                          192.35.94.0/24-32 AS 7
+                          192.67.43.0/24-32 AS 7
+                          194.32.69.0/24-32 AS 7
+                          194.32.218.0/23-32 AS 7
+                          194.34.138.0/24-32 AS 7
+                          194.61.92.0/23-32 AS 7
+                          2a0b:3b40::/29-128 AS 7
+                          91.208.34.0/24 AS 8283
+                          94.142.240.0/24 AS 8283
+                          94.142.240.0/21 AS 8283
+                          94.142.241.0/24 AS 8283
+                          94.142.242.0/24 AS 8283
+                          94.142.244.0/24 AS 8283
+                          94.142.245.0/24 AS 8283
+                          94.142.246.0/24 AS 8283
+                          94.142.247.0/24 AS 8283
+                          185.52.224.0/24 AS 8283
+                          185.52.224.0/22 AS 8283
+                          185.52.225.0/24 AS 8283
+                          185.52.226.0/24 AS 8283
+                          185.52.227.0/24 AS 8283
+                          203.56.44.0/24 AS 8283
+                          2001:678:688::/48 AS 8283
+                          2a02:898::/32 AS 8283
+                          2001:67c:208c::/48 AS 15562
+                          2001:728:1808::/48 AS 15562
+                          2a0e:b240::/48 AS 15562
+                          2a0e:b240:118::/48 AS 15562
+ASPA payload state hash:  MTc4RkVEOTczODY5OThCRTE4MkExNzMxQ0FGRjBDQTE=
+ASPA payload entries:
+                          customer: 945 providers: 1421, 13213
+                          customer: 7719 providers: 945, 1421, 13213, 61138
+                          customer: 18607 providers: 20473, 207487
+                          customer: 39002 providers: 0
+                          customer: 41720 providers: 174, 1299, 9002, 50877, 60068, 203446, 212508
+Trust anchor state hash:  RkZCMDlBRDA5QzJCOEU2MEI2NDcyMjIyNUE2NENCNUQ=
+Trust anchor keyids:      0B9CCA90DD0D7A8A37666B19217FE0D84037B7A2, E8552B1FD6D1A4F7E404C6D8E5680D1EBC163FC3
+Router key state hash:    QkE1RkI0NDlDRUZCNkJBMDBGMzYxMjc5NjJBMkVFQTY=
+Router keys:
+                          asid:15562 ski:5D4250E2D81D4448D8A29EFCE91D29FF075EC9E2 pubkey:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgFcjQ/g//LAQerAH2Mpp+GucoDAGBbhIqD33wNPsXxnAGb+mtZ7XQrVO9DQ6UlAShtig5+QfEKpTtFgiqfiAFQ==
+                          asid:15562 ski:BE889B55D0B737397D75C49F485B858FA98AD11F pubkey:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE4FxJr0n2bux1uX1Evl+QWwZYvIadPjLuFX2mxqKuAGUhKnr7VLLDgrE++l9p5eH2kWTNVAN22FUU3db/RKpE2w==
+Validation:               N/A
