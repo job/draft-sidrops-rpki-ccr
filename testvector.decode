@@ -1,20 +1,15 @@
 File:                     /var/db/rpki-client/rpki.ccr
-Hash identifier:          2I/Z4CJxz1uFzeCzNrVI0z0mwNWmjJr5rfIthoSSe/o=
-CCR produced at:          Sun 14 Sep 2025 15:01:00 +0000
-Manifest state hash:      RTkyNzcyQTREM0U0OEVFM0JCOTY1NDAzRThFRjk5MTE=
-Manifest last update:     Sun 14 Sep 2025 08:46:11 +0000
+Hash identifier:          k5quWMYc3o8nIzijN+dNEWNBNbHmjjtGfFvzdhT8MsM=
+CCR produced at:          Mon 15 Sep 2025 12:28:41 +0000
+Manifest state hash:      MTE5QkQ3REFCMDQ5NTgyNzdCNEQzODQwRjlEMjhBMzg=
+Manifest last update:     Mon 15 Sep 2025 12:01:44 +0000
 Manifest references:
-                          hash:AAJkHxAacbug2d9I3RgA68J03dSvcGL/plSvfOGMjNM= size:1998 aki:F5882F33F7480DCC7B87637AEA76368289D75C2D seqnum:039D sia:rsync://rpki.ripe.net/repository/DEFAULT/58/92ff2a-a16a-4a78-99b2-a95105f16e66/1/9YgvM_dIDcx7h2N66nY2gonXXC0.mft
-                          hash:AAMVpLc55h0gauVh2mWZZEJz9v+8ghnjXHZxggMH3y0= size:1924 aki:E22501D9A401709838F33D1AE279BCE7100B3CCF seqnum:10FB sia:rsync://rpki.ripe.net/repository/DEFAULT/73/63fae9-499f-43d5-8768-f9811ee3fa87/1/4iUB2aQBcJg48z0a4nm85xALPM8.mft
-                          hash:AAZftcBOmqiZF5kf+QUnNG9OKz5llBRS/LjIe0igyXg= size:1998 aki:6D164D9B6B3C7CBD1E9D279C6C867BAD397D1E17 seqnum:0ABD sia:rsync://rpki.ripe.net/repository/DEFAULT/6f/aeb23a-f8d8-4a1b-a232-3d7e4b496b23/1/bRZNm2s8fL0enSecbIZ7rTl9Hhc.mft
-                          hash:AAr7w8/up/PZUntkxbfvXZrYVA4lbhaZdyLqBn573/U= size:1998 aki:BBBC3DBD1A4F224AB84AD609C268079FB624B5BD seqnum:02A7 sia:rsync://rpki.ripe.net/repository/DEFAULT/2f/54b006-6809-441b-84d7-a24cb572298e/1/u7w9vRpPIkq4StYJwmgHn7Yktb0.mft
-                          hash:AAsF2PWNxkTeZQ/qxn0i4yX62+4mhxcHa6lXXFiqd1Y= size:2113 aki:B13832FCA4934496236AC3894998C3DD513D7C09 seqnum:01D1 sia:rsync://rpki.apnic.net/member_repository/A91D4A16/BAE7EFFECC5311ED81F4C515C4F9AE02/sTgy_KSTRJYjasOJSZjD3VE9fAk.mft
-                          hash:AAxQt4RXXbQqLedjYi+JKCgiiPFzR9jhBhssdbVG8Ig= size:2072 aki:0AEEAEE0863D1DCA624F61F39B2181C7DB6CBA3F seqnum:1682 sia:rsync://rpki.ripe.net/repository/DEFAULT/6b/b62878-ccc8-4d57-9fe0-7a104b80cd71/1/Cu6u4IY9HcpiT2HzmyGBx9tsuj8.mft
-                          hash:AA9bMXbx8zKdwLHXaprPuRCKgQWpBQOVEQiyQN6Xfus= size:2192 aki:578C8D02AEF0B43E29FECEA1895DCC9D10663535 seqnum:9A sia:rsync://rpki.apnic.net/member_repository/A91D4786/34598C70A7C311EFB511E053C4F9AE02/V4yNAq7wtD4p_s6hiV3MnRBmNTU.mft
-                          hash:AA/iSfH0yo2LRxfvL9RkIEo0+NAtgdM5BK8pIGwcltA= size:2084 aki:12301D400962DD987A3C7B83A3366287D47F86FD seqnum:019E sia:rsync://rpki-repository.nic.ad.jp/ap/A91A73810000/1164/EjAdQAli3Zh6PHuDozZih9R_hv0.mft
-                          hash:AB2L58delmHldffkzMc6QDJ9F31+PEJaau9u7cHxjLY= size:2172 aki:B1F0A7585ED1882783C6AF802B826607ABB92671 seqnum:A4 sia:rsync://repo-rpki.idnic.net/repo/38913893-5f64-4a5e-a8d2-5d51ebde473f/0/B1F0A7585ED1882783C6AF802B826607ABB92671.mft
-                          hash:ACDy+jFe4pphixrHj/sLz2f6X9aNOHiEcFseRYKJQPI= size:1998 aki:39E4059E519E7CAD0536BD54D91BC97875644CDB seqnum:1614 sia:rsync://rpki.ripe.net/repository/DEFAULT/d0/ef9221-c354-4e67-a32f-84e596a3c121/1/OeQFnlGefK0FNr1U2RvJeHVkTNs.mft
-                          hash:ACLbiX5uyswdLWeu1TBH8p9kVqH49Cy/jShdzyJQ/hA= size:2113 aki:1D492FA3F3B29580495A6880D404EE0C370AD925 seqnum:07BF sia:rsync://rpki.apnic.net/member_repository/A915D963/90E80BC897E211EB9B39D531C4F9AE02/HUkvo_OylYBJWmiA1ATuDDcK2SU.mft
+                          hash:AACJIfSmEEhkWVitCCwcUmpIn5rH9qyIWd0vNhVS4sE= size:1998 aki:AA0BD78CA2CAA5EB8FF3B9E823774DC1B74DEBEB seqnum:0550 thisupdate:1757926912 sia:rsync://rpki.ripe.net/repository/DEFAULT/c3/978837-1023-4b39-9b37-a108dbe0fd1f/1/qgvXjKLKpeuP87noI3dNwbdN6-s.mft
+                          hash:AAIINi/FNk2gG24RmitkMFRwPv2mr4OuSOeTnChnM2E= size:1924 aki:4C71E9F23EEACA68C721CBE42806100B75E15770 seqnum:0544 thisupdate:1757908897 sia:rsync://rpki.ripe.net/repository/DEFAULT/16/94f662-506b-4ec9-a7aa-c9b7eb2cea57/1/THHp8j7qymjHIcvkKAYQC3XhV3A.mft
+                          hash:AAJs57If1EkFg4TkLLhdFLBSLvLrxo0FRMM/Fx18rkg= size:2268 aki:8E8DD5B2C101B983A799C938AA0E40A651FCBE07 seqnum:012F thisupdate:1757912489 sia:rsync://rpki.apnic.net/member_repository/A9156334/E7CDDFCEC8D811EE9F4AB96DC4F9AE02/jo3VssEBuYOnmck4qg5AplH8vgc.mft
+                          hash:AAKTeG0+jnyS87E1Osv5VNS/F1iN8+nS02GdayrB8G4= size:2240 aki:578D7DC9779B27815EBB5C3F5FCF07CC583708B3 seqnum:0121 thisupdate:1757895655 sia:rsync://rsync.paas.rpki.ripe.net/repository/eca25350-9e3f-46e1-ae2b-1c61b6ea5ae2/0/578D7DC9779B27815EBB5C3F5FCF07CC583708B3.mft
+                          hash:AAXTLjblol0VOOylIGkAKdUHno9TwstslDfkg818LFQ= size:3473 aki:1B9F21BA04E5E3077B391E3D48FF5B0A50B3369F seqnum:0ABF thisupdate:1757934063 sia:rsync://rpki.ripe.net/repository/DEFAULT/22/f67a78-183d-494a-995e-f51c5fb3df9a/1/G58hugTl4wd7OR49SP9bClCzNp8.mft
+                          hash:AAeycRGtdSE/PcgWvFqb/hb4cX53cYCV8Vq1iOUs9F8= size:1924 aki:39EF4AA5977F1F37133E7310809FFF8935C0C8BC seqnum:03DE thisupdate:1757937704 sia:rsync://rpki.ripe.net/repository/DEFAULT/fe/148f71-ab2c-4409-ae1f-e7d5fce6bfac/1/Oe9KpZd_HzcTPnMQgJ__iTXAyLw.mft
 ROA payload state hash:   MDI1RjhBMTc2NkE1RkM0RjA2NUExRUJFNzNBQUI4OEE=
 ROA payload entries:
                           192.35.94.0/24-32 AS 7

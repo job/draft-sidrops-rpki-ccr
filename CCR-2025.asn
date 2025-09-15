@@ -11,7 +11,7 @@ IMPORTS
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) }
 
-  -- in [draft-spaghetti-sidrops-rpki-erik-protocol-01]
+  -- in [draft-spaghetti-sidrops-rpki-erik-protocol-02]
   ManifestRef
   FROM RpkiErikPartition-2025
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
