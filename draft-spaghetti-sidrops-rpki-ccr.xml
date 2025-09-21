@@ -433,6 +433,14 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
           </front>
         </reference>
 
+        <reference anchor="rpkitouch" target="https://www.github.com/job/rpkitouch">
+          <front>
+            <title>rpki-client</title>
+            <author fullname="Job Snijders"/>
+            <date month="September" year="2025" />
+          </front>
+        </reference>
+
       </references>
 
     </references>
@@ -485,6 +493,9 @@ https://console.rpki-client.org/rpki.ccr
         </li>
         <li>
           A CCR serializer and deserializer implementation based on <xref target="rpki-client"/> was provided by Job Snijders.
+        </li>
+        <li>
+          Another CCR serializer and deserializer implementation based on <xref target="rpkitouch"/> was provided by Job Snijders.
         </li>
       </ul>
     </section>
