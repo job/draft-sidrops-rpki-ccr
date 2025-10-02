@@ -11,7 +11,7 @@ IMPORTS
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) }
 
-  -- in [draft-spaghetti-sidrops-rpki-erik-protocol-02]
+  -- in [draft-spaghetti-sidrops-rpki-erik-protocol-03]
   ManifestRef
   FROM RpkiErikPartition-2025
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
@@ -22,10 +22,15 @@ IMPORTS
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs9(9) smime(16) mod(0) id-mod-rpkiROA-2023(75) }
 
-  SubjectPublicKeyInfo
+  CertificateSerialNumber, SubjectPublicKeyInfo
   FROM PKIX1Explicit-2009
     { iso(1) identified-organization(3) dod(6) internet(1) security(5)
       mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
+
+  KeyIdentifier
+  FROM PKIX1Implicit-2009
+     {iso(1) identified-organization(3) dod(6) internet(1) security(5)
+     mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59) }
   ;
 
 ct-rpkiCanonicalCacheRepresentation CONTENT-TYPE ::=
@@ -45,13 +50,15 @@ RpkiCanonicalCacheRepresentation ::= SEQUENCE {
   vaps        [3] ASPAPayloadState OPTIONAL,
   tas         [4] TrustAnchorState OPTIONAL,
   rks         [5] RouterKeyState OPTIONAL,
+  rcis        [6] ResourceCertificateIssuanceState OPTIONAL,
   ... }
   -- at least one of mfts, vrps, vaps, or tas MUST be present
   ( WITH COMPONENTS { ..., mfts PRESENT } |
     WITH COMPONENTS { ..., vrps PRESENT } |
     WITH COMPONENTS { ..., vaps PRESENT } |
     WITH COMPONENTS { ..., tas PRESENT } |
-    WITH COMPONENTS { ..., rks PRESENT } )
+    WITH COMPONENTS { ..., rks PRESENT } |
+    WITH COMPONENTS { ..., rcis PRESENT } )
 
 ManifestState ::= SEQUENCE {
   mftrefs           SEQUENCE OF ManifestRef,
@@ -89,5 +96,18 @@ RouterKeySet ::= SEQUENCE {
 RouterKey ::= SEQUENCE {
   ski               SubjectKeyIdentifier,
   spki              SubjectPublicKeyInfo }
+
+ResourceCertificateIssuanceState ::= SEQUENCE {
+  rcisets           SEQUENCE (SIZE(1..MAX)) OF ResourceCertificateIssuanceSet,
+  hash              Digest }
+
+ResourceCertificateIssuanceSet ::= SEQUENCE {
+  authority         KeyIdentifier,
+  current           SEQUENCE OF ResourceCertificateIssuance,
+  revoked           SEQUENCE OF CertificateSerialNumber }
+
+ResourceCertificateIssuance ::= SEQUENCE {
+  ski               SubjectKeyIdentifier,
+  serial            CertificateSerialNumber }
 
 END
