@@ -103,7 +103,13 @@
     <section>
       <name>The Canonical Cache Representation content type</name>
       <t>
+        The content of a CCR file is an instance of <tt>EncapsulatedContentInfo</tt>.
+      </t>
+      <t>
         The <tt>contentType</tt> for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with temporary Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
+      </t>
+      <t>
+        The eContent is the payload of the CCR encapsulated as an OCTET STRING.
       </t>
       <t>
         Note: as part of the standardization process, at a future point in time, the aforementioned contentType value will change from the current Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
@@ -154,19 +160,51 @@
           <name>ManifestState</name>
           <t>
             An instance of <tt>ManifestState</tt> represents the set of valid, current Manifests (<xref target="RFC9286"/>) in the cache.
-            It contains three fields:
+            It contains three fields: <tt>mis</tt>, <tt>mostRecentUpdate</tt>, and <tt>hash</tt>.
           </t>
-          <t>
-            The <tt>mftrefs</tt> field contains a SEQUENCE of <tt>ManifestRef</tt> structures (see <xref target="I-D.spaghetti-sidrops-rpki-erik-protocol" section="3" />) sorted in ascending order by hash value.
-            The <tt>hash</tt> value in each instance of <tt>ManifestRef</tt> <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestRef</tt>.
-          </t>
-          <t>
-            The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all Manifests.
-            If the <tt>mftrefs</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
-          </t>
-          <t>
-            The <tt>hash</tt> field contains a message digest computed using the <tt>mftrefs</tt> value (encoded in DER format) as input message.
-          </t>
+          <section>
+            <name>ManifestInstance</name>
+            <t>
+              The <tt>mis</tt> field contains a SEQUENCE of <tt>ManifestInstance</tt>.
+              There is one <tt>ManifestInstance</tt> for each current manifest.
+              A manifest is nominally current until the time specified in nextUpdate or until a manifest is issued with a greater manifestNumber, whichever comes first (see <xref target="RFC9286" section="4.2.1"/>).
+            </t>
+            <t>
+              A <tt>ManifestInstance</tt> is a structure consisting of the following fields:
+            </t>
+            <dl>
+              <dt><tt>hash</tt></dt>           <dd>the hash of the DER-encoded manifest object</dd>
+              <dt><tt>size</tt></dt>           <dd>the size of the manifest object</dd>
+              <dt><tt>aki</tt></dt>            <dd>the manifest issuer's key identifier</dd>
+              <dt><tt>manifestNumber</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
+              <dt><tt>thisUpdate</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
+              <dt><tt>location</tt></dt>       <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
+              <dt><tt>current</tt></dt>         <dd>a SEQUENCE of <tt>ResourceCertificateIssuance</tt></dd>
+              <dt><tt>revoked</tt></dt>         <dd>a SEQUENCE of the serial numbers (in ascending order) of all the non-expired certificates that have been revoked by the CA that issued the manifest</dd>
+            </dl>
+            <t>
+              The <tt>current</tt> field represents the set of non-revoked, non-expired, validly signed resource certificates subordinate to the manifest issuer.
+              Each instance of <tt>ResourceCertificateIssuance</tt> is a tuple of <tt>SubjectKeyIdentifier</tt> and <tt>CertificateSerialNumber</tt>.
+              Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the resource certificate's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
+              The sequence elements of the <tt>current</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting <tt>ski</tt> value of each <tt>ResourceCertificateIssuance</tt> instance as an unsigned 160-bit integer.
+            </t>
+            <t>
+              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by <tt>hash</tt> value contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
+            </t>
+          </section>
+          <section>
+            <name>mostRecentUpdate</name>
+            <t>
+              The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all current manifests represented by the <tt>ManifestInstance</tt> structures.
+              If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
+            </t>
+          </section>
+          <section>
+            <name>hash</name>
+            <t>
+              The <tt>hash</tt> field contains a message digest computed using the <tt>mis</tt> value (encoded in DER format) as input message.
+            </t>
+          </section>
         </section>
 
         <section>
