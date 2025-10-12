@@ -72,12 +72,7 @@ ManifestInstance ::= SEQUENCE {
   manifestNumber    INTEGER (0..MAX),
   thisUpdate        GeneralizedTime,
   location          SEQUENCE SIZE (1..MAX) OF AccessDescription,
-  current       [0] SEQUENCE (SIZE(1..MAX)) OF ResourceCertificateIssuance OPTIONAL,
-  revoked       [1] SEQUENCE (SIZE(1..MAX)) OF CertificateSerialNumber OPTIONAL }
-
-ResourceCertificateIssuance ::= SEQUENCE {
-  ski               SubjectKeyIdentifier,
-  serial            CertificateSerialNumber }
+  subordinate       SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier OPTIONAL }
 
 ROAPayloadState ::= SEQUENCE {
   rps               SEQUENCE OF ROAPayloadSet,

@@ -29,7 +29,7 @@
     </title>
 
     <author fullname="Job Snijders" initials="J." surname="Snijders">
-      <organization />
+      <organization abbrev="BSD">BSD Software Development</organization>
       <address>
         <postal>
           <street/>
@@ -37,7 +37,8 @@
           <city>Amsterdam</city>
           <country>Netherlands</country>
         </postal>
-        <email>job@sobornost.net</email>
+        <email>job@bsd.nl</email>
+        <uri>https://www.bsd.nl</uri>
       </address>
     </author>
 
@@ -179,14 +180,12 @@
               <dt><tt>manifestNumber</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
               <dt><tt>location</tt></dt>       <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
-              <dt><tt>current</tt></dt>         <dd>a non-empty SEQUENCE of <tt>ResourceCertificateIssuance</tt></dd>
-              <dt><tt>revoked</tt></dt>         <dd>a non-empty SEQUENCE of the serial numbers (in ascending order) of all the non-expired certificates that have been revoked by the CA that issued the manifest</dd>
+              <dt><tt>subordinate</tt></dt>    <dd>a optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
             </dl>
             <t>
-              The <tt>current</tt> field represents the set of non-revoked, non-expired, validly signed resource certificates subordinate to the manifest issuer.
-              Each instance of <tt>ResourceCertificateIssuance</tt> is a tuple of <tt>SubjectKeyIdentifier</tt> and <tt>CertificateSerialNumber</tt>.
+              The <tt>subordinate</tt> field represents the set of non-revoked, non-expired, validly signed resource certificates subordinate to the manifest issuer.
               Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the resource certificate's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
-              The sequence elements of the <tt>current</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting <tt>ski</tt> value of each <tt>ResourceCertificateIssuance</tt> instance as an unsigned 160-bit integer.
+              The sequence elements of the <tt>subordinate</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
             </t>
             <t>
               The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by <tt>hash</tt> value contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
