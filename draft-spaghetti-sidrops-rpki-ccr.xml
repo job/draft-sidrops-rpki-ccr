@@ -179,7 +179,7 @@
               <dt><tt>aki</tt></dt>            <dd>the manifest issuer's key identifier</dd>
               <dt><tt>manifestNumber</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
-              <dt><tt>location</tt></dt>       <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
+              <dt><tt>locations</tt></dt>      <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
               <dt><tt>subordinates</tt></dt>   <dd>a optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
             </dl>
             <t>
@@ -395,10 +395,10 @@
              <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
            </dl>
            </dd>
-           <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@sobornost.net)</dd>
+           <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@bsd.nl)</dd>
            <dt>Intended usage:</dt><dd>COMMON</dd>
            <dt>Restrictions on usage:</dt><dd>N/A</dd>
-           <dt>Author:</dt><dd>Job Snijders (job@sobornost.net)</dd>
+           <dt>Author:</dt><dd>Job Snijders (job@bsd.nl)</dd>
            <dt>Change controller:</dt><dd>IETF</dd>
         </dl>
         </section>
@@ -466,7 +466,7 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
             <author fullname="Kristaps Dzonsons"/>
             <author fullname="Theo Buehler"/>
             <author fullname="Job Snijders"/>
-            <date month="September" year="2025" />
+            <date month="October" year="2025" />
           </front>
         </reference>
 
@@ -474,7 +474,7 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
           <front>
             <title>rpki-client</title>
             <author fullname="Job Snijders"/>
-            <date month="September" year="2025" />
+            <date month="October" year="2025" />
           </front>
         </reference>
 
