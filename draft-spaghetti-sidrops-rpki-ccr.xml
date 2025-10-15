@@ -180,12 +180,12 @@
               <dt><tt>manifestNumber</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
               <dt><tt>location</tt></dt>       <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
-              <dt><tt>subordinate</tt></dt>    <dd>a optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
+              <dt><tt>subordinates</tt></dt>   <dd>a optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
             </dl>
             <t>
-              The <tt>subordinate</tt> field represents the set of non-revoked, non-expired, validly signed resource certificates subordinate to the manifest issuer.
+              The <tt>subordinates</tt> field represents the keypairs associated with the set of non-revoked, non-expired, validly signed resource certificates subordinate to the manifest issuer.
               Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the resource certificate's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
-              The sequence elements of the <tt>subordinate</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
+              The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
             </t>
             <t>
               The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by <tt>hash</tt> value contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.

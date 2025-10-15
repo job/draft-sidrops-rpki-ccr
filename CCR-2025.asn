@@ -72,7 +72,7 @@ ManifestInstance ::= SEQUENCE {
   manifestNumber    INTEGER (0..MAX),
   thisUpdate        GeneralizedTime,
   location          SEQUENCE SIZE (1..MAX) OF AccessDescription,
-  subordinate       SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier OPTIONAL }
+  subordinates      SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier OPTIONAL }
 
 ROAPayloadState ::= SEQUENCE {
   rps               SEQUENCE OF ROAPayloadSet,
