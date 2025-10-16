@@ -495,10 +495,8 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
       <name>Acknowledgements</name>
       <t>
         The authors wish to thank
-        <contact fullname="Theo Buehler" />
-        and
         <contact fullname="Russ Housley" />
-        for their generous feedback on this specification,
+        for their generous feedback on this specification.
       </t>
     </section>
 
@@ -538,7 +536,7 @@ https://console.rpki-client.org/rpki.ccr
 ]]>
         </li>
         <li>
-          A CCR serializer and deserializer implementation based on <xref target="rpki-client"/> was provided by Job Snijders.
+          A CCR serializer and deserializer implementation based on <xref target="rpki-client"/> was provided by Job Snijders and Theo Buehler.
         </li>
         <li>
           Another CCR serializer and deserializer implementation based on <xref target="rpkitouch"/> was provided by Job Snijders.
