@@ -183,7 +183,7 @@
               <dt><tt>subordinates</tt></dt>   <dd>a optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
             </dl>
             <t>
-              The <tt>subordinates</tt> field represents the keypairs associated with the set of non-revoked, non-expired, validly signed resource certificates subordinate to the manifest issuer.
+              The <tt>subordinates</tt> field represents the keypairs associated with the set of non-revoked, non-expired, validly signed, certification authority (CA) resource certificates subordinate to the manifest issuer.
               Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the resource certificate's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
               The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
             </t>
