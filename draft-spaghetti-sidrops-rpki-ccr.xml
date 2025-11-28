@@ -184,7 +184,7 @@
             </t>
             <dl>
               <dt><tt>hash</tt></dt>           <dd>the hash of the DER-encoded manifest object</dd>
-              <dt><tt>size</tt></dt>           <dd>the size of the manifest object</dd>
+              <dt><tt>size</tt></dt>           <dd>the size of the DER-encoded manifest object</dd>
               <dt><tt>aki</tt></dt>            <dd>the manifest issuer's key identifier</dd>
               <dt><tt>manifestNumber</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
@@ -496,6 +496,8 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
       <t>
         The authors wish to thank
         <contact fullname="Russ Housley" />
+        and
+        <contact fullname="Luuk Hendriks" />
         for their generous feedback on this specification.
       </t>
     </section>

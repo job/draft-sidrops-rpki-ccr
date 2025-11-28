@@ -53,7 +53,7 @@ RpkiCanonicalCacheRepresentation ::= SEQUENCE {
   tas         [4] TrustAnchorState OPTIONAL,
   rks         [5] RouterKeyState OPTIONAL,
   ... }
-  -- at least one of mfts, vrps, vaps, or tas MUST be present
+  -- at least one of mfts, vrps, vaps, tas, or rks MUST be present
   ( WITH COMPONENTS { ..., mfts PRESENT } |
     WITH COMPONENTS { ..., vrps PRESENT } |
     WITH COMPONENTS { ..., vaps PRESENT } |
