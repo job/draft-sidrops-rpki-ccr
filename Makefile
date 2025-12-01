@@ -1,4 +1,4 @@
-NAME=draft-spaghetti-sidrops-rpki-ccr
+NAME=draft-ietf-sidrops-rpki-ccr
 
 .PHONY: all
 all: drafts

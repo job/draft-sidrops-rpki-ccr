@@ -14,7 +14,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-spaghetti-sidrops-rpki-ccr-04"
+     docName="draft-ietf-sidrops-rpki-ccr-00"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -183,8 +183,8 @@
               A <tt>ManifestInstance</tt> is a structure consisting of the following fields:
             </t>
             <dl>
-              <dt><tt>hash</tt></dt>           <dd>the hash of the DER-encoded manifest object</dd>
-              <dt><tt>size</tt></dt>           <dd>the size of the DER-encoded manifest object</dd>
+              <dt><tt>hash</tt></dt>           <dd>the hash of the represented DER-encoded manifest object</dd>
+              <dt><tt>size</tt></dt>           <dd>the size of the represented DER-encoded manifest object</dd>
               <dt><tt>aki</tt></dt>            <dd>the manifest issuer's key identifier</dd>
               <dt><tt>manifestNumber</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
