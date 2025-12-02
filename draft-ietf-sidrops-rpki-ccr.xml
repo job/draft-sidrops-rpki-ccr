@@ -430,7 +430,6 @@
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-aspa-profile.xml"/>
-        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
 
         <reference anchor="SHS" target="https://csrc.nist.gov/publications/fips/fips180-4/fips-180-4.pdf">
           <front>
@@ -444,8 +443,7 @@
 
         <reference anchor="X.690" target="https://www.itu.int/rec/T-REC-X.690-202102-I/en">
           <front>
-            <title>Information technology - ASN.1 encoding rules: Specification of Basic Encoding Rules (B
-ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</title>
+            <title>Information technology - ASN.1 encoding rules: Specification of Basic Encoding Rules (BER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</title>
             <author>
               <organization showOnFrontPage="true">ITU-T</organization>
             </author>
@@ -460,6 +458,8 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
       <references>
         <name>Informative References</name>
 
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
+
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5781.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8182.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8205.xml"/>
@@ -471,7 +471,7 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
             <author fullname="Kristaps Dzonsons"/>
             <author fullname="Theo Buehler"/>
             <author fullname="Job Snijders"/>
-            <date month="October" year="2025" />
+            <date month="December" year="2025" />
           </front>
         </reference>
 
@@ -479,7 +479,7 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
           <front>
             <title>rpki-client</title>
             <author fullname="Job Snijders"/>
-            <date month="October" year="2025" />
+            <date month="December" year="2025" />
           </front>
         </reference>
 
