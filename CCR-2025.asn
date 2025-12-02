@@ -6,7 +6,8 @@ DEFINITIONS EXPLICIT TAGS ::=
 BEGIN
 
 IMPORTS
-  CONTENT-TYPE, Digest, DigestAlgorithmIdentifier, SubjectKeyIdentifier
+  CONTENT-TYPE, Digest, DigestAlgorithmIdentifier,
+    SubjectKeyIdentifier
   FROM CryptographicMessageSyntax-2010 -- in [RFC6268]
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs-9(9) smime(16) modules(0) id-mod-cms-2009(58) }
@@ -18,19 +19,22 @@ IMPORTS
 
   CertificateSerialNumber, SubjectPublicKeyInfo
   FROM PKIX1Explicit-2009
-    { iso(1) identified-organization(3) dod(6) internet(1) security(5)
-      mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-explicit-02(51) }
+    { iso(1) identified-organization(3) dod(6) internet(1)
+      security(5) mechanisms(5) pkix(7) id-mod(0)
+      id-mod-pkix1-explicit-02(51) }
 
   AccessDescription, KeyIdentifier
   FROM PKIX1Implicit-2009
-     {iso(1) identified-organization(3) dod(6) internet(1) security(5)
-     mechanisms(5) pkix(7) id-mod(0) id-mod-pkix1-implicit-02(59) }
+    { iso(1) identified-organization(3) dod(6) internet(1)
+      security(5) mechanisms(5) pkix(7) id-mod(0)
+      id-mod-pkix1-implicit-02(59) }
   ;
 
 EncapsulatedContentInfo ::= SEQUENCE {
   eContentType      CONTENT-TYPE.&id({ContentSet}),
   eContent      [0] EXPLICIT OCTET STRING
-    (CONTAINING CONTENT-TYPE.&Type({ContentSet}{@eContentType})) OPTIONAL }
+    (CONTAINING CONTENT-TYPE.&Type({ContentSet}{@eContentType}))
+    OPTIONAL }
 
 ContentSet CONTENT-TYPE ::= {
   ct-rpkiCanonicalCacheRepresentation, ... }
@@ -40,8 +44,8 @@ ct-rpkiCanonicalCacheRepresentation CONTENT-TYPE ::=
     IDENTIFIED BY id-ct-rpkiCanonicalCacheRepresentation }
 
 id-ct-rpkiCanonicalCacheRepresentation OBJECT IDENTIFIER ::=
-  { iso(1) identified-organization(3) dod(6) internet(1) private(4)
-    enterprise(1) snijders(41948) ccr(828) }
+  { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+    pkcs-9(9) id-smime(16) id-ct(1) ccr(54) }
 
 RpkiCanonicalCacheRepresentation ::= SEQUENCE {
   version     [0] INTEGER DEFAULT 0,
@@ -72,7 +76,8 @@ ManifestInstance ::= SEQUENCE {
   manifestNumber    INTEGER (0..MAX),
   thisUpdate        GeneralizedTime,
   locations         SEQUENCE SIZE (1..MAX) OF AccessDescription,
-  subordinates      SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier OPTIONAL }
+  subordinates      SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier
+                      OPTIONAL }
 
 ROAPayloadState ::= SEQUENCE {
   rps               SEQUENCE OF ROAPayloadSet,

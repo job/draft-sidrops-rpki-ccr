@@ -14,7 +14,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-00"
+     docName="draft-ietf-sidrops-rpki-ccr-01"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -99,7 +99,7 @@
         The CCR profile is a compact and versatile format well-suited for a diverse set of applications such as audit record keeping, validated payload dissemination, and analytics pipelines.
        </t>
        <t>
-         The format was primarily designed to support comparative analysis of uniformities and differences among multiple RP instances using different RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.spaghetti-sidrops-rpki-erik-protocol"/>).
+         The format was primarily designed to support comparative analysis of uniformities and differences among multiple RP instances using different RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
        </t>
 
       <section anchor="requirements">
@@ -116,13 +116,10 @@
         The content of a CCR file is an instance of <tt>EncapsulatedContentInfo</tt>.
       </t>
       <t>
-        The <tt>contentType</tt> for a CCR currently is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with temporary Object Identifier (OID) <tt>1.3.6.1.4.1.41948.825</tt>.
+        The <tt>contentType</tt> for a CCR is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.2.840.113549.1.9.16.1.54</tt>.
       </t>
       <t>
-        The eContent is the payload of the CCR encapsulated as an OCTET STRING.
-      </t>
-      <t>
-        Note: as part of the standardization process, at a future point in time, the aforementioned contentType value will change from the current Private Enterprise Number (<xref target="RFC9371"/>) to an OID assigned by <xref target="iana">IANA</xref>.
+        The eContent is the payload of the CCR encapsulated as an <tt>OCTET STRING</tt>.
       </t>
     </section>
 
@@ -304,7 +301,7 @@
       <section>
         <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
         <t>
-          IANA is requested to allocate the following in the "SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)" registry:
+          IANA has allocated the following in the "SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)" registry:
         </t>
 
         <table anchor="cms-content-type" align="center">
@@ -318,9 +315,9 @@
             </thead>
             <tbody>
               <tr>
-                <td>TBD</td>
+                <td>54</td>
                 <td>id-ct-rpkiCanonicalCacheRepresentation</td>
-                <td>draft-spaghetti-sidrops-rpki-ccr</td>
+                <td>draft-ietf-sidrops-rpki-ccr</td>
               </tr>
             </tbody>
         </table>
@@ -345,7 +342,7 @@
             <tr>
               <td>.ccr</td>
               <td>Canonical Cache Representation</td>
-              <td>draft-spaghetti-sidrops-rpki-ccr</td>
+              <td>draft-ietf-sidrops-rpki-ccr</td>
             </tr>
           </tbody>
         </table>
@@ -370,7 +367,7 @@
             <tr>
               <td>TBD</td>
               <td>id-mod-rpkiCCR-2025</td>
-              <td>draft-spaghetti-sidrops-rpki-ccr</td>
+              <td>draft-ietf-sidrops-rpki-ccr</td>
             </tr>
           </tbody>
         </table>
@@ -391,14 +388,14 @@
            <dt>Encoding considerations:</dt><dd>binary</dd>
            <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
            <dt>Interoperability considerations:</dt><dd>N/A</dd>
-           <dt>Published specification:</dt><dd>draft-spaghetti-sidrops-rpki-ccr</dd>
+           <dt>Published specification:</dt><dd>draft-ietf-sidrops-rpki-ccr</dd>
            <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
            <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
            <dt>Additional information:</dt>
            <dd>
            <dl spacing="compact">
              <dt><br/></dt><dd/>
-             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in draft-spaghetti-sidrops-rpki-ccr.</dd>
+             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in draft-ietf-sidrops-rpki-ccr.</dd>
              <dt>Magic number(s):</dt><dd>N/A</dd>
              <dt>File extension(s):</dt><dd>.ccr</dd>
              <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
@@ -433,7 +430,7 @@
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-aspa-profile.xml"/>
-        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.spaghetti-sidrops-rpki-erik-protocol.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
 
         <reference anchor="SHS" target="https://csrc.nist.gov/publications/fips/fips180-4/fips-180-4.pdf">
           <front>
@@ -466,7 +463,6 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5781.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8182.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8205.xml"/>
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9371.xml"/>
 
         <reference anchor="rpki-client" target="https://www.rpki-client.org/">
           <front>
@@ -511,7 +507,7 @@ ER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)</titl
       <t>
         It decodes as follows:
       </t>
-      <sourcecode anchor="tv-decode" type="txt" src="testvector.decode"/>
+      <sourcecode anchor="tv-decode" type="txt" src="testvector.decode.fold"/>
     </section>
 
     <section removeInRFC="true" anchor="implementation">

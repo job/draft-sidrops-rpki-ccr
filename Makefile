@@ -19,3 +19,8 @@ upload:
 
 clean:
 	rm -f *.html *.txt *.exp.xml
+
+example:
+	cat example.ccr | base64 | dos2unix | par 69 > example.b64
+	rpki-client -f example.ccr > decode
+	rfcfold -i decode -o folded
