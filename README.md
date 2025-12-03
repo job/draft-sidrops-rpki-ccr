@@ -1,6 +1,6 @@
 # draft-spaghetti-sidrops-rpki-ccr
 
-Work in progress repository for Internet-Draft draft-spaghetti-sidrops-rpki-ccr
+Work in progress repository for Internet-Draft draft-ietf-sidrops-rpki-ccr
 
 ## Usage
 
@@ -8,7 +8,7 @@ Work in progress repository for Internet-Draft draft-spaghetti-sidrops-rpki-ccr
 
 The source files for the Internet-Draft documents are:
 
-- `draft-spaghetti-sidrops-rpki-ccr.xml`
+- `draft-ietf-sidrops-rpki-ccr.xml`
 - `CCR-2025.asn`
 
 To regenerate the text and HTML versions after making changes, run:
