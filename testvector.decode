@@ -1,25 +1,19 @@
 File:                   example.ccr
-Hash identifier:        dTmqYyAdIR9bqR3nfaVLA3iRx8WdAbqGu70Nbc0cW5M=
-CCR produced at:        Tue 02 Dec 2025 09:20:15 +0000
-Manifest state hash:    MUFGOENERTQ5MzY2MEI4RDQ5NjZBMTMzQ0UwNThERDU=
-Manifest last update:   Tue 02 Dec 2025 07:02:59 +0000
+Hash identifier:        wHMUl0+oVEBXXPPxp+0XUhaHaNb2phSO0dScm+emGx8=
+CCR produced at:        Thu 04 Dec 2025 10:39:22 +0000
+Manifest state hash:    NjhEMzkwQTk4ODk5MDU1RUMxRUREQjVEMTdBNEZEM0U=
+Manifest last update:   Thu 04 Dec 2025 10:00:09 +0000
 Manifest instances:
-                        hash:BCD1f7kpEx3/fWt8AIScJGkWN5Y6hyfm/7fdxlUXrJU= size:2143 aki:E52D8B5CBA7C2D2B8AF046EB7F310105AC0C09AC seqnum:0552 thisupdate:1764633688 sia:rsync://rpki.ripe.net/repository/DEFAULT/b4/d4f83d-fb53-424f-851d-c0d062a75354/1/5S2LXLp8LSuK8EbrfzEBBawMCaw.mft
-                        hash:BCGPGrsQL4zgtzBTVG/hZHOpw060Mee/dyYrt9qpObQ= size:1924 aki:95AE8BD33249CF1ED5F0D4398147EFD32D25421A seqnum:0EC6 thisupdate:1764658979 sia:rsync://rpki.ripe.net/repository/DEFAULT/1f/e27d9b-931a-488b-ac35-8ffbd6c73bf5/1/la6L0zJJzx7V8NQ5gUfv0y0lQho.mft
-                        hash:BCHnZyxReuJ8T3Z3bnRUnl+SlnGcINUFjyOMA0REw74= size:1924 aki:195FA8330252A07F250E51D8E474BB38D7DC3B9A seqnum:0573 thisupdate:1764644463 sia:rsync://rpki.ripe.net/repository/DEFAULT/cd/e9b0e0-f4b6-46da-aff8-be7087dbf536/1/GV-oMwJSoH8lDlHY5HS7ONfcO5o.mft
-                        hash:BCZpVcM4Gr/Vw6j16n9H1o062ZUyNfrOcZyk25pL6Ts= size:1998 aki:234B449894589D16F676BFF282ABEDAA56CC7B8D seqnum:0792 thisupdate:1764633690 sia:rsync://rpki.ripe.net/repository/DEFAULT/0d/3318d9-5669-4920-a55c-73a63b259beb/1/I0tEmJRYnRb2dr_ygqvtqlbMe40.mft
-                        hash:BCZyC2zRKpEKATxdQJWfkAJYk9PjPSresJvSkg2dJqM= size:1924 aki:4B177C450D2035067BAA26920B8A4BD36C7B3314 seqnum:0E69 thisupdate:1764658969 sia:rsync://rpki.ripe.net/repository/DEFAULT/99/5a6aad-a4c7-43b9-8a9e-8d7b736a695c/1/Sxd8RQ0gNQZ7qiaSC4pL02x7MxQ.mft
-                        hash:BCagCSWmdO3mC73CYFmilUBUD1aB6UbauZo8WDBN8LM= size:1998 aki:20D4BD499F58494AC0E82263B5520A2C64D6477E seqnum:16E8 thisupdate:1764633693 sia:rsync://rpki.ripe.net/repository/DEFAULT/95/af601e-c2bf-4a6a-aa32-d2ee15399d06/1/INS9SZ9YSUrA6CJjtVIKLGTWR34.mft
-                        hash:BCbaSy/4iRonG8BvQfiWawECzgrHTbA8ROpPKxGWEvY= size:4843 aki:3EEEBB946A8D21D4083C93DC09CEE557BB2AC32E seqnum:02E5 thisupdate:1764630764 sia:rsync://rsync.paas.rpki.ripe.net/repository/6ff7a989-ecdf-43d6-86e1-f6c3935b9b3d/4/3EEEBB946A8D21D4083C93DC09CEE557BB2AC32E.mft subordinates:04C92D9B1C8307B70C47290166D5989CEFABDCC4
-                        hash:BCl0MQpE86B5mYTCdjobXkfXd+yKruym1EG8O6o52hk= size:1924 aki:5337DDFA6530FCC67F76937DEBE3D8208CB9902C seqnum:08F9 thisupdate:1764637299 sia:rsync://rpki.ripe.net/repository/DEFAULT/80/2c6c2b-54d6-431d-9c06-dde36574b178/1/Uzfd-mUw_MZ_dpN96-PYIIy5kCw.mft
-                        hash:BCvgAbNsxSfa0tsOe20NprPfe1oRMQxmkYN3UUv+jac= size:1999 aki:D268D9A2A645D7CC2FD253B3670408055E56FFF9 seqnum:0E39 thisupdate:1764658974 sia:rsync://rpki.ripe.net/repository/DEFAULT/e7/44038b-8031-44e0-91c4-cc5676c7de9f/1/0mjZoqZF18wv0lOzZwQIBV5W__k.mft
-                        hash:BCxWGtTKIXYfXpaOGDuL88Q+TxbDpEzamsEBWPmHlIQ= size:1924 aki:BA8D6798BDD0B2B8805D43B3455F76739B946F1D seqnum:16E6 thisupdate:1764658954 sia:rsync://rpki.ripe.net/repository/DEFAULT/ec/68b57b-d18d-4785-97b0-ec56c0b081ae/1/uo1nmL3QsriAXUOzRV92c5uUbx0.mft
-                        hash:BDNmKXoKbp/8++wT92tazKm/IBKJL2D8/tC14qPSifo= size:2323 aki:6D2FA94F5131FEBB344C1140590E1E658A49A2D3 seqnum:0141 thisupdate:1764618838 sia:rsync://repository.lacnic.net/rpki/lacnic/D04D926BC8F78DA6BDEB901CE50235E9F7FDB6AD4DF42E9DA2F3C4994581CC5E/0/6D2FA94F5131FEBB344C1140590E1E658A49A2D3.mft
-                        hash:BDP5BaOsQTEPg/hNREYgNLAy20fE5j/F84EN1j8fSEs= size:2299 aki:300051EF302B34E03DB98212D978869E349107D6 seqnum:48 thisupdate:1764652198 sia:rsync://rpki-repo.registro.br/repo/5guzYu9DqsnkfpYJ4x1B67yxAirPCJQtAm77QWD13m1y/0/300051EF302B34E03DB98212D978869E349107D6.mft
-                        hash:BDVXRzdRUBIsb7FPiDRKRiBBl86bHb8AUyl+zPkRemM= size:1924 aki:460C571111AAFC0D51E5FDE08230BF78B89E4A48 seqnum:1753 thisupdate:1764655249 sia:rsync://rpki.ripe.net/repository/DEFAULT/e6/069e95-0ac2-4c27-82b4-bd2fff5b8849/1/RgxXERGq_A1R5f3ggjC_eLieSkg.mft
-                        hash:BDqgmqJTsfx+FebPm+loicdy9vOUlQv7C7Waxo+QM2A= size:1924 aki:907A4D12924B5357E30267AFE3C5CC7364241158 seqnum:116C thisupdate:1764658956 sia:rsync://rpki.ripe.net/repository/DEFAULT/5a/aef44f-cbdf-4120-84f1-621a2bb40c66/1/kHpNEpJLU1fjAmev48XMc2QkEVg.mft
-                        hash:BDy+vsuznrrVtgJ/9JnFlY6ZI9JR177pu9qX8sCrr2s= size:1998 aki:5C68A279769D193DF3F9781D2BA4C1D9277B4FD6 seqnum:0586 thisupdate:1764644491 sia:rsync://rpki.ripe.net/repository/DEFAULT/52/f5c96a-b70f-419e-826f-15398ba5b0e7/1/XGiieXadGT3z-XgdK6TB2Sd7T9Y.mft
-ROA payload state hash: OTI4NzFFN0EyRDAzODRGNTJCNjg5NkZDMjQ1QjBBMDI=
+                        hash:An4v94Lj6dIrJVXA6nPyEXUf2KSwui6SPTq5B4TuRuA= size:1998 aki:90218E801A532595E9B71C643684EA05F96BF5F3 seqnum:04C0 thisupdate:1764813669 sia:rsync://rpki.ripe.net/repository/DEFAULT/3f/1b6624-8441-4d01-96e3-601812ef428b/1/kCGOgBpTJZXptxxkNoTqBflr9fM.mft
+                        hash:AoK3wW77/7zG259iMeQRzl1KjvtW9/3g4xMZFvnPHK4= size:2072 aki:052B864969E9680764899015E163ECE77BB4CB76 seqnum:0B48 thisupdate:1764842409 sia:rsync://rpki.ripe.net/repository/DEFAULT/24/4759f9-7fdf-4916-a995-6970ecd9a610/1/BSuGSWnpaAdkiZAV4WPs53u0y3Y.mft
+                        hash:AoNrldzYKR+VrvDvNrSHjSG1jYa/3WjR9P+vM2bf0QE= size:1998 aki:659ABAE2B0CAE86C4196B020765B823A203207FC seqnum:175C thisupdate:1764831610 sia:rsync://rpki.ripe.net/repository/DEFAULT/96/694d9b-0e1c-43ad-ac98-02aac8b596dc/1/ZZq64rDK6GxBlrAgdluCOiAyB_w.mft
+                        hash:AonCj5doUDG8hBtc8gP/iaRbZRCaMdOxBwbQqiRL0Eo= size:2360 aki:D7CE462F710BCDF0D8753D83D8EA2347946A7C61 seqnum:010D0C9F4328584805E961F9897EA7D40563F1DC thisupdate:1764799208 sia:rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/d9d1572f-6cbb-4cf7-b599-e9d0e981d9bf/998ce6c6-de76-4028-a6fe-ea03cffffbcb/998ce6c6-de76-4028-a6fe-ea03cffffbcb.mft
+                        hash:AouTc1wvBSnJu779VNXLeMOLDVcxGAx+5SDUv4ORKSs= size:2072 aki:507E582ADC9369DA8AE85DD935740123081C7EED seqnum:0A16 thisupdate:1764820843 sia:rsync://rpki.ripe.net/repository/DEFAULT/75/6ed434-cd51-4152-aa43-056bae27288e/1/UH5YKtyTadqK6F3ZNXQBIwgcfu0.mft
+                        hash:AozZ7kkD/nZZZrvWcBX0b4KE5YS/SeSwROdAU+EjC8s= size:2443 aki:1A08015182F8E83043E76AB345CD5472A4B4CDFC seqnum:010D0C9F4328584073A83051F4D825D02C88E3DB thisupdate:1764802803 sia:rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/521eb33f-9672-4cd9-acce-137227e971ac/4e87d83f-b50c-4a65-9d9a-c28458fc1979/4e87d83f-b50c-4a65-9d9a-c28458fc1979.mft
+                        hash:ApCnE8s8avaRqL2X2ms0W2L5SYT+RazKhXZ1hy8b9+0= size:2375 aki:76B41B8BB16119B3969C98E50B47AFB6C5FF8273 seqnum:010D0C9F4328584073A83550C3A200B23E0FB4AD thisupdate:1764810003 sia:rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/76fe11d4-d352-4994-8f6c-d6c91b0b8415/7225b415-8ae0-4523-b37f-74ed780676aa/7225b415-8ae0-4523-b37f-74ed780676aa.mft subordinates:18C0924D231DA30195160B25EEE6327EB40306F8
+                        hash:ApKZUyrzgxwgooY27kVNyU/GcfKMveLqnEy9eC1eSww= size:2602 aki:8D76833091E74B048443F7C48F245050D19896F4 seqnum:010D0C9F43285847D2B7DBCB1D1B747F813D071D thisupdate:1764813729 sia:rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/69fd0156-bb1f-48b6-bf32-c9492286f195/4c3bb7e4-c97e-43ab-a6dd-cbf0e6434c5b/4c3bb7e4-c97e-43ab-a6dd-cbf0e6434c5b.mft
+                        hash:ApOABwwgUrkpDLqEH7jyW3bg/ks6O7xBJQlc2Oo6jPA= size:2360 aki:B91FDC17A2A1175656E7502796169F3FBADA1B28 seqnum:010D0C9F43285844A2E84682076D3353D626A23B thisupdate:1764838808 sia:rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/4ab7ae4d-bd7b-4b33-9a88-5b22d2a8337d/6f4d8e6b-e66e-46f9-8ef2-f2da1981cbca/6f4d8e6b-e66e-46f9-8ef2-f2da1981cbca.mft
+ROA payload state hash: RDAyQUFFMzk4RjA4QkI5MDg5NTEzM0FBMTBBODg3NzA=
 ROA payload entries:
                         192.35.94.0/24-32 AS 7
                         192.67.43.0/24-32 AS 7
@@ -44,8 +38,19 @@ ROA payload entries:
                         185.52.227.0/24 AS 8283
                         2001:678:688::/48 AS 8283
                         2a02:898::/32 AS 8283
+                        67.221.245.0/24 AS 15562
+                        165.254.225.0/24 AS 15562
+                        165.254.255.0/24-32 AS 15562
+                        192.147.168.0/24 AS 15562
+                        198.58.2.0/23-24 AS 15562
+                        204.2.30.0/23-24 AS 15562
+                        209.24.1.0/24 AS 15562
+                        209.24.5.0/24 AS 15562
+                        209.24.9.0/24 AS 15562
+                        2001:418:144e::/47-64 AS 15562
                         2001:67c:208c::/48 AS 15562
                         2001:728:1808::/48 AS 15562
+                        2607:fae0:245::/48 AS 15562
                         2a0e:b240::/48 AS 15562
                         2a0e:b240:118::/48 AS 15562
 ASPA payload state hash:MkNGNTFGMThGRkYxNEFGQ0M5OUIwOTBFREU0ODE4Rjk=
@@ -55,8 +60,8 @@ ASPA payload entries:
                         customer: 4601 providers: 8298, 58115
                         customer: 6424 providers: 174, 1273, 1299, 6461, 6762, 6830, 141193
                         customer: 6775 providers: 174, 6204, 6939, 13030
-Trust anchor state hash:MkMxRjY0QjU2ODBCREVGODVENjlCOUMxRUZGMjFBMkQ=
-Trust anchor keyids:    E8552B1FD6D1A4F7E404C6D8E5680D1EBC163FC3, FC8A9CB3ED184E17D30EEA1E0FA7615CE4B1AF47
+Trust anchor state hash:QTFFNkM4RDJBNTFGODdGNzdGQjZCNThCQUE5MzkxOTk=
+Trust anchor keyids:    13D4F24F9A9FCD98DB36F930631808C88F3974BC, E8552B1FD6D1A4F7E404C6D8E5680D1EBC163FC3
 Router key state hash:  QkE1RkI0NDlDRUZCNkJBMDBGMzYxMjc5NjJBMkVFQTY=
 Router keys:
                         asid:15562 ski:5D4250E2D81D4448D8A29EFCE91D29FF075EC9E2 pubkey:MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgFcjQ/g//LAQerAH2Mpp+GucoDAGBbhIqD33wNPsXxnAGb+mtZ7XQrVO9DQ6UlAShtig5+QfEKpTtFgiqfiAFQ==

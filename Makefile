@@ -21,6 +21,6 @@ clean:
 	rm -f *.html *.txt *.exp.xml
 
 example:
-	cat example.ccr | base64 | dos2unix | par 69 > example.b64
-	rpki-client -f example.ccr > decode
-	rfcfold -i decode -o folded
+	cat example.ccr | base64 | dos2unix | tr -d '\n' | par 69 > testvector.b64
+	rpki-client -f example.ccr | sed 's/  //' > testvector.decode
+	~/source/rfcfold/rfcfold -i testvector.decode -o testvector.decode.fold

@@ -14,7 +14,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-01"
+     docName="draft-ietf-sidrops-rpki-ccr-02"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -113,13 +113,13 @@
     <section>
       <name>The Canonical Cache Representation content type</name>
       <t>
-        The content of a CCR file is an instance of <tt>EncapsulatedContentInfo</tt>.
+        The content of a CCR file is an instance of <tt>ContentInfo</tt>.
       </t>
       <t>
         The <tt>contentType</tt> for a CCR is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.2.840.113549.1.9.16.1.54</tt>.
       </t>
       <t>
-        The eContent is the payload of the CCR encapsulated as an <tt>OCTET STRING</tt>.
+        The value of the <tt>content</tt> field is an instance of <tt>RpkiCanonicalCacheRepresentation</tt>.
       </t>
     </section>
 
