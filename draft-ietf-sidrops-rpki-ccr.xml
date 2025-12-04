@@ -119,7 +119,7 @@
         The <tt>contentType</tt> for a CCR is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.2.840.113549.1.9.16.1.54</tt>.
       </t>
       <t>
-        The value of the <tt>content</tt> field is an instance of <tt>RpkiCanonicalCacheRepresentation</tt>.
+        The <tt>content</tt> field contains an instance of <tt>RpkiCanonicalCacheRepresentation</tt>.
       </t>
     </section>
 
