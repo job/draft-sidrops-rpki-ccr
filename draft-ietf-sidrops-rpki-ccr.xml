@@ -14,7 +14,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-02"
+     docName="draft-ietf-sidrops-rpki-ccr-03"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -278,7 +278,8 @@
         Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI supply chain.
       </t>
       <t>
-        Given the absence of public keys and fairly repetitive content in RPKI AccessDescription instances, it should be noted CCR content compresses well.
+        CCR content compresses very well due to the fairly repetitive nature of content in certain fields, consistent ordering, and the absence of public keys.
+        Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>).
       </t>
       <section>
         <name>Verifying CCR file integrity</name>
@@ -407,6 +408,16 @@
            <dt>Author:</dt><dd>Job Snijders (job@bsd.nl)</dd>
            <dt>Change controller:</dt><dd>IETF</dd>
         </dl>
+           <dl spacing="compact">
+             <dt><br/></dt><dd/>
+             <dt>Type name:</dt><dd>application</dd>
+             <dt>Subtype name:</dt><dd>rpki-ccr+gz</dd>
+             <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in draft-ietf-sidrops-rpki-ccr.</dd>
+             <dt>Magic number(s):</dt><dd>N/A</dd>
+             <dt>File extension(s):</dt><dd>.ccr.gz</dd>
+             <dt>References:</dt><dd>RFC1952, RFC6713</dd>
+             <dt>Encoding considerations:</dt><dd>gzip is a binary encoding</dd>
+           </dl>
         </section>
       </section>
     </section>
@@ -460,6 +471,7 @@
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
 
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1952.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5781.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8182.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8205.xml"/>
