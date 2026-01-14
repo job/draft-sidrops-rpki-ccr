@@ -377,7 +377,7 @@
       <section>
         <name>Media Types</name>
         <t>
-          IANA is requested to register the media type "application/rpki-ccr" in the "Media Types" registry as follows:
+          IANA is requested to register the media types "application/rpki-ccr" and "application/rpki-ccr+gz" in the "Media Types" registry as follows:
         </t>
         <section>
         <name>Canonical Cache Representation Media Type</name>
