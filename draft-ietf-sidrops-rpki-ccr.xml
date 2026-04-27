@@ -101,7 +101,7 @@
        <section>
          <name>History</name>
          <t>
-           The format initially was designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
+           The format was initially designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
          </t>
        </section>
 
