@@ -32,7 +32,8 @@ IMPORTS
 
 ContentInfo ::= SEQUENCE {
   contentType      CONTENT-TYPE.&id({ContentSet}),
-  content      [0] EXPLICIT CONTENT-TYPE.&Type({ContentSet}{@contentType}) }
+  content      [0] EXPLICIT
+                   CONTENT-TYPE.&Type({ContentSet}{@contentType}) }
 
 ContentSet CONTENT-TYPE ::= {
   ct-rpkiCanonicalCacheRepresentation, ... }
