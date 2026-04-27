@@ -98,9 +98,12 @@
         CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time.
         The CCR profile is a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
        </t>
-       <t>
-         The format was primarily designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
-       </t>
+       <section>
+         <name>History</name>
+         <t>
+           The format was initially designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
+         </t>
+       </section>
 
       <section anchor="requirements">
         <name>Requirements Language</name>
