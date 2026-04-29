@@ -14,7 +14,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-03"
+     docName="draft-ietf-sidrops-rpki-ccr-04"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -83,7 +83,7 @@
     <abstract>
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
-        CCR is a DER-encoded data interchange format which can be used to represent various aspects of the state of a validated cache at a particular point in time.
+        CCR is a DER-encoded data interchange format which can be used to represent various aspects of the state of a validated RPKI cache at a particular point in time.
         The CCR profile is a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
       </t>
     </abstract>
@@ -93,17 +93,27 @@
     <section anchor="intro">
       <name>Introduction</name>
       <t>
-        This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
-        A validated cache contains all RPKI objects that the Relying Party (RP) has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
-        CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time.
-        The CCR profile is a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
-       </t>
-       <section>
-         <name>History</name>
-         <t>
-           The format was initially designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
-         </t>
-       </section>
+        Resource Public Key Infrastructure (RPKI) operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behavior by inspecting validation outcomes.
+        To this end, Canonical Cache Representation (CCR) was developed to capture and archive RPKI validation states in a standardized data representation.
+      </t>
+      <t>
+        CCR offers a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
+        A validated cache contains all RPKI objects that the RP has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
+        CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time in a reproducable manner.
+      </t>
+      <t>
+        This document formally specifies the CCR content type for use with the RPKI and provides test vectors.
+      </t>
+      <section>
+        <name>History</name>
+        <t>
+          The format was initially designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
+        </t>
+        <t>
+          Due to the format's highly compressible data layout characteristics it also found use in multi-perspective collector methods such as <xref target="I-D.snijders-rpkispool-format">RPKISPOOL</xref>.
+          An example of a large-scale CCR-based RPKI data archival project is <xref target="RPKIViews"/>.
+        </t>
+      </section>
 
       <section anchor="requirements">
         <name>Requirements Language</name>
@@ -472,6 +482,7 @@
       <references>
         <name>Informative References</name>
 
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.snijders-rpkispool-format.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
 
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1952.xml"/>
@@ -502,6 +513,14 @@
           <front>
             <title>rpki-commons</title>
             <author fullname="RIPE NCC"/>
+            <date month="April" year="2026" />
+          </front>
+        </reference>
+
+        <reference anchor="RPKIViews" target="https://www.rpkiviews.org/">
+          <front>
+            <title>The RPKIViews Project</title>
+            <author fullname="Job Snijders"/>
             <date month="April" year="2026" />
           </front>
         </reference>
