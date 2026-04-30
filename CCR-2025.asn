@@ -17,6 +17,11 @@ IMPORTS
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
       pkcs9(9) smime(16) mod(0) id-mod-rpkiROA-2023(75) }
 
+  CAS, PAS
+  FROM RPKI-ASPA-2023 -- in [draft-ietf-sidrops-aspa-profile]
+    { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
+     pkcs-9(9) smime(16) modules(0) id-mod-rpki-aspa-2023(TBD) }
+
   CertificateSerialNumber, SubjectPublicKeyInfo
   FROM PKIX1Explicit-2009
     { iso(1) identified-organization(3) dod(6) internet(1)
@@ -91,8 +96,8 @@ ASPAPayloadState ::= SEQUENCE {
   hash              Digest }
 
 ASPAPayloadSet ::= SEQUENCE {
-  customerASID      ASID,
-  providers         SEQUENCE (SIZE(1..MAX)) OF ASID }
+  customerASID      CAS,
+  providers         SEQUENCE (SIZE(1..MAX)) OF PAS }
 
 TrustAnchorState ::= SEQUENCE {
   skis              SEQUENCE (SIZE(1..MAX)) OF SubjectKeyIdentifier,
