@@ -173,7 +173,7 @@
           Implementers should note the ellipsis extension marker in the <tt>RpkiCanonicalCacheRepresentation</tt> ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
         <t>
-          Each state aspect generally consists of a sequence of details extracted from RPKI Objects of a specific type, along with a digest computed by hashing the aforementioned DER-encoded sequence, optionally including some metadata.
+          Each state aspect generally consists of a sequence of details extracted from RPKI Objects of a specific type, along with a digest computed by hashing the aforementioned DER-encoded sequence, and optionally including some metadata.
         </t>
 
         <section>
@@ -288,16 +288,34 @@
     <section>
       <name>Operational Considerations</name>
       <t>
-        Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI supply chain.
-      </t>
-      <t>
-        CCR content compresses very well due to the fairly repetitive nature of content in certain fields, consistent ordering, and the absence of public keys.
-        Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>).
+        This section covers operational considerations.
       </t>
       <section>
-        <name>Verifying CCR file integrity</name>
+        <name>CCR file integrity</name>
         <t>
-          The integrity of a CCR object can be checked by confirming whether the hash values embedded inside state aspects match the computed hash value of the respective state aspect payload structure.
+          The integrity of a CCR file can be checked by confirming whether the hash value embedded inside each state aspect matches the computed hash value of the respective state aspect payload structure.
+          Readers <bcp14>MUST</bcp14> verify the integrity of CCR files and stop further processing on failure.
+        </t>
+      </section>
+      <section>
+        <name>Efficiency</name>
+        <t>
+          CCRs compress very well due to the fairly repetitive nature of the content, consistent ordering, and the absence of high entropy data such as public keys.
+          Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
+        </t>
+      </section>
+      <section>
+        <name>Constructing consistent views on distributed data</name>
+        <t>
+          RPKI Manifests can be considered a state-based Conflict-free Replicated Data Type (<xref target="CRDT"/>), meaning that a set of <tt>ManifestState</tt> instances contain sufficient information to form a monotonic semilattice.
+          The implication is that <tt>ManifestStates</tt> from multiple CCRs produced by multiple different RP instances at different times can safely be merged in order to construct an internally consistent view of the RPKI distributed database.
+          The reconciled merge result can be useful, for example, as backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which employ separate validation processes for different Trust Anchors and certificate chain depths.
+        </t>
+      </section>
+      <section>
+        <name>Propagation delay</name>
+        <t>
+          Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
         </t>
       </section>
     </section>
@@ -305,7 +323,21 @@
     <section anchor="security">
       <name>Security Considerations</name>
       <t>
-        CCR objects are not signed objects.
+        The CCR format utilizes a structure that can store information about the state of a given RPKI cache at a particular moment in time.
+        The fields defined in this specification are of a descriptive nature and provide information that is useful to facilitate the analysis of RPKI data.
+        As such, these fields do not in themselves create additional security risks, since the fields are not used to induce any particular behavior by the recipient application.
+      </t>
+      <t>
+        Readers <bcp14>MUST</bcp14> check contextual bounds on all fields appropriately and stop further processing on failure.
+        E.g., the <tt>maxLength</tt> element in a <tt>ROAIPAddress</tt> cannot contain an integer smaller than the length of the accompanying prefix, the <tt>manifestNumber</tt> field is cannot be longer than 20 octets, etc.
+      </t>
+      <t>
+        The CCR format contains no executable code, and it does not define any extensible areas that could be used to store such code.
+      </t>
+      <t>
+        CCRs are not signed objects.
+        RPKI information is normally public and does not call for confidentiality protection.
+        Ascertaining the provenance (and thus authenticity) of any given CCR is out-of-scope for this document.
       </t>
     </section>
 
@@ -523,6 +555,19 @@
             <author fullname="Job Snijders"/>
             <date month="April" year="2026" />
           </front>
+        </reference>
+
+        <!-- https://inria.hal.science/inria-00609399v2/bibtex -->
+        <reference anchor="CRDT" target="https://inria.hal.science/inria-00609399">
+          <front>
+            <title>Conflict-free Replicated Data Types</title>
+            <author fullname="Marc Shapiro"/>
+            <author fullname="Nuno Preguiça"/>
+            <author fullname="Carlos Baquero"/>
+            <author fullname="Marek Zawirski"/>
+            <date month="July" year="2011"/>
+          </front>
+          <seriesInfo name="INRIA" value="RR-7687"/>
         </reference>
 
       </references>
