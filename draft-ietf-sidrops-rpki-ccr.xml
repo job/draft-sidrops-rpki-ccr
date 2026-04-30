@@ -216,6 +216,9 @@
               The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all current manifests represented by the <tt>ManifestInstance</tt> structures.
               If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
             </t>
+            <t>
+              Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
+            </t>
           </section>
           <section>
             <name>hash</name>
@@ -316,12 +319,6 @@
       </section>
 -->
 
-      <section>
-        <name>Propagation delay</name>
-        <t>
-          Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
-        </t>
-      </section>
     </section>
  
     <section anchor="security">
