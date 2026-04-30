@@ -99,7 +99,7 @@
       <t>
         CCR offers a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
         A validated cache contains all RPKI objects that the RP has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
-        CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time in a reproducable manner.
+        CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time in a reproducible manner.
       </t>
       <t>
         This document formally specifies the CCR content type for use with the RPKI and provides test vectors.
