@@ -107,11 +107,7 @@
       <section>
         <name>History</name>
         <t>
-          The format was initially designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (such as <xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
-        </t>
-        <t>
-          Due to the format's highly compressible data layout characteristics it also found use in multi-perspective collector methods such as <xref target="I-D.snijders-rpkispool-format">RPKISPOOL</xref>.
-          An example of a large-scale CCR-based RPKI data archival project is <xref target="RPKIViews"/>.
+          The format was initially designed to support comparative analysis of multiple RP instances using a variety of RPKI transport protocols (<xref target="RFC5781"/>, <xref target="RFC8182"/>, and <xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>).
         </t>
       </section>
 
@@ -289,13 +285,17 @@
     </section>
 
     <section>
-      <name>Use Case</name>
+      <name>Use Cases</name>
+
       <t>
-        This section describes a use case for CCRs in the context of distributed systems.
+        This section describes a number of applications for the CCR format across different contexts.
       </t>
 
       <section>
         <name>Constructing Consistent Views on Distributed Data</name>
+        <t>
+          This section describes a use case for CCRs in the context of distributed systems.
+        </t>
         <t>
           Assuming CAs issue Manifests in accordance with <xref target="RFC9286" section="5"/>, a <tt>ManifestInstance</tt> can be considered a state-based Conflict-free Replicated Data Type (<xref target="CRDT"/>), meaning that <tt>ManifestInstance</tt> sets contain sufficient information to form a monotonic semilattice.
         </t>
@@ -304,6 +304,17 @@
         </t>
         <t>
           The reconciled merge result can be useful, for example, as a backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which execute separate validation processes for different Trust Anchors and varying maximum certificate chain depths.
+        </t>
+      </section>
+
+      <section>
+        <name>Data Collection</name>
+        <t>
+          Operators have an interest in determining how the global RPKI is viewed from the perspectives of several different locations around the Internet.
+          As CCR allows for point-in-time capture and later reconstruction and analysis, it found use in multi-perspective collector methods such as described <xref target="I-D.snijders-rpkispool-format">RPKISPOOL</xref>.
+        </t>
+        <t>
+          An example of a large-scale CCR-based RPKI data archival project is <xref target="RPKIViews"/>.
         </t>
       </section>
     </section>
@@ -323,7 +334,7 @@
       <section>
         <name>Efficiency</name>
         <t>
-          CCRs compress very well due to the fairly repetitive nature of the content, consistent ordering, and the absence of high entropy data such as public keys.
+          CCRs compress very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as public keys, is consistently ordered.
           Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
         </t>
       </section>
