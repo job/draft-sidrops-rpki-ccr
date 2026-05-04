@@ -308,7 +308,6 @@
         </t>
       </section>
 
-<!-- To be discussed further
       <section>
         <name>Constructing consistent views on distributed data</name>
         <t>
@@ -317,7 +316,6 @@
           The reconciled merge result can be useful, for example, as backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which employ separate validation processes for different Trust Anchors and certificate chain depths.
         </t>
       </section>
--->
 
     </section>
  
@@ -559,7 +557,6 @@
         </reference>
 
         <!-- https://inria.hal.science/inria-00609399v2/bibtex -->
-<!--
         <reference anchor="CRDT" target="https://inria.hal.science/inria-00609399">
           <front>
             <title>Conflict-free Replicated Data Types</title>
@@ -571,7 +568,6 @@
           </front>
           <seriesInfo name="INRIA" value="RR-7687"/>
         </reference>
--->
       </references>
 
     </references>
