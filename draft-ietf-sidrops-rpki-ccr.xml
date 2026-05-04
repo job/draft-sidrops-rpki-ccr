@@ -289,6 +289,26 @@
     </section>
 
     <section>
+      <name>Use Case</name>
+      <t>
+        This section describes a use case for CCRs in the context of distributed systems.
+      </t>
+
+      <section>
+        <name>Constructing Consistent Views on Distributed Data</name>
+        <t>
+          Assuming CAs issue Manifests in accordance with <xref target="RFC9286" section="5"/>, a <tt>ManifestInstance</tt> can be considered a state-based Conflict-free Replicated Data Type (<xref target="CRDT"/>), meaning that sets of <tt>ManifestInstance</tt>s contain sufficient information to form a monotonic semilattice.
+        </t>
+        <t>
+          The implication is that <tt>ManifestState</tt> instances from multiple CCRs produced by multiple different RPs at different times can safely be merged in order to construct an internally consistent view of the RPKI distributed database.
+        </t>
+        <t>
+          The reconciled merge result can be useful, for example, as a backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which execute separate validation processes for different Trust Anchors and varying maximum certificate chain depths.
+        </t>
+      </section>
+    </section>
+
+    <section>
       <name>Operational Considerations</name>
       <t>
         This section covers operational considerations.
@@ -307,17 +327,6 @@
           Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
         </t>
       </section>
-
-<!-- To be discussed further
-      <section>
-        <name>Constructing consistent views on distributed data</name>
-        <t>
-          RPKI Manifests can be considered a state-based Conflict-free Replicated Data Type (<xref target="CRDT"/>), meaning that a set of <tt>ManifestState</tt> instances contain sufficient information to form a monotonic semilattice.
-          The implication is that <tt>ManifestStates</tt> from multiple CCRs produced by multiple different RP instances at different times can safely be merged in order to construct an internally consistent view of the RPKI distributed database.
-          The reconciled merge result can be useful, for example, as backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which employ separate validation processes for different Trust Anchors and certificate chain depths.
-        </t>
-      </section>
--->
 
     </section>
  
@@ -559,7 +568,6 @@
         </reference>
 
         <!-- https://inria.hal.science/inria-00609399v2/bibtex -->
-<!--
         <reference anchor="CRDT" target="https://inria.hal.science/inria-00609399">
           <front>
             <title>Conflict-free Replicated Data Types</title>
@@ -571,7 +579,7 @@
           </front>
           <seriesInfo name="INRIA" value="RR-7687"/>
         </reference>
--->
+
       </references>
 
     </references>
@@ -626,7 +634,7 @@ https://console.rpki-client.org/rpki.ccr
           A CCR serializer and deserializer implementation based on <xref target="rpki-client"/> was provided by Job Snijders and Theo Buehler.
         </li>
         <li>
-          Another CCR serializer and deserializer implementation based on <xref target="rpkitouch"/> was provided by Job Snijders.
+          Another CCR serializer, deserializer, and CRDT effector implementation based on <xref target="rpkitouch"/> was provided by Job Snijders.
         </li>
         <li>
           A CCR encoding and decoding implementation in Java library <xref target="rpki-commons"/> was provided by RIPE NCC.
