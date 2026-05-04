@@ -303,7 +303,7 @@
           The implication is that <tt>ManifestState</tt> instances from multiple CCRs produced by multiple different RPs at different times can safely be merged in order to construct an internally consistent view of the RPKI distributed database.
         </t>
         <t>
-          The reconciled merge result can be useful, for example, as backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which execute separate validation processes for different Trust Anchors and varying maximum certificate chain depths.
+          The reconciled merge result can be useful, for example, as a backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which execute separate validation processes for different Trust Anchors and varying maximum certificate chain depths.
         </t>
       </section>
     </section>
