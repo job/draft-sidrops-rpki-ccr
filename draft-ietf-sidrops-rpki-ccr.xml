@@ -334,7 +334,7 @@
       <section>
         <name>Efficiency</name>
         <t>
-          CCRs compress very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as public keys, is consistent ordered.
+          CCRs compress very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as public keys, is consistently ordered.
           Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
         </t>
       </section>
