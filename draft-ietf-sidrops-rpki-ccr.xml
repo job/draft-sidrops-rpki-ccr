@@ -300,7 +300,7 @@
           Assuming CAs issue Manifests in accordance with <xref target="RFC9286" section="5"/>, a <tt>ManifestInstance</tt> can be considered a state-based Conflict-free Replicated Data Type (<xref target="CRDT"/>), meaning that sets of <tt>ManifestInstance</tt>s contain sufficient information to form a monotonic semilattice.
         </t>
         <t>
-          The implication is that <tt>ManifestState</tt> instances from multiple CCRs produced by multiple different RP instances at different times can safely be merged in order to construct an internally consistent view of the RPKI distributed database.
+          The implication is that <tt>ManifestState</tt> instances from multiple CCRs produced by multiple different RPs at different times can safely be merged in order to construct an internally consistent view of the RPKI distributed database.
         </t>
         <t>
           The reconciled merge result can be useful, for example, as backend for Erik Synchronization relays (<xref target="I-D.ietf-sidrops-rpki-erik-protocol"/>) which execute separate validation processes for different Trust Anchors and varying maximum certificate chain depths.
