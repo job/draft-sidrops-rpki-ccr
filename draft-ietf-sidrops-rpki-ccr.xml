@@ -227,7 +227,7 @@
         <section>
           <name>ROAPayloadState</name>
           <t>
-            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (<xref target="RFC6811" section="2" />) encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances.
+            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (<xref target="RFC6811" section="2" />) ordered by ascending <tt>asID</tt> encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances.
           </t>
           <t>
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
@@ -247,6 +247,8 @@
           </t>
           <t>
             The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />).
+            The elements of <tt>providers</tt> <bcp14>MUST</bcp14> be ordered in ascending numerical order and <bcp14>MUST</bcp14> be unique (with respect to the other elements of providers).
+            An <tt>PAS</tt> value of 0 can only be encoded in the <tt>providers</tt> field as a single item list, i.e., an element for AS 0 MUST NOT appear alongside any other elements.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>aps</tt> value (encoded in DER format) as input message.
@@ -600,9 +602,10 @@
       <name>Acknowledgements</name>
       <t>
         The authors wish to thank
-        <contact fullname="Russ Housley" />
-        and
+        <contact fullname="Russ Housley" />,
         <contact fullname="Luuk Hendriks" />
+        and
+        <contact fullname="Theodor-Fedor Vompe" />
         for their generous feedback on this specification.
       </t>
     </section>
