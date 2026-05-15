@@ -333,7 +333,7 @@
       <section>
         <name>Timing analysis</name>
         <t>
-          If the CCR is produced right after all relevant repository content was received and validated, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the CCR <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
+          If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the CCR <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
         </t>
       </section>
       <section>
