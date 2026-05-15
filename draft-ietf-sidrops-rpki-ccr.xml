@@ -155,7 +155,7 @@
         </t>
       </section>
 
-      <section>
+      <section anchor="producedAt">
         <name>producedAt</name>
         <t>
           The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time the CCR was generated.
@@ -206,11 +206,14 @@
               The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by <tt>hash</tt> value contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
             </t>
           </section>
-          <section>
+          <section anchor="mostRecentUpdate">
             <name>mostRecentUpdate</name>
             <t>
               The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all current manifests represented by the <tt>ManifestInstance</tt> structures.
               If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
+            </t>
+            <t>
+              A corollary to the above is that <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> precede or be equal to <tt>producedAt</tt> (<xref target="producedAt"/>).
             </t>
           </section>
           <section>
@@ -333,7 +336,11 @@
       <section>
         <name>Timing analysis</name>
         <t>
-          If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the CCR <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
+          If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp (<xref target="mostRecentUpdate"/>) value with the CCR <tt>producedAt</tt> timestamp (<xref target="producedAt"/>) might help offer insight into the timing and propagation delays of the RPKI ecosystem.
+        </t>
+        <t>
+          Because path discovery in the RPKI usually is performed on a top-down basis with RPs operating on wall clock time, normally, there is be a time delay between initiating the production of a CCR and materializing its serialized form.
+          As a result, a correctly produced CCR could reference information that expired in-flight.
         </t>
       </section>
       <section>
