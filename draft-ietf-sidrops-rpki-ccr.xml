@@ -212,9 +212,6 @@
               The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all current manifests represented by the <tt>ManifestInstance</tt> structures.
               If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
             </t>
-            <t>
-              Comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
-            </t>
           </section>
           <section>
             <name>hash</name>
@@ -331,6 +328,12 @@
         <t>
           The integrity of a CCR file can be checked by confirming whether the hash value embedded inside each state aspect matches the computed hash value of the respective state aspect payload structure.
           Readers <bcp14>MUST</bcp14> verify the integrity of CCR files and stop further processing on failure.
+        </t>
+      </section>
+      <section>
+        <name>Timing analysis</name>
+        <t>
+          If the CCR is produced right after all relevant repository content was received and validated, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp value with the CCR <tt>producedAt</tt> timestamp might help offer insight into the timing and propagation delays of the RPKI ecosystem.
         </t>
       </section>
       <section>
