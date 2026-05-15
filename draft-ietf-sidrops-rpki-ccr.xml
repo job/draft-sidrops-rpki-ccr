@@ -445,7 +445,7 @@
       <section>
         <name>Media Types</name>
         <t>
-          IANA is requested to register the media types "application/rpki-ccr" and "application/rpki-ccr+gz" in the "Media Types" registry as follows:
+          IANA is requested to register the media types "application/rpki-ccr" and "application/rpki-ccr+gzip" in the "Media Types" registry as follows:
         </t>
         <section>
         <name>Canonical Cache Representation Media Type</name>
@@ -479,7 +479,7 @@
            <dl spacing="compact">
              <dt><br/></dt><dd/>
              <dt>Type name:</dt><dd>application</dd>
-             <dt>Subtype name:</dt><dd>rpki-ccr+gz</dd>
+             <dt>Subtype name:</dt><dd>rpki-ccr+gzip</dd>
              <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in draft-ietf-sidrops-rpki-ccr.</dd>
              <dt>Magic number(s):</dt><dd>N/A</dd>
              <dt>File extension(s):</dt><dd>.ccr.gz</dd>
@@ -603,9 +603,10 @@
       <t>
         The authors wish to thank
         <contact fullname="Russ Housley" />,
-        <contact fullname="Luuk Hendriks" />
+        <contact fullname="Luuk Hendriks" />,
+        <contact fullname="Theodor-Fedor Vompe" />,
         and
-        <contact fullname="Theodor-Fedor Vompe" />
+        <contact fullname="Tom Harrison" />
         for their generous feedback on this specification.
       </t>
     </section>
