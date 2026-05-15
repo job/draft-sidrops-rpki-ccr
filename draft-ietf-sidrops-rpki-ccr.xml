@@ -183,7 +183,7 @@
             <t>
               The <tt>mis</tt> field contains a SEQUENCE of <tt>ManifestInstance</tt>.
               There is one <tt>ManifestInstance</tt> for each current manifest.
-              A manifest is nominally current until the time specified in nextUpdate or until a manifest is issued with a greater manifestNumber, whichever comes first (see <xref target="RFC9286" section="4.2.1"/>).
+              A manifest is nominally current until the time specified in <tt>nextUpdate</tt>, or until a manifest is issued with a greater <tt>manifestNumber</tt>, whichever comes first (see <xref target="RFC9286" section="4.2.1"/>), or until a new manifest is issued with a new filename per the process described in section 2 of <xref target="RFC9981"/>.
             </t>
             <t>
               A <tt>ManifestInstance</tt> is a structure consisting of the following fields:
@@ -511,6 +511,19 @@
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
+
+	<!-- not yet published
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9981.xml"/> -->
+
+        <reference anchor="RFC9981" target="https://www.rfc-editor.org/info/rfc9981">
+          <front>
+            <title>Resource Public Key Infrastructure (RPKI) Manifest Number Handling</title>
+            <author fullname="Tom Harrison" initials="T." surname="Harrison"/>
+            <author fullname="George Michaelson" initials="G." surname="Michaelson"/>
+            <author fullname="Job Snijders" initials="J." surname="Snijders"/>
+            <date month="May" year="2026" />
+          </front>
+        </reference>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-aspa-profile.xml"/>
 
