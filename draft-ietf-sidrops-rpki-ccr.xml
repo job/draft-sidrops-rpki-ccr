@@ -159,6 +159,7 @@
         <name>producedAt</name>
         <t>
           The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time the CCR was generated.
+          For the purposes of this section, CCR generation begins once the RP's fetching and validation operations have been completed.
         </t>
       </section>
 
@@ -214,6 +215,7 @@
             </t>
             <t>
               A corollary to the above is that <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> precede or be equal to <tt>producedAt</tt> (<xref target="producedAt"/>).
+              This is due to the requirements set out in <xref target="RFC9286" section="6.3"/>.
             </t>
           </section>
           <section>
@@ -339,8 +341,9 @@
           If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp (<xref target="mostRecentUpdate"/>) value with the CCR <tt>producedAt</tt> timestamp (<xref target="producedAt"/>) might help offer insight into the timing and propagation delays of the RPKI ecosystem.
         </t>
         <t>
-          Because path discovery in the RPKI usually is performed on a top-down basis with RPs operating on wall clock time, normally, there is be a time delay between initiating the production of a CCR and materializing its serialized form.
-          As a result, a correctly produced CCR could reference information that expired in-flight.
+          The <tt>producedAt</tt> timestamp is not necessarily the current time used by the RP for the purposes of validating the RPKI content.
+          In practice, most RPs interleave fetching and validation operations, with validation occurring with respect to whatever the time happens to be at that point (i.e., wall clock time).
+          This means that it is possible for a CCR to include information that would have been excluded if validated at the time indicated by the <tt>producedAt</tt> timestamp.
         </t>
       </section>
       <section>
