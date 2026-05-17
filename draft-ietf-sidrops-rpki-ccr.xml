@@ -159,7 +159,7 @@
         <name>producedAt</name>
         <t>
           The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time the CCR was generated.
-          For the purposes of this section, CCR generation begins once the RP's fetching and validation operations have been completed.
+          For the purposes of this section, CCR generation begins once the RP's fetching and validation operations are completed.
         </t>
       </section>
 
