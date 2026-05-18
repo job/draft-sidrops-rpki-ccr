@@ -214,8 +214,7 @@
               If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
             </t>
             <t>
-              A corollary to the above is that <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> precede or be equal to <tt>producedAt</tt> (<xref target="producedAt"/>).
-              This is due to the requirements set out in <xref target="RFC9286" section="6.3"/>.
+              The above and the requirements in <xref target="RFC9286" section="6.3"/> imply that <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> precede or be equal to <tt>producedAt</tt> (<xref target="producedAt"/>).
             </t>
           </section>
           <section>
@@ -229,7 +228,7 @@
         <section>
           <name>ROAPayloadState</name>
           <t>
-            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (<xref target="RFC6811" section="2" />) ordered by ascending <tt>asID</tt> encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances.
+            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (<xref target="RFC6811" section="2" />) encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances ordered by ascending <tt>asID</tt>.
           </t>
           <t>
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
@@ -244,13 +243,13 @@
         <section>
           <name>ASPAPayloadState</name>
           <t>
-            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) ordered by ascending <tt>customerASID</tt> value encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances.
+            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) value encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances ordered by ascending <tt>customerASID</tt>.
             The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>.
           </t>
           <t>
             The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />).
             The elements of <tt>providers</tt> <bcp14>MUST</bcp14> be ordered in ascending numerical order and <bcp14>MUST</bcp14> be unique (with respect to the other elements of providers).
-            An <tt>PAS</tt> value of 0 can only be encoded in the <tt>providers</tt> field as a single item list, i.e., an element for AS 0 MUST NOT appear alongside any other elements.
+            A <tt>PAS</tt> value of 0 can only be encoded in the <tt>providers</tt> field as a single item list, i.e., an element for AS 0 MUST NOT appear alongside any other elements.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>aps</tt> value (encoded in DER format) as input message.
