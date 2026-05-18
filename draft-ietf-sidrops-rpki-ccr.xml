@@ -337,12 +337,12 @@
       <section>
         <name>Timing analysis</name>
         <t>
-          If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp (<xref target="mostRecentUpdate"/>) value with the CCR <tt>producedAt</tt> timestamp (<xref target="producedAt"/>) might help offer insight into the timing and propagation delays of the RPKI ecosystem.
-        </t>
-        <t>
           The <tt>producedAt</tt> timestamp is not necessarily the current time used by the RP for the purposes of validating the RPKI content.
           In practice, most RPs interleave fetching and validation operations, with validation occurring with respect to whatever the time happens to be at that point (i.e., wall clock time).
           This means that it is possible for a CCR to include information that would have been excluded if validated at the time indicated by the <tt>producedAt</tt> timestamp.
+        </t>
+        <t>
+          If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp (<xref target="mostRecentUpdate"/>) value with the CCR <tt>producedAt</tt> timestamp (<xref target="producedAt"/>) might help offer insight into the timing and propagation delays of the RPKI ecosystem.
         </t>
       </section>
       <section>
