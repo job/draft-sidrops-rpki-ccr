@@ -6,39 +6,33 @@ CCR produced at:        Sat 11 Apr 2026 08:04:31 +0000
 Manifest state hash:    8bXskzbWa1oCoQYF1VnbQskxegvOO2eyS67YnkY29wg=
 Manifest last update:   Sat 11 Apr 2026 08:00:03 +0000
 Manifest instances:
-                        hash:AAA2wRwPsxllQz3CGSuUSNg95LD7ve8TkQG8oJf\
-Zf/Q= size:1998 aki:46387C56B331FF84BC10D8AC90E1E2C16F172345 seqnum:\
-18B2 thisupdate:1775862111 sia:rsync://rpki.ripe.net/repository/DEFA\
-ULT/48/1b40ff-b1e1-4951-9165-23bb39a83481/1/Rjh8VrMx_4S8ENiskOHiwW8X\
-I0U.mft
-                        hash:AAFxGHgJjLarAoLN6aV4ByTazpqHNrQ4xDjc5eX\
-RQrY= size:2360 aki:C0D733E05D4C056E3A7E94332DC46BE80148688A seqnum:\
-010D0C9F43285843EC2B3B6AE919C88C87F39200 thisupdate:1775858403 sia:r\
-sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
--2171da2157d3/871da40f-793a-4a45-a0a9-978148321a07/a120b5d4-da56-49b\
-1-8ae1-7987a6afde99/a120b5d4-da56-49b1-8ae1-7987a6afde99.mft
-                        hash:AAW6NCJNhHhc/7A9Breu8dpn2xXFC71OKRA9u9x\
-KsZQ= size:2360 aki:AE122805FDB09BF5B1DFDC14985AC40F07F43E85 seqnum:\
-010D0C9F4328584B9CE67A3ADA7D16609B932F8F thisupdate:1775876403 sia:r\
-sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
--2171da2157d3/85e06eaf-37a7-4588-abea-e4909ef1b4e2/b2c58ba9-3393-4f4\
-c-abe1-b231a3ea2700/b2c58ba9-3393-4f4c-abe1-b231a3ea2700.mft
-                        hash:AAa3zi7lmCVevHrdjC4RltPtW7yVv4w8/6KfKt+\
-1EQY= size:1998 aki:16B198B6EE3AF68DEBC2347A5E98F711FB30F28B seqnum:\
-05B6 thisupdate:1775876533 sia:rsync://rpki.ripe.net/repository/DEFA\
-ULT/3a/22ae14-e45e-4eee-bd07-4482ada232e3/1/FrGYtu469o3rwjR6Xpj3Efsw\
-8os.mft
                         hash:AAdjp/1ti4quGz7ucd/EZ/g28pqgrdsIN2FoHsI\
 /O/s= size:2443 aki:02725494FA7C81427EC59F0713F3B9B068EBC8C2 seqnum:\
 010D0C9F43285842762E5CDF487448DBE3D65306 thisupdate:1775862003 sia:r\
 sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
 -2171da2157d3/5b7fb122-dfdf-4c0c-b90d-3bc7a5feb82b/fdc3365a-18ea-469\
 6-ad8c-6b66a3e152b7/fdc3365a-18ea-4696-ad8c-6b66a3e152b7.mft
+                        hash:AAa3zi7lmCVevHrdjC4RltPtW7yVv4w8/6KfKt+\
+1EQY= size:1998 aki:16B198B6EE3AF68DEBC2347A5E98F711FB30F28B seqnum:\
+05B6 thisupdate:1775876533 sia:rsync://rpki.ripe.net/repository/DEFA\
+ULT/3a/22ae14-e45e-4eee-bd07-4482ada232e3/1/FrGYtu469o3rwjR6Xpj3Efsw\
+8os.mft
                         hash:AAgBgdsAF5T25s1DMzpv6dmVkk/F8ye6gUxqw2Q\
 +UWs= size:1924 aki:38D63C5FCE1EF09E4BF2CFC94BB2509FD5FF509C seqnum:\
 06E4 thisupdate:1775887279 sia:rsync://rpki.ripe.net/repository/DEFA\
 ULT/bf/ee3d73-9729-4da4-8bc7-67c442d6a850/1/ONY8X84e8J5L8s_JS7JQn9X_\
 UJw.mft
+                        hash:AAA2wRwPsxllQz3CGSuUSNg95LD7ve8TkQG8oJf\
+Zf/Q= size:1998 aki:46387C56B331FF84BC10D8AC90E1E2C16F172345 seqnum:\
+18B2 thisupdate:1775862111 sia:rsync://rpki.ripe.net/repository/DEFA\
+ULT/48/1b40ff-b1e1-4951-9165-23bb39a83481/1/Rjh8VrMx_4S8ENiskOHiwW8X\
+I0U.mft
+                        hash:ABRkjCfKzkq+VljmLDPOTrRzb9XCSHS4+MdJ85h\
+48Ck= size:2360 aki:4E428C958C2E77BF29924C4307CA4C7AAFCCAC8F seqnum:\
+010D0C9F432858457C8ED47A37E56E1C2B792621 thisupdate:1775894403 sia:r\
+sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
+-2171da2157d3/4ab7ae4d-bd7b-4b33-9a88-5b22d2a8337d/022d0269-7d56-45c\
+c-8167-b1e7ab13f1f4/022d0269-7d56-45cc-8167-b1e7ab13f1f4.mft
                         hash:AAgGTG8qcTnrJ+s3v2qwsYhicint7+AAzZvEBKS\
 0/Cg= size:2072 aki:73E157B2918CADCA8A5A9FBC66E977608A6DF5E1 seqnum:\
 18BB thisupdate:1775880020 sia:rsync://rpki.ripe.net/repository/DEFA\
@@ -50,23 +44,29 @@ M2dQ= size:2360 aki:9E6EF4051C0BC6DB084757A8A37A7D5929AED033 seqnum:\
 sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
 -2171da2157d3/69fd0156-bb1f-48b6-bf32-c9492286f195/afb3511b-f1b6-44a\
 d-9c36-f6576a5400df/afb3511b-f1b6-44ad-9c36-f6576a5400df.mft
-                        hash:ABHMuie2PQZfMvLKOxKMHfjD1eaPqk9g7ApjxVq\
-Reko= size:1998 aki:DA77FA100D6CD288E544C7CB4C7D4D18879079ED seqnum:\
-0344 thisupdate:1775865660 sia:rsync://rpki.ripe.net/repository/DEFA\
-ULT/dc/e31ad5-ef74-40a4-9a0d-df872fb269cf/1/2nf6EA1s0ojlRMfLTH1NGIeQ\
-ee0.mft
-                        hash:ABRkjCfKzkq+VljmLDPOTrRzb9XCSHS4+MdJ85h\
-48Ck= size:2360 aki:4E428C958C2E77BF29924C4307CA4C7AAFCCAC8F seqnum:\
-010D0C9F432858457C8ED47A37E56E1C2B792621 thisupdate:1775894403 sia:r\
+                        hash:AAW6NCJNhHhc/7A9Breu8dpn2xXFC71OKRA9u9x\
+KsZQ= size:2360 aki:AE122805FDB09BF5B1DFDC14985AC40F07F43E85 seqnum:\
+010D0C9F4328584B9CE67A3ADA7D16609B932F8F thisupdate:1775876403 sia:r\
 sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
--2171da2157d3/4ab7ae4d-bd7b-4b33-9a88-5b22d2a8337d/022d0269-7d56-45c\
-c-8167-b1e7ab13f1f4/022d0269-7d56-45cc-8167-b1e7ab13f1f4.mft
+-2171da2157d3/85e06eaf-37a7-4588-abea-e4909ef1b4e2/b2c58ba9-3393-4f4\
+c-abe1-b231a3ea2700/b2c58ba9-3393-4f4c-abe1-b231a3ea2700.mft
+                        hash:AAFxGHgJjLarAoLN6aV4ByTazpqHNrQ4xDjc5eX\
+RQrY= size:2360 aki:C0D733E05D4C056E3A7E94332DC46BE80148688A seqnum:\
+010D0C9F43285843EC2B3B6AE919C88C87F39200 thisupdate:1775858403 sia:r\
+sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
+-2171da2157d3/871da40f-793a-4a45-a0a9-978148321a07/a120b5d4-da56-49b\
+1-8ae1-7987a6afde99/a120b5d4-da56-49b1-8ae1-7987a6afde99.mft
                         hash:ABmkMrkqDHq5RUqsoySxusyf+4z3PHRJyCZKs08\
 B5xw= size:2280 aki:D6BA7E3355B5CBF6740392364CA921379241C027 seqnum:\
 010D0C9F432858410FF677C49D023E85FBC3671F thisupdate:1775833203 sia:r\
 sync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c\
 -2171da2157d3/2a246947-2d62-4a6c-ba05-87187f0099b2/0a94b460-7441-495\
 e-9358-475ea795ecc6/0a94b460-7441-495e-9358-475ea795ecc6.mft
+                        hash:ABHMuie2PQZfMvLKOxKMHfjD1eaPqk9g7ApjxVq\
+Reko= size:1998 aki:DA77FA100D6CD288E544C7CB4C7D4D18879079ED seqnum:\
+0344 thisupdate:1775865660 sia:rsync://rpki.ripe.net/repository/DEFA\
+ULT/dc/e31ad5-ef74-40a4-9a0d-df872fb269cf/1/2nf6EA1s0ojlRMfLTH1NGIeQ\
+ee0.mft
 ROA payload state hash: 1YAaU0XAqrxHTlD4u0b5hsPYI5aDsNzXDQMKFESDEQI=
 ROA payload entries:
                         192.35.94.0/24-32 AS 7

@@ -1,0 +1,459 @@
+SEQUENCE {
+  OBJECT_IDENTIFIER { 1.2.840.113549.1.9.16.1.54 }
+  [0] {
+    SEQUENCE {
+      SEQUENCE {
+        # sha256
+        OBJECT_IDENTIFIER { 2.16.840.1.101.3.4.2.1 }
+      }
+      GeneralizedTime { "20260411080431Z" }
+      [1] {
+        SEQUENCE {
+          SEQUENCE {
+            SEQUENCE {
+              OCTET_STRING { `000036c11c0fb31965433dc2192b9448d83de4b0fbbdef139101bca097d97ff4` }
+              INTEGER { 1998 }
+              OCTET_STRING { `46387c56b331ff84bc10d8ac90e1e2c16f172345` }
+              INTEGER { 6322 }
+              GeneralizedTime { "20260410230151Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.ripe.net/repository/DEFAULT/48/1b40ff-b1e1-4951-9165-23bb39a83481/1/Rjh8VrMx_4S8ENiskOHiwW8XI0U.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0001711878098cb6ab0282cde9a5780724dace9a8736b438c438dce5e5d142b6` }
+              INTEGER { 2360 }
+              OCTET_STRING { `c0d733e05d4c056e3a7e94332dc46be80148688a` }
+              INTEGER { `010d0c9f43285843ec2b3b6ae919c88c87f39200` }
+              GeneralizedTime { "20260410220003Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/871da40f-793a-4a45-a0a9-978148321a07/a120b5d4-da56-49b1-8ae1-7987a6afde99/a120b5d4-da56-49b1-8ae1-7987a6afde99.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0005ba34224d84785cffb03d06b7aef1da67db15c50bbd4e29103dbbdc4ab194` }
+              INTEGER { 2360 }
+              OCTET_STRING {
+                [14] {
+                  [EXTERNAL CONSTRUCTED] {
+                    `fdb09bf5b1`
+                  }
+                  `dfdc14985ac40f07f43e85`
+                }
+              }
+              INTEGER { `010d0c9f4328584b9ce67a3ada7d16609b932f8f` }
+              GeneralizedTime { "20260411030003Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/85e06eaf-37a7-4588-abea-e4909ef1b4e2/b2c58ba9-3393-4f4c-abe1-b231a3ea2700/b2c58ba9-3393-4f4c-abe1-b231a3ea2700.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0006b7ce2ee598255ebc7add8c2e1196d3ed5bbc95bf8c3cffa29f2adfb51106` }
+              INTEGER { 1998 }
+              OCTET_STRING { `16b198b6ee3af68debc2347a5e98f711fb30f28b` }
+              INTEGER { 1462 }
+              GeneralizedTime { "20260411030213Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.ripe.net/repository/DEFAULT/3a/22ae14-e45e-4eee-bd07-4482ada232e3/1/FrGYtu469o3rwjR6Xpj3Efsw8os.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `000763a7fd6d8b8aae1b3eee71dfc467f836f29aa0addb083761681ec23f3bfb` }
+              INTEGER { 2443 }
+              OCTET_STRING { `02725494fa7c81427ec59f0713f3b9b068ebc8c2` }
+              INTEGER { `010d0c9f43285842762e5cdf487448dbe3d65306` }
+              GeneralizedTime { "20260410230003Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/5b7fb122-dfdf-4c0c-b90d-3bc7a5feb82b/fdc3365a-18ea-4696-ad8c-6b66a3e152b7/fdc3365a-18ea-4696-ad8c-6b66a3e152b7.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `00080181db001794f6e6cd43333a6fe9d995924fc5f327ba814c6ac3643e516b` }
+              INTEGER { 1924 }
+              OCTET_STRING { `38d63c5fce1ef09e4bf2cfc94bb2509fd5ff509c` }
+              INTEGER { 1764 }
+              GeneralizedTime { "20260411060119Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.ripe.net/repository/DEFAULT/bf/ee3d73-9729-4da4-8bc7-67c442d6a850/1/ONY8X84e8J5L8s_JS7JQn9X_UJw.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0008064c6f2a7139eb27eb37bf6ab0b188627229edefe000cd9bc404a4b4fc28` }
+              INTEGER { 2072 }
+              OCTET_STRING { `73e157b2918cadca8a5a9fbc66e977608a6df5e1` }
+              INTEGER { 6331 }
+              GeneralizedTime { "20260411040020Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.ripe.net/repository/DEFAULT/79/bbcd53-c4f8-4245-bb90-00a154b8ecb1/1/c-FXspGMrcqKWp-8Zul3YIpt9eE.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `000c652fe52054af43c7885d166b42d48a387273576be59292d7f11cd0ccd9d4` }
+              INTEGER { 2360 }
+              OCTET_STRING { `9e6ef4051c0bc6db084757a8a37a7d5929aed033` }
+              INTEGER { `010d0c9f43285847d8bf5ef10e9318a0e5c72573` }
+              GeneralizedTime { "20260410180003Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/69fd0156-bb1f-48b6-bf32-c9492286f195/afb3511b-f1b6-44ad-9c36-f6576a5400df/afb3511b-f1b6-44ad-9c36-f6576a5400df.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0011ccba27b63d065f32f2ca3b128c1df8c3d5e68faa4f60ec0a63c55a917a4a` }
+              INTEGER { 1998 }
+              OCTET_STRING { `da77fa100d6cd288e544c7cb4c7d4d18879079ed` }
+              INTEGER { 836 }
+              GeneralizedTime { "20260411000100Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.ripe.net/repository/DEFAULT/dc/e31ad5-ef74-40a4-9a0d-df872fb269cf/1/2nf6EA1s0ojlRMfLTH1NGIeQee0.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0014648c27cace4abe5658e62c33ce4eb4736fd5c24874b8f8c749f39878f029` }
+              INTEGER { 2360 }
+              OCTET_STRING { `4e428c958c2e77bf29924c4307ca4c7aafccac8f` }
+              INTEGER { `010d0c9f432858457c8ed47a37e56e1c2b792621` }
+              GeneralizedTime { "20260411080003Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/4ab7ae4d-bd7b-4b33-9a88-5b22d2a8337d/022d0269-7d56-45cc-8167-b1e7ab13f1f4/022d0269-7d56-45cc-8167-b1e7ab13f1f4.mft" }
+                }
+              }
+            }
+            SEQUENCE {
+              OCTET_STRING { `0019a432b92a0c7ab9454aaca324b1bacc9ffb8cf73c7449c8264ab34f01e71c` }
+              INTEGER { 2280 }
+              OCTET_STRING { `d6ba7e3355b5cbf6740392364ca921379241c027` }
+              INTEGER { `010d0c9f432858410ff677c49d023e85fbc3671f` }
+              GeneralizedTime { "20260410150003Z" }
+              SEQUENCE {
+                SEQUENCE {
+                  # signedObject
+                  OBJECT_IDENTIFIER { 1.3.6.1.5.5.7.48.11 }
+                  [6 PRIMITIVE] { "rsync://rpki.arin.net/repository/arin-rpki-ta/5e4a23ea-e80a-403e-b08c-2171da2157d3/2a246947-2d62-4a6c-ba05-87187f0099b2/0a94b460-7441-495e-9358-475ea795ecc6/0a94b460-7441-495e-9358-475ea795ecc6.mft" }
+                }
+              }
+            }
+          }
+          GeneralizedTime { "20260411080003Z" }
+          OCTET_STRING { `f1b5ec9336d66b5a02a10605d559db42c9317a0bce3b67b24baed89e4636f708` }
+        }
+      }
+      [2] {
+        SEQUENCE {
+          SEQUENCE {
+            SEQUENCE {
+              INTEGER { 7 }
+              SEQUENCE {
+                SEQUENCE {
+                  OCTET_STRING { `0001` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      BIT_STRING { b`110000000010001101011110` }
+                      INTEGER { 32 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110000000100001100101011` }
+                      INTEGER { 32 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110000100010000001000101` }
+                      INTEGER { 32 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`11000010001000001101101` }
+                      INTEGER { 32 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110000100010001010001010` }
+                      INTEGER { 32 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`11000010001111010101110` }
+                      INTEGER { 32 }
+                    }
+                  }
+                }
+                SEQUENCE {
+                  OCTET_STRING { `0002` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      BIT_STRING { b`00101010000010110011101101000` }
+                      INTEGER { 128 }
+                    }
+                  }
+                }
+              }
+            }
+            SEQUENCE {
+              INTEGER { 8283 }
+              SEQUENCE {
+                SEQUENCE {
+                  OCTET_STRING { `0001` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      BIT_STRING { b`010110111101000000100010` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110000` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110001` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110010` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110100` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110101` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110110` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`010111101000111011110111` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`1011100100110100111000` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`101110010011010011100000` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`101110010011010011100001` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`101110010011010011100010` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`101110010011010011100011` }
+                    }
+                  }
+                }
+                SEQUENCE {
+                  OCTET_STRING { `0002` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      BIT_STRING { `00` `200106780688` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING {
+                        `00`
+                        [ENUMERATED CONSTRUCTED] {
+                          `0898`
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            SEQUENCE {
+              INTEGER { 15562 }
+              SEQUENCE {
+                SEQUENCE {
+                  OCTET_STRING { `0001` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      BIT_STRING { b`010000111101110111110101` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`101001011111111011100001` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`101001011111111011111111` }
+                      INTEGER { 32 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110000001001001110101000` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`11000110001110100000001` }
+                      INTEGER { 24 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`11001100000000100001111` }
+                      INTEGER { 24 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110100010001100000000001` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110100010001100000000101` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { b`110100010001100000001001` }
+                    }
+                  }
+                }
+                SEQUENCE {
+                  OCTET_STRING { `0002` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      BIT_STRING { `01` `20010418144e` }
+                      INTEGER { 64 }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { `00` `2001067c208c` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { `00` `200107281808` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { `00` `2607fae00245` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { `00` `2a0eb2400000` }
+                    }
+                    SEQUENCE {
+                      BIT_STRING { `00` `2a0eb2400118` }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          OCTET_STRING { `d5801a5345c0aabc474e50f8bb46f986c3d8239683b0dcd70d030a1444831102` }
+        }
+      }
+      [3] {
+        SEQUENCE {
+          SEQUENCE {
+            SEQUENCE {
+              INTEGER { 80 }
+              SEQUENCE {
+                INTEGER { 3356 }
+                INTEGER { 6461 }
+              }
+            }
+            SEQUENCE {
+              INTEGER { 174 }
+              SEQUENCE {
+                INTEGER { 0 }
+              }
+            }
+            SEQUENCE {
+              INTEGER { 267 }
+              SEQUENCE {
+                INTEGER { 12129 }
+                INTEGER { 14103 }
+              }
+            }
+            SEQUENCE {
+              INTEGER { 553 }
+              SEQUENCE {
+                INTEGER { 174 }
+                INTEGER { 559 }
+                INTEGER { 680 }
+                INTEGER { 1299 }
+                INTEGER { 2914 }
+                INTEGER { 3320 }
+              }
+            }
+            SEQUENCE {
+              INTEGER { 559 }
+              SEQUENCE {
+                INTEGER { 174 }
+                INTEGER { 513 }
+                INTEGER { 553 }
+                INTEGER { 1299 }
+                INTEGER { 3257 }
+                INTEGER { 3356 }
+                INTEGER { 20965 }
+                INTEGER { 21320 }
+              }
+            }
+          }
+          OCTET_STRING { `c84c4f4ada5225ed29c9440ca01a2f11e1236bb9608882895646eff8c61a098d` }
+        }
+      }
+      [4] {
+        SEQUENCE {
+          SEQUENCE {
+            OCTET_STRING { `13d4f24f9a9fcd98db36f930631808c88f3974bc` }
+            OCTET_STRING { `e8552b1fd6d1a4f7e404c6d8e5680d1ebc163fc3` }
+          }
+          OCTET_STRING { `a1e6c8d2a51f87f77fb6b58baa93919990101100a86100fee1f8728647e6a00c` }
+        }
+      }
+      [5] {
+        SEQUENCE {
+          SEQUENCE {
+            SEQUENCE {
+              INTEGER { 15562 }
+              SEQUENCE {
+                SEQUENCE {
+                  OCTET_STRING { `5d4250e2d81d4448d8a29efce91d29ff075ec9e2` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      # ecPublicKey
+                      OBJECT_IDENTIFIER { 1.2.840.10045.2.1 }
+                      # secp256r1
+                      OBJECT_IDENTIFIER { 1.2.840.10045.3.1.7 }
+                    }
+                    BIT_STRING { `00` `0480572343f83ffcb0107ab007d8ca69f86b9ca0300605b848a83df7c0d3ec5f19c019bfa6b59ed742b54ef4343a52501286d8a0e7e41f10aa53b45822a9f88015` }
+                  }
+                }
+                SEQUENCE {
+                  OCTET_STRING { `be889b55d0b737397d75c49f485b858fa98ad11f` }
+                  SEQUENCE {
+                    SEQUENCE {
+                      # ecPublicKey
+                      OBJECT_IDENTIFIER { 1.2.840.10045.2.1 }
+                      # secp256r1
+                      OBJECT_IDENTIFIER { 1.2.840.10045.3.1.7 }
+                    }
+                    BIT_STRING { `00` `04e05c49af49f66eec75b97d44be5f905b0658bc869d3e32ee157da6c6a2ae0065212a7afb54b2c382b13efa5f69e5e1f69164cd540376d85514ddd6ff44aa44db` }
+                  }
+                }
+              }
+            }
+          }
+          OCTET_STRING { `ba5fb449cefb6ba00f36127962a2eea6e867fe8512bbddade9c6e4b8bc16c1d2` }
+        }
+      }
+    }
+  }
+}
