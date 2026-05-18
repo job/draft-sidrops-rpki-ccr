@@ -14,7 +14,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-04"
+     docName="draft-ietf-sidrops-rpki-ccr-05"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -629,7 +629,7 @@
         The authors wish to thank
         <contact fullname="Russ Housley" />,
         <contact fullname="Luuk Hendriks" />,
-        <contact fullname="Theodor-Fedor Vompe" />,
+        <contact fullname="Fedor Vompe" />,
         and
         <contact fullname="Tom Harrison" />
         for their generous feedback on this specification.
