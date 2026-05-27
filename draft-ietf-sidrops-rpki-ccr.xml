@@ -684,6 +684,9 @@ https://console.rpki-client.org/rpki.ccr
         <li>
           A CCR encoding and decoding implementation in Java library <xref target="rpki-commons"/> was provided by RIPE NCC.
         </li>
+        <li>
+          A CCR encoding and decoding implementation in Go was developed by Ben Cartwright-Cox.
+        </li>
       </ul>
     </section>
 
