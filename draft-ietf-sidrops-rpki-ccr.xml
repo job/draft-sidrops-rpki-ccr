@@ -197,7 +197,7 @@
               <dt><tt>manifestNumber:</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate:</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
               <dt><tt>locations:</tt></dt>      <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
-              <dt><tt>subordinates:</tt></dt>   <dd>a optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
+              <dt><tt>subordinates:</tt></dt>   <dd>an optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
             </dl>
             <t>
               The <tt>subordinates</tt> field represents the key pairs associated with the set of non-revoked, non-expired, validly signed, certification authority (CA) resource certificates subordinate to the manifest issuer.
@@ -205,7 +205,7 @@
               The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
             </t>
             <t>
-              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by <tt>hash</tt> value contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
+              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by the value of the <tt>hash</tt> field contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
             </t>
           </section>
           <section anchor="mostRecentUpdate">
@@ -244,7 +244,7 @@
         <section>
           <name>ASPAPayloadState</name>
           <t>
-            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) value encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances ordered by ascending <tt>customerASID</tt>.
+            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances ordered by ascending <tt>customerASID</tt>.
             The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>.
           </t>
           <t>
@@ -280,7 +280,7 @@
             Instances of <tt>RouterKey</tt> are sorted by ascending value of <tt>ski</tt> by interpreting the SKI value as an unsigned 160-bit integer.
           </t>
           <t>
-            The <tt>hash</tt> field contains a message digest computed using the <tt>rks</tt> value (encoded in DER format) as input message.
+            The <tt>hash</tt> field contains a message digest computed using the <tt>rksets</tt> value (encoded in DER format) as input message.
           </t>
         </section>
 
@@ -315,7 +315,7 @@
         <name>Data Collection</name>
         <t>
           Operators have an interest in determining how the global RPKI is viewed from the perspectives of several different locations around the Internet.
-          As CCR allows for point-in-time capture and later reconstruction and analysis, it found use in multi-perspective collector methods such as described <xref target="I-D.snijders-rpkispool-format">RPKISPOOL</xref>.
+          As CCR allows for point-in-time capture and later reconstruction and analysis, it found use in multi-perspective collector methods such as described in <xref target="I-D.snijders-rpkispool-format">RPKISPOOL</xref>.
         </t>
         <t>
           An example of a large-scale CCR-based RPKI data archival project is <xref target="RPKIViews"/>.
@@ -634,8 +634,9 @@
         <contact fullname="Fedor Vompe" />,
         <contact fullname="Tom Harrison" />,
         <contact fullname="Changwang Lin" />,
-        and
         <contact fullname="Luigi Iannone" />,
+        and
+        <contact fullname="Luuk Hendriks" />
         for their generous feedback on this specification.
       </t>
     </section>
