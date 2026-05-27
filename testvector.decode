@@ -1,5 +1,5 @@
 File:                   example.ccr
-Hash identifier:        8mdCrklrbLHKzDVr5fFbsGK4fyJsArmsGeLShZhRyio=
+Hash identifier:        i6al+dtC28smyNZnl4gY6O8Y7uGiCF7oTlvAgXJAVG0=
 CCR produced at:        Fri 15 May 2026 00:00:10 +0000
 Manifest state hash:    Y41AjkpiFr/AzR2/c8cItZOmICwuIaZOGqYdKaonbBI=
 Manifest last update:   Fri 15 May 2026 00:00:09 +0000
@@ -8,11 +8,11 @@ Manifest instances:
                         hash:KF60zgHHRNmQSUXcsAcAPB2cB7kvToWUF60GADJuG5E= size:1001 aki:A2DF042FE8B0006311E894851AC11411307B6043 seqnum:1321 thisupdate:1778803209 sia:rsync://example.net/ca4/QksbQZMC7YWsNrREt4l4dWAQ1sE.mft
                         hash:vee5m+i2FKhzHwldksC2IX0WlVcHHVu3B8qAMnk+/Xo= size:3995 aki:E7315EA515D7C20538681249D3E30D6777162585 seqnum:0508 thisupdate:1778803208 sia:rsync://example.net/ca3/sbhFzz4wTqsFo2NVRM8mWfsPBKQ.mft
                         hash:PH84tOOYN8EterYimODMa4sDj9HkMeyTNyCsy/9Q/48= size:2040 aki:FACBD02CA47E3BD9666FCBD823B37DEDD0BCEE00 seqnum:0203 thisupdate:1778803207 sia:rsync://example.net/ca2/z0nzVS7SOB_9y6tapHk7-YuKkm8.mft
-ROA payload state hash: mA5UBnskTs56Rb2oyUpQ2OQZ3OCh3sVyhumHkB9dWQI=
+ROA payload state hash: D7GXkab9xejDm5KqaoYNDnApeP+5BX/9ExEBesfHTHo=
 ROA payload entries:
                         192.0.2.0/24 AS 0
                         198.51.100.0/24-28 AS 65536
-                        2001:d08::/48 AS 65536
+                        2001:db8::/48 AS 65536
                         3fff::/32 AS 65550
                         3fff::/32 AS 65551
 ASPA payload state hash:JzffEMksigs1JT58SSU+Yhq0UAiy27wg3beHrAslFFM=
