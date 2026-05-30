@@ -15,7 +15,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-06"
+     docName="draft-ietf-sidrops-rpki-ccr-07"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -522,19 +522,7 @@
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
-
-	<!-- not yet published
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9981.xml"/> -->
-
-        <reference anchor="RFC9981" target="https://www.rfc-editor.org/info/rfc9981">
-          <front>
-            <title>Resource Public Key Infrastructure (RPKI) Manifest Number Handling</title>
-            <author fullname="Tom Harrison" initials="T." surname="Harrison"/>
-            <author fullname="George Michaelson" initials="G." surname="Michaelson"/>
-            <author fullname="Job Snijders" initials="J." surname="Snijders"/>
-            <date month="May" year="2026" />
-          </front>
-        </reference>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9981.xml"/>
 
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-aspa-profile.xml"/>
 
