@@ -144,7 +144,9 @@
       <section>
         <name>version</name>
         <t>
-          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure. In this version of the specification, it <bcp14>MUST</bcp14> be 0.
+          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure. 
+</t> 
+ <t>In this version of the specification, it <bcp14>MUST</bcp14> be 0.
         </t>
       </section>
 
