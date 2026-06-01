@@ -6,7 +6,7 @@ all: drafts
 .PHONY: drafts
 drafts: $(NAME).txt
 
-$(NAME).txt $(NAME).html $(NAME).exp.xml: $(NAME).xml CCR-2025.asn
+$(NAME).txt $(NAME).html $(NAME).exp.xml: $(NAME).xml CCR-2025.asn example.ccr.ascii
 	xml2rfc $(NAME).xml --html --text --expand --allow-local-file-access
 
 www: $(NAME).txt $(NAME).html
