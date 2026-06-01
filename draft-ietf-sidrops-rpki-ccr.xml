@@ -153,7 +153,8 @@
         <name>hashAlg</name>
         <t>
           The <tt>hashAlg</tt> field specifies the algorithm used to construct the message digests.
-          This profile uses SHA-256 <xref target="SHS"/>. Therefore, the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt> and the parameters field <bcp14>MUST</bcp14> be absent (<xref target="RFC5754" section="2"/>).
+          This profile uses SHA-256 <xref target="SHS"/>.
+          Therefore, the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt> and the parameters field <bcp14>MUST</bcp14> be absent (<xref target="RFC5754" section="2"/>).
         </t>
       </section>
 
