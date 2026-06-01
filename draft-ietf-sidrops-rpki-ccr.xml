@@ -187,7 +187,7 @@
             <t>
               The <tt>mis</tt> field contains a SEQUENCE of <tt>ManifestInstance</tt>.
               There is one <tt>ManifestInstance</tt> for each current manifest.
-              A manifest is nominally current until the time specified in <tt>nextUpdate</tt>, or until a manifest is issued with a greater <tt>manifestNumber</tt> (see <xref target="RFC9286" section="4.2.1"/>), or until a new manifest is issued with a new filename per the process described in Section 2 of <xref target="RFC9981"/>.
+              A manifest is nominally current until the time specified in <tt>nextUpdate</tt>, or until a manifest is issued with a greater <tt>manifestNumber</tt> (see <xref target="RFC9286" section="4.2.1"/>), or until a new manifest is issued with a new filename per the process described in <xref target="RFC9981" section="2"/>.
             </t>
             <t>
               A <tt>ManifestInstance</tt> is a structure consisting of the following fields:
