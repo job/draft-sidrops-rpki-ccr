@@ -373,7 +373,9 @@
 
     <section anchor="iana">
       <name>IANA Considerations</name>
-
+       <t>
+          Note to the RFC Editor: Please replace XXXX with the RFC number to be assigned to this document.
+        </t>
       <section>
         <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
         <t>
@@ -562,7 +564,7 @@
             <author fullname="Kristaps Dzonsons"/>
             <author fullname="Theo Buehler"/>
             <author fullname="Job Snijders"/>
-            <date month="December" year="2025" />
+            <date month="December" year="2026" />
           </front>
         </reference>
 
@@ -570,7 +572,7 @@
           <front>
             <title>rpki-client</title>
             <author fullname="Job Snijders"/>
-            <date month="December" year="2025" />
+            <date month="December" year="2026" />
           </front>
         </reference>
 
