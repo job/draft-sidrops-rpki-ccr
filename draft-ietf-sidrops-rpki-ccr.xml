@@ -84,7 +84,7 @@
     <abstract>
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
-        CCR is a DER-encoded data interchange format which can be used to represent various aspects of the state of a validated RPKI cache at a particular point in time.
+        CCR is a Distinguished Encoding Rules (DER) encoded data interchange format which can be used to represent various aspects of the state of a validated RPKI cache at a particular point in time.
         The CCR profile is a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
       </t>
     </abstract>
@@ -94,13 +94,13 @@
     <section anchor="intro">
       <name>Introduction</name>
       <t>
-        Resource Public Key Infrastructure (RPKI) operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behavior by inspecting validation outcomes.
+        Resource Public Key Infrastructure (RPKI) operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behaviors by inspecting validation outcomes.
         To this end, Canonical Cache Representation (CCR) was developed to capture and archive RPKI validation states in a standardized data representation.
       </t>
       <t>
         CCR offers a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
-        A validated cache contains all RPKI objects that the RP has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, <xref target="RFC9286"/>).
-        CCR is a data interchange format using Distinguished Encoding Rules (DER, <xref target="X.690"/>) which can be used to represent various aspects of the state of a validated cache at a particular point in time in a reproducible manner.
+        A validated cache contains all RPKI objects that the RP has verified to be valid according to the rules for validation (see <xref target="RFC6487"/>, <xref target="RFC6488"/>, and <xref target="RFC9286"/>).
+        CCR is a data interchange format using Distinguished Encoding Rules (DER) <xref target="X.690"/> which can be used to represent various aspects of the state of a validated cache at a particular point in time in a reproducible manner.
       </t>
       <t>
         This document formally specifies the CCR content type for use with the RPKI and provides test vectors.
@@ -121,7 +121,7 @@
     </section>
 
     <section>
-      <name>The Canonical Cache Representation content type</name>
+      <name>The Canonical Cache Representation (CCR) Content Type</name>
       <t>
         The content of a CCR file is an instance of <tt>ContentInfo</tt>.
       </t>
@@ -134,9 +134,9 @@
     </section>
 
     <section anchor="content">
-      <name>The Canonical Cache Representation content</name>
+      <name>The Canonical Cache Representation Content</name>
       <t>
-        The content of a Canonical Cache Representation is formally defined as follows:
+        The content of a CCR is formally defined as follows:
       </t>
 
       <sourcecode anchor="ASN.1" type="asn.1" src="CCR-2025.asn"/>
@@ -144,7 +144,8 @@
       <section>
         <name>version</name>
         <t>
-          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure, in this version of the specification it <bcp14>MUST</bcp14> be 0.
+          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure. 
+ In this version of the specification, it <bcp14>MUST</bcp14> be 0.
         </t>
       </section>
 
@@ -152,14 +153,15 @@
         <name>hashAlg</name>
         <t>
           The <tt>hashAlg</tt> field specifies the algorithm used to construct the message digests.
-          This profile uses SHA-256 <xref target="SHS"/>, therefore the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt> and the parameters field <bcp14>MUST</bcp14> be absent (<xref target="RFC5754" section="2"/>).
+          This profile uses SHA-256 <xref target="SHS"/>.
+          Therefore, the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt> and the parameters field <bcp14>MUST</bcp14> be absent (<xref target="RFC5754" section="2"/>).
         </t>
       </section>
 
       <section anchor="producedAt">
         <name>producedAt</name>
         <t>
-          The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time the CCR was generated.
+          The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time when the CCR was generated.
           For the purposes of this section, CCR generation begins once the RP's fetching and validation operations are completed.
         </t>
       </section>
@@ -185,7 +187,7 @@
             <t>
               The <tt>mis</tt> field contains a SEQUENCE of <tt>ManifestInstance</tt>.
               There is one <tt>ManifestInstance</tt> for each current manifest.
-              A manifest is nominally current until the time specified in <tt>nextUpdate</tt>, or until a manifest is issued with a greater <tt>manifestNumber</tt> (see <xref target="RFC9286" section="4.2.1"/>), or until a new manifest is issued with a new filename per the process described in section 2 of <xref target="RFC9981"/>.
+              A manifest is nominally current until the time specified in <tt>nextUpdate</tt>, or until a manifest is issued with a greater <tt>manifestNumber</tt> (see <xref target="RFC9286" section="4.2.1"/>), or until a new manifest is issued with a new filename per the process described in <xref target="RFC9981" section="2"/>.
             </t>
             <t>
               A <tt>ManifestInstance</tt> is a structure consisting of the following fields:
@@ -196,11 +198,11 @@
               <dt><tt>aki:</tt></dt>            <dd>the manifest issuer's key identifier</dd>
               <dt><tt>manifestNumber:</tt></dt> <dd>the manifest number contained within the manifest's eContent field</dd>
               <dt><tt>thisUpdate:</tt></dt>     <dd>the thisUpdate contained within the manifest's eContent field</dd>
-              <dt><tt>locations:</tt></dt>      <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity certificate's Subject Information Access extension</dd>
+              <dt><tt>locations:</tt></dt>      <dd>a sequence of <tt>AccessDescription</tt> instances from the manifest's End-Entity (EE) certificate's Subject Information Access (SIA) extension</dd>
               <dt><tt>subordinates:</tt></dt>   <dd>an optional non-empty SEQUENCE of <tt>SubjectKeyIdentifier</tt></dd>
             </dl>
             <t>
-              The <tt>subordinates</tt> field represents the key pairs associated with the set of non-revoked, non-expired, validly signed, certification authority (CA) resource certificates subordinate to the manifest issuer.
+              The <tt>subordinates</tt> field represents the key pairs associated with the set of non-revoked, non-expired, validly signed, CA resource certificates subordinate to the manifest issuer.
               Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the resource certificate's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
               The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
             </t>
@@ -229,7 +231,7 @@
         <section>
           <name>ROAPayloadState</name>
           <t>
-            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (<xref target="RFC6811" section="2" />) encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances ordered by ascending <tt>asID</tt>.
+            An instance of <tt>ROAPayloadState</tt> contains a field named <tt>rps</tt> which represents the current set of Validated ROA Payloads (VRPs) (<xref target="RFC6811" section="2" />) encoded as a SEQUENCE of <tt>ROAPayloadSet</tt> instances ordered by ascending <tt>asID</tt>.
           </t>
           <t>
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
@@ -244,7 +246,7 @@
         <section>
           <name>ASPAPayloadState</name>
           <t>
-            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged ASPA payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances ordered by ascending <tt>customerASID</tt>.
+            An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged Autonomous System Provider Authorization (ASPA) payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances ordered by ascending <tt>customerASID</tt>.
             The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>.
           </t>
           <t>
@@ -260,7 +262,7 @@
         <section>
           <name>TrustAnchorState</name>
           <t>
-            An instance of <tt>TrustAnchorState</tt> represents the set of valid Trust Anchor (TA) Certification Authority (CA) resource certificates used by the relying party when producing the CCR.
+            An instance of <tt>TrustAnchorState</tt> represents the set of valid Trust Anchor (TA) CA resource certificates used by the RP when producing the CCR.
           </t>
           <t>
             Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the TA's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
@@ -325,29 +327,26 @@
 
     <section>
       <name>Operational Considerations</name>
-      <t>
-        This section covers operational considerations.
-      </t>
       <section>
-        <name>CCR file integrity</name>
+        <name>CCR File Integrity</name>
         <t>
           The integrity of a CCR file can be checked by confirming whether the hash value embedded inside each state aspect matches the computed hash value of the respective state aspect payload structure.
           Readers <bcp14>MUST</bcp14> verify the integrity of CCR files and stop further processing on failure.
         </t>
       </section>
       <section>
-        <name>Timing analysis</name>
+        <name>Timing Analysis</name>
         <t>
           The <tt>producedAt</tt> timestamp is not necessarily the current time used by the RP for the purposes of validating the RPKI content.
           In practice, most RPs interleave fetching and validation operations, with validation occurring with respect to whatever the time happens to be at that point (i.e., wall clock time).
           This means that it is possible for a CCR to include information that would have been excluded if validated at the time indicated by the <tt>producedAt</tt> timestamp.
         </t>
         <t>
-          If the CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp (<xref target="mostRecentUpdate"/>) value with the CCR <tt>producedAt</tt> timestamp (<xref target="producedAt"/>) might help offer insight into the timing and propagation delays of the RPKI ecosystem.
+          If a CCR is produced right after all relevant repository content was received and validated by an RP, then comparing the ManifestState <tt>mostRecentUpdate</tt> timestamp (<xref target="mostRecentUpdate"/>) value with the CCR <tt>producedAt</tt> timestamp (<xref target="producedAt"/>) might help offer insight into the timing and propagation delays of the RPKI ecosystem.
         </t>
       </section>
       <section>
-        <name>Storage efficiency</name>
+        <name>Storage Efficiency</name>
         <t>
           CCRs compress very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as public keys, and is consistently ordered.
           Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
@@ -365,7 +364,7 @@
       </t>
       <t>
         Readers <bcp14>MUST</bcp14> check contextual bounds on all fields appropriately and stop further processing on failure.
-        E.g., the <tt>maxLength</tt> element in a <tt>ROAIPAddress</tt> cannot contain an integer smaller than the length of the accompanying prefix, the <tt>manifestNumber</tt> field is cannot be longer than 20 octets, etc.
+        For example, the <tt>maxLength</tt> element in a <tt>ROAIPAddress</tt> cannot contain an integer smaller than the length of the accompanying prefix, the <tt>manifestNumber</tt> field is cannot be longer than 20 octets, etc.
       </t>
       <t>
         The CCR format contains no executable code, and it does not define any extensible areas that could be used to store such code.
@@ -373,17 +372,19 @@
       <t>
         CCRs are not signed objects.
         RPKI information is normally public and does not call for confidentiality protection.
-        Ascertaining the provenance (and thus authenticity) of any given CCR is out-of-scope for this document.
+        Ascertaining the provenance (and thus authenticity) of any given CCR is out of scope for this document.
       </t>
     </section>
 
     <section anchor="iana">
       <name>IANA Considerations</name>
-
+       <t>
+          Note to the RFC Editor: Please replace XXXX with the RFC number to be assigned to this document.
+        </t>
       <section>
         <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
         <t>
-          IANA has allocated the following in the "SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)" registry:
+          IANA has allocated the following in the "SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)" registry under "Structure of Management Information (SMI) Numbers (MIB Module Registrations)" registry group:
         </t>
 
         <table anchor="cms-content-type" align="center">
@@ -399,7 +400,7 @@
               <tr>
                 <td>54</td>
                 <td>id-ct-rpkiCanonicalCacheRepresentation</td>
-                <td>draft-ietf-sidrops-rpki-ccr</td>
+                <td>RFC XXXX</td>
               </tr>
             </tbody>
         </table>
@@ -408,7 +409,7 @@
       <section>
         <name>RPKI Repository Name Schemes</name>
         <t>
-          IANA is requested to add the Canonical Cache Representation file extension to the "RPKI Repository Name Schemes" registry <xref target="RFC6481"/> as follows:
+          IANA is requested to add the Canonical Cache Representation file extension to the "RPKI Repository Name Schemes" registry under the "Resource Public Key Infrastructure (RPKI)" registry group as follows:
         </t>
 
         <table anchor="rpki-repository-name-schemes" align="center">
@@ -424,7 +425,7 @@
             <tr>
               <td>.ccr</td>
               <td>Canonical Cache Representation</td>
-              <td>draft-ietf-sidrops-rpki-ccr</td>
+              <td>RFC XXXX</td>
             </tr>
           </tbody>
         </table>
@@ -433,7 +434,7 @@
       <section>
         <name>SMI Security for S/MIME Module Identifier (1.2.840.113549.1.9.16.0)</name>
         <t>
-          IANA is requested to allocate the following in the "SMI Security for S/MIME Module Identifier (1.2.840.113549.1.9.16.0)" registry:
+          IANA is requested to allocate the following in the "SMI Security for S/MIME Module Identifier (1.2.840.113549.1.9.16.0)" registry under "Structure of Management Information (SMI) Numbers (MIB Module Registrations)" registry group:
         </t>
 
         <table anchor="smi-security-identifier" align="center">
@@ -449,7 +450,7 @@
             <tr>
               <td>TBD</td>
               <td>id-mod-rpkiCCR-2025</td>
-              <td>draft-ietf-sidrops-rpki-ccr</td>
+              <td>RFC XXXX</td>
             </tr>
           </tbody>
         </table>
@@ -470,14 +471,14 @@
            <dt>Encoding considerations:</dt><dd>binary</dd>
            <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
            <dt>Interoperability considerations:</dt><dd>N/A</dd>
-           <dt>Published specification:</dt><dd>draft-ietf-sidrops-rpki-ccr</dd>
+           <dt>Published specification:</dt><dd>RFC XXXX</dd>
            <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
            <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
            <dt>Additional information:</dt>
            <dd>
            <dl spacing="compact">
              <dt><br/></dt><dd/>
-             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in draft-ietf-sidrops-rpki-ccr.</dd>
+             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in RFC XXXX.</dd>
              <dt>Magic number(s):</dt><dd>N/A</dd>
              <dt>File extension(s):</dt><dd>.ccr</dd>
              <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
@@ -486,14 +487,14 @@
            <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@bsd.nl)</dd>
            <dt>Intended usage:</dt><dd>COMMON</dd>
            <dt>Restrictions on usage:</dt><dd>N/A</dd>
-           <dt>Author:</dt><dd>Job Snijders (job@bsd.nl)</dd>
+           <dt>Author:</dt><dd>IETF</dd>
            <dt>Change controller:</dt><dd>IETF</dd>
         </dl>
            <dl spacing="compact">
              <dt><br/></dt><dd/>
              <dt>Type name:</dt><dd>application</dd>
              <dt>Subtype name:</dt><dd>rpki-ccr+gzip</dd>
-             <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in draft-ietf-sidrops-rpki-ccr.</dd>
+             <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in RFC XXXX.</dd>
              <dt>Magic number(s):</dt><dd>N/A</dd>
              <dt>File extension(s):</dt><dd>.ccr.gz</dd>
              <dt>References:</dt><dd>RFC1952, RFC6713</dd>
@@ -631,7 +632,7 @@
 
     <section title="Example CCR">
       <t>
-        The below is a Base64-encoded example CCR object.
+        This section provides a Base64-encoded example CCR object.
         For a more elaborate example based on the global RPKI, see the URL in <xref target="implementation"/>.
       </t>
       <sourcecode anchor="tv-base64" type="txt" src="testvector.b64"/>
@@ -642,7 +643,7 @@
     </section>
 
     <section removeInRFC="true" anchor="implementation">
-      <name>Implementation status</name>
+      <name>Implementation Status</name>
       <t>
         This section records the status of known implementations of the protocol defined by this specification at the time of posting of this Internet-Draft, and is based on a proposal described in RFC 7942.
         The description of implementations in this section is intended to assist the IETF in its decision processes in progressing drafts to RFCs.
