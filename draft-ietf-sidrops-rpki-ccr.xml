@@ -140,6 +140,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
     <section anchor="content">
       <name>The Canonical Cache Representation Content</name>
       <t>
+        Any failure to comply with the normative requirements listed in this section is considered a fatal error (i.e., the CCR is invalid).
         The content of a CCR is formally defined as follows:
       </t>
 
