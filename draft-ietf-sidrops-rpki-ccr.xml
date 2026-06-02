@@ -150,7 +150,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <name>version</name>
         <t>
           The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure. 
- In this version of the specification, it <bcp14>MUST</bcp14> be 0.
+          In this version of the specification, it <bcp14>MUST</bcp14> be 0, otherwise the CCR is invalid.
         </t>
       </section>
 
@@ -159,7 +159,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <t>
           The <tt>hashAlg</tt> field specifies the algorithm used to construct the message digests.
           This profile uses SHA-256 <xref target="SHS"/>.
-          Therefore, the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt> and the parameters field <bcp14>MUST</bcp14> be absent (<xref target="RFC5754" section="2"/>).
+          Therefore, the OID <bcp14>MUST</bcp14> be <tt>2.16.840.1.101.3.4.2.1</tt> and the parameters field <bcp14>MUST</bcp14> be absent (<xref target="RFC5754" section="2"/>), otherwise the CCR is invalid.
         </t>
       </section>
 
@@ -174,7 +174,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section>
         <name>State aspect fields</name>
         <t>
-          Each CCR <bcp14>MUST</bcp14> contain one or more fields representing particular aspects of the cache's state.
+          Each CCR <bcp14>MUST</bcp14> contain one or more fields representing particular aspects of the cache's state, otherwise the CCR is invalid.
         </t>
         <t>
           Implementers should note the ellipsis extension marker in the <tt>RpkiCanonicalCacheRepresentation</tt> ASN.1 notation and anticipate future changes as new signed object types are standardized.
@@ -211,20 +211,20 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
             <t>
               The <tt>subordinates</tt> field represents the key pairs associated with the set of non-revoked, non-expired, validly signed, CA resource certificates subordinate to the manifest issuer.
               Each <tt>SubjectKeyIdentifier</tt> is the 160-bit SHA-1 hash of the value of the DER-encoded ASN.1 bit string of the resource certificate's Subject Public Key, as described in <xref target="RFC6487" section="4.8.2"/>.
-              The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
+              The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other, otherwise the CCR is invalid.
             </t>
             <t>
-              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by the value of the <tt>hash</tt> field contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
+              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by the value of the <tt>hash</tt> field contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>, otherwise the CCR is invalid.
             </t>
           </section>
           <section anchor="mostRecentUpdate">
             <name>mostRecentUpdate</name>
             <t>
               The <tt>mostRecentUpdate</tt> is a metadata field which contains the most recent <tt>thisUpdate</tt> amongst all current manifests represented by the <tt>ManifestInstance</tt> structures.
-              If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z").
+              If the <tt>mis</tt> field contains an empty sequence, the <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> be set to the POSIX Epoch ("19700101000000Z"), otherwise the CCR is invalid.
             </t>
             <t>
-              The above and the requirements in <xref target="RFC9286" section="6.3"/> imply that <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> precede or be equal to <tt>producedAt</tt> (<xref target="producedAt"/>).
+              The above and the requirements in <xref target="RFC9286" section="6.3"/> imply that <tt>mostRecentUpdate</tt> <bcp14>MUST</bcp14> precede or be equal to <tt>producedAt</tt> (<xref target="producedAt"/>), otherwise the CCR is invalid.
             </t>
           </section>
           <section>
@@ -242,8 +242,8 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
           </t>
           <t>
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
-            The <tt>asID</tt> value in each instance of <tt>ROAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ROAPayloadSet</tt>.
-            The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form and ordered as defined in <xref target="RFC9582" section="4.3.3"/>.
+            The <tt>asID</tt> value in each instance of <tt>ROAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ROAPayloadSet</tt>, otherwise the CCR is invalid.
+            The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form and ordered as defined in <xref target="RFC9582" section="4.3.3"/>, otherwise the CCR is invalid.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>rps</tt> value (encoded in DER format) as input message.
@@ -254,12 +254,12 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
           <name>ASPAPayloadState</name>
           <t>
             An instance of <tt>ASPAPayloadState</tt> contains an <tt>aps</tt> field which represents the current set of deduplicated and merged Autonomous System Provider Authorization (ASPA) payloads (<xref target="I-D.ietf-sidrops-aspa-profile"/>) encoded as a SEQUENCE of <tt>ASPAPayloadSet</tt> instances ordered by ascending <tt>customerASID</tt>.
-            The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>.
+            The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>, otherwise the CCR is invalid.
           </t>
           <t>
             The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />).
-            The elements of <tt>providers</tt> <bcp14>MUST</bcp14> be ordered in ascending numerical order and <bcp14>MUST</bcp14> be unique (with respect to the other elements of providers).
-            A <tt>PAS</tt> value of 0 can only be encoded in the <tt>providers</tt> field as a single item list, i.e., an element for AS 0 MUST NOT appear alongside any other elements.
+            The elements of <tt>providers</tt> <bcp14>MUST</bcp14> be ordered in ascending numerical order and <bcp14>MUST</bcp14> be unique (with respect to the other elements of providers), otherwise the CCR is invalid.
+            A <tt>PAS</tt> value of 0 can only be encoded in the <tt>providers</tt> field as a single item list, i.e., an element for AS 0 MUST NOT appear alongside any other elements, otherwise the CCR is invalid.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>aps</tt> value (encoded in DER format) as input message.
@@ -284,7 +284,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
           <name>RouterKeyState</name>
           <t>
             An instance of <tt>RouterKeyState</tt> contains an <tt>rksets</tt> field which represents the current set of valid BGPsec Router Keys <xref target="RFC8205" /> encoded as a SEQUENCE of <tt>RouterKeySet</tt> instances.
-            The <tt>asID</tt> value in each instance of <tt>RouterKeySet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>RouterKeySet</tt>.
+            The <tt>asID</tt> value in each instance of <tt>RouterKeySet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>RouterKeySet</tt>, otherwise the CCR is invalid.
             Instances of <tt>RouterKeySet</tt> are sorted by ascending value of <tt>asID</tt>.
             Instances of <tt>RouterKey</tt> are sorted by ascending value of <tt>ski</tt> by interpreting the SKI value as an unsigned 160-bit integer.
           </t>
