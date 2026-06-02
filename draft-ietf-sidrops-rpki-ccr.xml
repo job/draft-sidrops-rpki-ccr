@@ -89,7 +89,8 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
         CCR is a Distinguished Encoding Rules (DER) encoded data interchange format which can be used to represent various aspects of the state of a validated RPKI cache at a particular point in time.
-        The CCR profile is a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
+        The CCR profile is a compact and versatile format.
+        The format is well-suited for a variety of applications, for example, audit trails, analytics pipelines, and validated payload dissemination.
       </t>
     </abstract>
   </front>
