@@ -665,13 +665,25 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
     <section title="Example CCR">
       <t>
         This section provides a Base64-encoded example CCR object.
-        For a more elaborate example based on the global RPKI, see the URL in <xref target="implementation"/>.
       </t>
+      <t>
+        This test vector demonstrates various features of the CCR format, for example, the tree-like structure following from <tt>TrustAnchorState</tt> and <tt>ManifestState</tt>, multiple authorizations for the same prefix in a <tt>ROAPayloadState</tt>, an <tt>ASPAPayloadState</tt> with AS 0 as provider.
+      </t>
+
       <sourcecode anchor="tv-base64" type="txt" src="testvector.b64"/>
+
       <t>
         It decodes as follows:
       </t>
+
       <sourcecode anchor="tv-decode" type="txt" src="testvector.decode.fold"/>
+
+      <section removeInRFC="true" title="Real world example">
+        <t>
+          For a more elaborate example based on the global RPKI, see the URL in <xref target="implementation"/>.
+        </t>
+      </section>
+
     </section>
 
     <section removeInRFC="true" anchor="implementation">
