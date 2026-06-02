@@ -98,7 +98,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
     <section anchor="intro">
       <name>Introduction</name>
       <t>
-        Resource Public Key Infrastructure (RPKI) operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behaviors by inspecting validation outcomes.
+        Resource Public Key Infrastructure (RPKI) <xref target="RFC6480"/> operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behaviors by inspecting validation outcomes.
         To this end, Canonical Cache Representation (CCR) was developed to capture and archive RPKI validation states in a standardized data representation.
       </t>
       <t>
@@ -519,8 +519,8 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5754.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6268.xml"/>
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6480.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6488.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6811.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
