@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <?xml-model href="rfc7991bis.rnc"?>
 
+<!--
+Note to the RFC Editor: Please replace [this_document] with the RFC number to be assigned to this document.
+-->
+
 <!DOCTYPE rfc [
  <!ENTITY nbsp "&#160;">
 ]>
@@ -15,7 +19,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-07"
+     docName="draft-ietf-sidrops-rpki-ccr-08"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -85,7 +89,7 @@
       <t>
         This document specifies a Canonical Cache Representation (CCR) content type for use with the Resource Public Key Infrastructure (RPKI).
         CCR is a Distinguished Encoding Rules (DER) encoded data interchange format which can be used to represent various aspects of the state of a validated RPKI cache at a particular point in time.
-        The CCR profile is a compact and versatile format well-suited for applications such as audit trails, analytics pipelines, and validated payload dissemination.
+        The CCR profile is a compact and versatile format, well-suited for a variety of applications, for example, audit trails, analytics pipelines, and validated payload dissemination.
       </t>
     </abstract>
   </front>
@@ -94,7 +98,7 @@
     <section anchor="intro">
       <name>Introduction</name>
       <t>
-        Resource Public Key Infrastructure (RPKI) operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behaviors by inspecting validation outcomes.
+        Resource Public Key Infrastructure (RPKI) <xref target="RFC6480"/> operators often wish to analyze Certification Authority (CA) and Relying Party (RP) behaviors by inspecting validation outcomes.
         To this end, Canonical Cache Representation (CCR) was developed to capture and archive RPKI validation states in a standardized data representation.
       </t>
       <t>
@@ -123,7 +127,7 @@
     <section>
       <name>The Canonical Cache Representation (CCR) Content Type</name>
       <t>
-        The content of a CCR file is an instance of <tt>ContentInfo</tt>.
+        The content of a CCR file is an instance of the Cryptographic Message Syntax (CMS) <xref target="RFC5652"/> <tt>ContentInfo</tt>.
       </t>
       <t>
         The <tt>contentType</tt> for a CCR is defined as <tt>id-ct-rpkiCanonicalCacheRepresentation</tt>, with Object Identifier (OID) <tt>1.2.840.113549.1.9.16.1.54</tt>.
@@ -136,6 +140,7 @@
     <section anchor="content">
       <name>The Canonical Cache Representation Content</name>
       <t>
+        Any failure to comply with the normative requirements listed in this section is considered a fatal error (i.e., the CCR is invalid).
         The content of a CCR is formally defined as follows:
       </t>
 
@@ -169,7 +174,9 @@
       <section>
         <name>State aspect fields</name>
         <t>
-          Each CCR contains one or more fields representing particular aspects of the cache's state.
+          Each CCR <bcp14>MUST</bcp14> contain one or more fields representing particular aspects of the cache's state.
+        </t>
+        <t>
           Implementers should note the ellipsis extension marker in the <tt>RpkiCanonicalCacheRepresentation</tt> ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
         <t>
@@ -379,7 +386,6 @@
     <section anchor="iana">
       <name>IANA Considerations</name>
        <t>
-          Note to the RFC Editor: Please replace XXXX with the RFC number to be assigned to this document.
         </t>
       <section>
         <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
@@ -400,7 +406,7 @@
               <tr>
                 <td>54</td>
                 <td>id-ct-rpkiCanonicalCacheRepresentation</td>
-                <td>RFC XXXX</td>
+                <td>[this_document]</td>
               </tr>
             </tbody>
         </table>
@@ -425,7 +431,7 @@
             <tr>
               <td>.ccr</td>
               <td>Canonical Cache Representation</td>
-              <td>RFC XXXX</td>
+              <td>[this_document]</td>
             </tr>
           </tbody>
         </table>
@@ -448,9 +454,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>TBD</td>
+              <td>TBD1</td>
               <td>id-mod-rpkiCCR-2025</td>
-              <td>RFC XXXX</td>
+              <td>[this_document]</td>
             </tr>
           </tbody>
         </table>
@@ -461,46 +467,72 @@
         <t>
           IANA is requested to register the media types "application/rpki-ccr" and "application/rpki-ccr+gzip" in the "Media Types" registry as follows:
         </t>
+
         <section>
-        <name>Canonical Cache Representation Media Type</name>
-        <dl spacing="compact">
-           <dt>Type name:</dt><dd>application</dd>
-           <dt>Subtype name:</dt><dd>rpki-ccr</dd>
-           <dt>Required parameters:</dt><dd>N/A</dd>
-           <dt>Optional parameters:</dt><dd>N/A</dd>
-           <dt>Encoding considerations:</dt><dd>binary</dd>
-           <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
-           <dt>Interoperability considerations:</dt><dd>N/A</dd>
-           <dt>Published specification:</dt><dd>RFC XXXX</dd>
-           <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
-           <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
-           <dt>Additional information:</dt>
-           <dd>
-           <dl spacing="compact">
-             <dt><br/></dt><dd/>
-             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in RFC XXXX.</dd>
-             <dt>Magic number(s):</dt><dd>N/A</dd>
-             <dt>File extension(s):</dt><dd>.ccr</dd>
-             <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
-           </dl>
-           </dd>
-           <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@bsd.nl)</dd>
-           <dt>Intended usage:</dt><dd>COMMON</dd>
-           <dt>Restrictions on usage:</dt><dd>N/A</dd>
-           <dt>Author:</dt><dd>IETF</dd>
-           <dt>Change controller:</dt><dd>IETF</dd>
-        </dl>
-           <dl spacing="compact">
-             <dt><br/></dt><dd/>
-             <dt>Type name:</dt><dd>application</dd>
-             <dt>Subtype name:</dt><dd>rpki-ccr+gzip</dd>
-             <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in RFC XXXX.</dd>
-             <dt>Magic number(s):</dt><dd>N/A</dd>
-             <dt>File extension(s):</dt><dd>.ccr.gz</dd>
-             <dt>References:</dt><dd>RFC1952, RFC6713</dd>
-             <dt>Encoding considerations:</dt><dd>gzip is a binary encoding</dd>
-           </dl>
+          <name>application/rpki-ccr Media Type</name>
+          <dl spacing="compact">
+            <dt>Type name:</dt><dd>application</dd>
+            <dt>Subtype name:</dt><dd>rpki-ccr</dd>
+            <dt>Required parameters:</dt><dd>N/A</dd>
+            <dt>Optional parameters:</dt><dd>N/A</dd>
+            <dt>Encoding considerations:</dt><dd>binary</dd>
+            <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
+            <dt>Interoperability considerations:</dt><dd>N/A</dd>
+            <dt>Published specification:</dt><dd>[this_document]</dd>
+            <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
+            <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
+            <dt>Additional information:</dt>
+            <dd>
+            <dl spacing="compact">
+              <dt><br/></dt><dd/>
+              <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in [this_document].</dd>
+              <dt>Magic number(s):</dt><dd>N/A</dd>
+              <dt>File extension(s):</dt><dd>.ccr</dd>
+              <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
+              <dt>Encoding considerations:</dt><dd>CCR is a binary encoding</dd>
+            </dl>
+            </dd>
+            <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@bsd.nl)</dd>
+            <dt>Intended usage:</dt><dd>COMMON</dd>
+            <dt>Restrictions on usage:</dt><dd>N/A</dd>
+            <dt>Author:</dt><dd>IETF</dd>
+            <dt>Change controller:</dt><dd>IETF</dd>
+          </dl>
         </section>
+
+        <section>
+          <name>application/rpki-ccr+gzip Media Type</name>
+          <dl spacing="compact">
+            <dt>Type name:</dt><dd>application</dd>
+            <dt>Subtype name:</dt><dd>rpki-ccr+gzip</dd>
+            <dt>Required parameters:</dt><dd>N/A</dd>
+            <dt>Optional parameters:</dt><dd>N/A</dd>
+            <dt>Encoding considerations:</dt><dd>binary</dd>
+            <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
+            <dt>Interoperability considerations:</dt><dd>N/A</dd>
+            <dt>Published specification:</dt><dd>[this_document]</dd>
+            <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
+            <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
+            <dt>Additional information:</dt>
+            <dd>
+              <dl spacing="compact">
+                <dt><br/></dt><dd/>
+                <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in [this_document].</dd>
+                <dt>Magic number(s):</dt><dd>The first two bytes are 0x1f, 0x8b.</dd>
+                <dt>File extension(s):</dt><dd>.ccr.gz</dd>
+                <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
+                <dt>References:</dt><dd>RFC1952, RFC6713</dd>
+                <dt>Encoding considerations:</dt><dd>Gzip compressed CCR is a binary encoding</dd>
+              </dl>
+            </dd>
+            <dt>Person &amp; email address to contact for further information:</dt><dd>Job Snijders (job@bsd.nl)</dd>
+            <dt>Intended usage:</dt><dd>COMMON</dd>
+            <dt>Restrictions on usage:</dt><dd>N/A</dd>
+            <dt>Author:</dt><dd>IETF</dd>
+            <dt>Change controller:</dt><dd>IETF</dd>
+          </dl>
+        </section>
+
       </section>
     </section>
   </middle>
@@ -513,14 +545,17 @@
       <references>
         <name>Normative References</name>
 
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1952.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5652.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5754.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6268.xml"/>
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6487.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6480.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6488.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6811.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8205.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9981.xml"/>
@@ -557,10 +592,9 @@
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.snijders-rpkispool-format.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
 
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1952.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5781.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8182.xml"/>
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8205.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8792.xml"/>
 
         <reference anchor="rpki-client" target="https://www.rpki-client.org/">
           <front>
@@ -634,13 +668,25 @@
     <section title="Example CCR">
       <t>
         This section provides a Base64-encoded example CCR object.
-        For a more elaborate example based on the global RPKI, see the URL in <xref target="implementation"/>.
       </t>
+      <t>
+        This test vector demonstrates various features of the CCR format, for example, the tree-like structure following from <tt>TrustAnchorState</tt> and <tt>ManifestState</tt>, multiple authorizations for the same prefix in a <tt>ROAPayloadState</tt>, an <tt>ASPAPayloadState</tt> with AS 0 as provider.
+      </t>
+
       <sourcecode anchor="tv-base64" type="txt" src="testvector.b64"/>
+
       <t>
         It decodes as follows:
       </t>
+
       <sourcecode anchor="tv-decode" type="txt" src="testvector.decode.fold"/>
+
+      <section removeInRFC="true" title="Real world example">
+        <t>
+          For a more elaborate example based on the global RPKI, see the URL in <xref target="implementation"/>.
+        </t>
+      </section>
+
     </section>
 
     <section removeInRFC="true" anchor="implementation">
