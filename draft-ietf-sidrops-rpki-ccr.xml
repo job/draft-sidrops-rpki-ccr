@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <?xml-model href="rfc7991bis.rnc"?>
 
+<!--
+Note to the RFC Editor: Please replace [this_document] with the RFC number to be assigned to this document.
+-->
+
 <!DOCTYPE rfc [
  <!ENTITY nbsp "&#160;">
 ]>
@@ -15,7 +19,7 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-07"
+     docName="draft-ietf-sidrops-rpki-ccr-08"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -379,7 +383,6 @@
     <section anchor="iana">
       <name>IANA Considerations</name>
        <t>
-          Note to the RFC Editor: Please replace XXXX with the RFC number to be assigned to this document.
         </t>
       <section>
         <name>SMI Security for S/MIME CMS Content Type (1.2.840.113549.1.9.16.1)</name>
@@ -400,7 +403,7 @@
               <tr>
                 <td>54</td>
                 <td>id-ct-rpkiCanonicalCacheRepresentation</td>
-                <td>RFC XXXX</td>
+                <td>[this_document]</td>
               </tr>
             </tbody>
         </table>
@@ -425,7 +428,7 @@
             <tr>
               <td>.ccr</td>
               <td>Canonical Cache Representation</td>
-              <td>RFC XXXX</td>
+              <td>[this_document]</td>
             </tr>
           </tbody>
         </table>
@@ -450,7 +453,7 @@
             <tr>
               <td>TBD</td>
               <td>id-mod-rpkiCCR-2025</td>
-              <td>RFC XXXX</td>
+              <td>[this_document]</td>
             </tr>
           </tbody>
         </table>
@@ -471,14 +474,14 @@
            <dt>Encoding considerations:</dt><dd>binary</dd>
            <dt>Security considerations:</dt><dd>This media type contains no active content.</dd>
            <dt>Interoperability considerations:</dt><dd>N/A</dd>
-           <dt>Published specification:</dt><dd>RFC XXXX</dd>
+           <dt>Published specification:</dt><dd>[this_document]</dd>
            <dt>Applications that use this media type:</dt><dd>RPKI operators</dd>
            <dt>Fragment identifier considerations:</dt><dd>N/A</dd>
            <dt>Additional information:</dt>
            <dd>
            <dl spacing="compact">
              <dt><br/></dt><dd/>
-             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in RFC XXXX.</dd>
+             <dt>Content:</dt><dd>This media type is a RPKI Canonical Cache Representation object, as defined in [this_document].</dd>
              <dt>Magic number(s):</dt><dd>N/A</dd>
              <dt>File extension(s):</dt><dd>.ccr</dd>
              <dt>Macintosh file type code(s):</dt><dd>N/A</dd>
@@ -494,7 +497,7 @@
              <dt><br/></dt><dd/>
              <dt>Type name:</dt><dd>application</dd>
              <dt>Subtype name:</dt><dd>rpki-ccr+gzip</dd>
-             <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in RFC XXXX.</dd>
+             <dt>Content:</dt><dd>This media type is a Gzip compressed RPKI Canonical Cache Representation object, as defined in [this_document].</dd>
              <dt>Magic number(s):</dt><dd>N/A</dd>
              <dt>File extension(s):</dt><dd>.ccr.gz</dd>
              <dt>References:</dt><dd>RFC1952, RFC6713</dd>
