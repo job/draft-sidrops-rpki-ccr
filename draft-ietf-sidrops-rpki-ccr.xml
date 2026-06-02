@@ -624,8 +624,9 @@
         <contact fullname="Tom Harrison" />,
         <contact fullname="Changwang Lin" />,
         <contact fullname="Luigi Iannone" />,
+        <contact fullname="Luuk Hendriks" />,
         and
-        <contact fullname="Luuk Hendriks" />
+        <contact fullname="Mohamed Boucadair" />
         for their generous feedback on this specification.
       </t>
     </section>
