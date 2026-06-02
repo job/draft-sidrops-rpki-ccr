@@ -2,7 +2,7 @@
 
 RpkiCanonicalCacheRepresentation-2025
   { iso(1) member-body(2) us(840) rsadsi(113549)
-    pkcs(1) pkcs9(9) smime(16) mod(0) id-mod-rpkiCCR-2025(TBD) }
+    pkcs(1) pkcs9(9) smime(16) mod(0) id-mod-rpkiCCR-2025(TBD1) }
 
 DEFINITIONS EXPLICIT TAGS ::=
 BEGIN
@@ -22,7 +22,7 @@ IMPORTS
   CAS, PAS
   FROM RPKI-ASPA-2023 -- in [draft-ietf-sidrops-aspa-profile]
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
-     pkcs-9(9) smime(16) modules(0) id-mod-rpki-aspa-2023(TBD) }
+     pkcs-9(9) smime(16) modules(0) id-mod-rpki-aspa-2023(TBD2) }
 
   CertificateSerialNumber, SubjectPublicKeyInfo
   FROM PKIX1Explicit-2009
