@@ -173,7 +173,9 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section>
         <name>State aspect fields</name>
         <t>
-          Each CCR contains one or more fields representing particular aspects of the cache's state.
+          Each CCR <bcp14>MUST</bcp14> contain one or more fields representing particular aspects of the cache's state.
+        </t>
+        <t>
           Implementers should note the ellipsis extension marker in the <tt>RpkiCanonicalCacheRepresentation</tt> ASN.1 notation and anticipate future changes as new signed object types are standardized.
         </t>
         <t>
