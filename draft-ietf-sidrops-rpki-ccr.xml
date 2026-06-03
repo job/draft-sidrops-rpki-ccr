@@ -166,8 +166,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section anchor="producedAt">
         <name>producedAt</name>
         <t>
-          The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time when the CCR was generated.
-          For the purposes of this section, CCR generation begins once the RP's fetching and validation operations are completed.
+          The <tt>producedAt</tt> field contains a <tt>GeneralizedTime</tt> and indicates the moment in time when the CCR is finalized.
         </t>
       </section>
 
