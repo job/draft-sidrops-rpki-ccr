@@ -376,8 +376,10 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       </t>
       <t>
         CCRs are not signed objects.
-        RPKI information is normally public and does not call for confidentiality protection.
         Ascertaining the provenance (and thus authenticity) of any given CCR is out of scope for this document.
+      </t>
+      <t>
+        RPKI information is normally public and does not call for confidentiality protection.
       </t>
     </section>
 
@@ -657,8 +659,9 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <contact fullname="Changwang Lin" />,
         <contact fullname="Luigi Iannone" />,
         <contact fullname="Luuk Hendriks" />,
+        <contact fullname="Mohamed Boucadair" />,
         and
-        <contact fullname="Mohamed Boucadair" />
+        <contact fullname="Deb Cooley" />
         for their generous feedback on this specification.
       </t>
     </section>
