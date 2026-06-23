@@ -19,7 +19,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
      category="std"
-     docName="draft-ietf-sidrops-rpki-ccr-08"
+     docName="draft-ietf-sidrops-rpki-ccr-09"
      ipr="trust200902"
      xml:lang="en"
      sortRefs="true"
@@ -129,7 +129,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
     <section anchor="reading">
       <name>Suggested Reading</name>
       <t>
-        Readers should be familiar with PKIX, the RPKI, the RPKI repository structure, and the various RPKI objects, uses, and interpretations described in the following: "<xref target="RFC3779" format="title"/>", "<xref target="RFC5280" format="title"/>", "<xref target="RFC6480" format="title"/>", "<xref target="RFC6481" format="title"/>", "<xref target="RFC6487" format="title"/>", and "<xref target="RFC6488" format="title"/>".
+        Readers should be familiar with X.509 Public Key Infrastructure, the RPKI, the RPKI repository structure, and the various RPKI signed objects, uses, and interpretations described in the following: "<xref target="RFC3779" format="title"/>", "<xref target="RFC5280" format="title"/>", "<xref target="RFC6480" format="title"/>", "<xref target="RFC6481" format="title"/>", "<xref target="RFC6487" format="title"/>", and "<xref target="RFC6488" format="title"/>".
       </t>
     </section>
 
