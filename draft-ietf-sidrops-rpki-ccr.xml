@@ -124,6 +124,13 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       </section>
     </section>
 
+    <section anchor="reading">
+      <name>Suggested Reading</name>
+      <t>
+        Readers should be familiar with PKIX, the RPKI, the RPKI repository structure, and the various RPKI objects, uses, and interpretations described in the following: "<xref target="RFC3779" format="title"/>", "<xref target="RFC5280" format="title"/>", "<xref target="RFC6480" format="title"/>", "<xref target="RFC6481" format="title"/>", "<xref target="RFC6487" format="title"/>", and "<xref target="RFC6488" format="title"/>".
+      </t>
+    </section>
+
     <section>
       <name>The Canonical Cache Representation (CCR) Content Type</name>
       <t>
@@ -592,7 +599,10 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.snijders-rpkispool-format.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-sidrops-rpki-erik-protocol.xml"/>
 
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3779.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5781.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6481.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8182.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8792.xml"/>
 
