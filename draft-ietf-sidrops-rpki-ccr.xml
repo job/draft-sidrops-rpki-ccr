@@ -342,6 +342,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section>
         <name>CCR File Integrity</name>
         <t>
+          The CCR format offers reliable, straightforward detection of non-malicious file corruption.
           The integrity of a CCR file can be checked by confirming whether the hash value embedded inside each state aspect matches the computed hash value of the respective state aspect payload structure.
           Readers <bcp14>MUST</bcp14> verify the integrity of CCR files and stop further processing on failure.
         </t>
