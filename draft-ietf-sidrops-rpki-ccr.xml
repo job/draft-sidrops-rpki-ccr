@@ -150,8 +150,8 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section>
         <name>version</name>
         <t>
-          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure. 
- In this version of the specification, it <bcp14>MUST</bcp14> be 0.
+          The <tt>version</tt> field contains the format version for the <tt>RpkiCanonicalCacheRepresentation</tt> structure.
+          The <tt>version</tt> value <bcp14>MUST</bcp14> be set to 0 for the CCR content specified in this document.
         </t>
       </section>
 
@@ -356,7 +356,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section>
         <name>Storage Efficiency</name>
         <t>
-          CCRs compress very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as public keys, and is consistently ordered.
+          A CCR file compresses very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as public keys, and is consistently ordered.
           Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
         </t>
       </section>
@@ -664,8 +664,9 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <contact fullname="Luuk Hendriks" />,
         <contact fullname="Mohamed Boucadair" />,
         <contact fullname="Deb Cooley" />,
+        <contact fullname="Gunter van de Velde" />,
         and
-        <contact fullname="Gunter van de Velde" />
+        <contact fullname="Ketan Talaulikar" />
         for their generous feedback on this specification.
       </t>
     </section>
