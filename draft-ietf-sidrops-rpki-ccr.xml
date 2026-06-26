@@ -666,7 +666,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <contact fullname="Deb Cooley" />,
         <contact fullname="Gunter van de Velde" />,
         and
-        <contact fullname="Ketan Talaulikar" />,
+        <contact fullname="Ketan Talaulikar" />
         for their generous feedback on this specification.
       </t>
     </section>
