@@ -24,7 +24,7 @@ IMPORTS
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
      pkcs-9(9) smime(16) modules(0) id-mod-rpki-aspa-2023(TBD2) }
 
-  CertificateSerialNumber, SubjectPublicKeyInfo
+  SubjectPublicKeyInfo
   FROM PKIX1Explicit-2009
     { iso(1) identified-organization(3) dod(6) internet(1)
       security(5) mechanisms(5) pkix(7) id-mod(0)
