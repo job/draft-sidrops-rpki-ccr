@@ -8,7 +8,7 @@ DEFINITIONS EXPLICIT TAGS ::=
 BEGIN
 
 IMPORTS
-  CONTENT-TYPE, Digest, DigestAlgorithmIdentifier,
+  CONTENT-TYPE, ContentSet, Digest, DigestAlgorithmIdentifier,
     SubjectKeyIdentifier
   FROM CryptographicMessageSyntax-2010 -- in [RFC6268]
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
@@ -43,6 +43,7 @@ ContentInfo ::= SEQUENCE {
                    CONTENT-TYPE.&Type({ContentSet}{@contentType}) }
 
 ContentSet CONTENT-TYPE ::= {
+  CryptographicMessageSyntax-2010.ContentSet |
   ct-rpkiCanonicalCacheRepresentation, ... }
 
 ct-rpkiCanonicalCacheRepresentation CONTENT-TYPE ::=
