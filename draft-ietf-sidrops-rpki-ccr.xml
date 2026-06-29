@@ -372,7 +372,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       </t>
       <t>
         Readers <bcp14>MUST</bcp14> check contextual bounds on all fields appropriately and stop further processing on failure.
-        For example, the <tt>maxLength</tt> element in a <tt>ROAIPAddress</tt> cannot contain an integer smaller than the length of the accompanying prefix, the <tt>manifestNumber</tt> field is cannot be longer than 20 octets, etc.
+        For example, the <tt>maxLength</tt> element in a <tt>ROAIPAddress</tt> cannot contain an integer smaller than the length of the accompanying prefix, the <tt>manifestNumber</tt> field cannot be longer than 20 octets, etc.
       </t>
       <t>
         The CCR format contains no executable code, and it does not define any extensible areas that could be used to store such code.
@@ -661,12 +661,12 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <contact fullname="Tom Harrison" />,
         <contact fullname="Changwang Lin" />,
         <contact fullname="Luigi Iannone" />,
-        <contact fullname="Luuk Hendriks" />,
         <contact fullname="Mohamed Boucadair" />,
         <contact fullname="Deb Cooley" />,
         <contact fullname="Gunter van de Velde" />,
+        <contact fullname="Ketan Talaulikar" />,
         and
-        <contact fullname="Ketan Talaulikar" />
+        <contact fullname="Mahesh Jethanandani" />
         for their generous feedback on this specification.
       </t>
     </section>
