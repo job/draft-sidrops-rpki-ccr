@@ -214,7 +214,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
               The sequence elements of the <tt>subordinates</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by interpreting each <tt>SubjectKeyIdentifier</tt> value as an unsigned 160-bit integer and <bcp14>MUST</bcp14> be unique with respect to each other.
             </t>
             <t>
-              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by the value of the <tt>hash</tt> field contained in each instance of <tt>ManifestInstance</tt> and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
+              The sequence elements in the <tt>mis</tt> field <bcp14>MUST</bcp14> be sorted in ascending order by the value of the <tt>hash</tt> field contained in each instance of <tt>ManifestInstance</tt> as an unsigned integer and <bcp14>MUST</bcp14> be unique with respect to the other instances of <tt>ManifestInstance</tt>.
             </t>
           </section>
           <section anchor="mostRecentUpdate">
