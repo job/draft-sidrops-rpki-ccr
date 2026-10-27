@@ -258,8 +258,9 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
             The <tt>customerASID</tt> value in each instance of <tt>ASPAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ASPAPayloadSet</tt>.
           </t>
           <t>
-            The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ProviderASSet</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3.3" />).
+            The <tt>ASPAPayloadSet</tt> structure is modeled after the <tt>ASProviderAttestation</tt> (<xref target="I-D.ietf-sidrops-aspa-profile" section="3" />).
             The elements of <tt>providers</tt> <bcp14>MUST</bcp14> be ordered in ascending numerical order and <bcp14>MUST</bcp14> be unique (with respect to the other elements of providers).
+            The <tt>customerASID</tt> value <bcp14>MUST NOT</bcp14> appear in the <tt>providers</tt> field.
             A <tt>PAS</tt> value of 0 can only be encoded in the <tt>providers</tt> field as a single item list, i.e., an element for AS 0 MUST NOT appear alongside any other elements.
           </t>
           <t>
