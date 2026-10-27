@@ -285,7 +285,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <section>
           <name>RouterKeyState</name>
           <t>
-            An instance of <tt>RouterKeyState</tt> contains an <tt>rksets</tt> field which represents the current set of valid BGPsec Router Keys <xref target="RFC8205" /> encoded as a SEQUENCE of <tt>RouterKeySet</tt> instances.
+            An instance of <tt>RouterKeyState</tt> contains an <tt>rksets</tt> field which represents the current set of valid BGPsec Router Keys <xref target="RFC8209" /> encoded as a SEQUENCE of <tt>RouterKeySet</tt> instances.
             The <tt>asID</tt> value in each instance of <tt>RouterKeySet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>RouterKeySet</tt>.
             Instances of <tt>RouterKeySet</tt> are sorted by ascending value of <tt>asID</tt>.
             Instances of <tt>RouterKey</tt> are sorted by ascending value of <tt>ski</tt> by interpreting the SKI value as an unsigned 160-bit integer.
@@ -560,7 +560,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6488.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6811.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
-        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8205.xml"/>
+        <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8209.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9286.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9582.xml"/>
         <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9981.xml"/>
