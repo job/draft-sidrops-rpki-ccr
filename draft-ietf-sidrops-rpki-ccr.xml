@@ -614,7 +614,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
 
         <reference anchor="rpkitouch" target="https://www.github.com/job/rpkitouch">
           <front>
-            <title>rpki-client</title>
+            <title>rpkitouch</title>
             <author fullname="Job Snijders"/>
             <date month="December" year="2025" />
           </front>
