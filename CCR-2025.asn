@@ -78,7 +78,7 @@ ManifestState ::= SEQUENCE {
 
 ManifestInstance ::= SEQUENCE {
   hash              Digest,
-  size              INTEGER (1000..MAX),
+  size              INTEGER,
   aki               KeyIdentifier,
   manifestNumber    INTEGER (0..MAX),
   thisUpdate        GeneralizedTime,
