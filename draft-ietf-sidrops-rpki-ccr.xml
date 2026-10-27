@@ -244,7 +244,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
             The <tt>ROAPayloadSet</tt> structure is modeled after the <tt>RouteOriginAttestation</tt> (<xref target="RFC9582" section="4" />).
             The <tt>asID</tt> value in each instance of <tt>ROAPayloadSet</tt> <bcp14>MUST</bcp14> be unique with respect to other instances of <tt>ROAPayloadSet</tt>.
             The contents of the <tt>ipAddrBlocks</tt> field <bcp14>MUST</bcp14> appear in canonical form and ordered as defined in <xref target="RFC9582" section="4.3.3"/>.
-            <tt>maxLength</tt> elements <bcp14>MUST NOT</bcp14> be encoded where the maximum length is equal to the prefix length.
+            Note that <tt>maxLength</tt> elements <bcp14>MUST NOT</bcp14> be encoded when the maximum length is equal to the prefix length.
           </t>
           <t>
             The <tt>hash</tt> field contains a message digest computed using the <tt>rps</tt> value (encoded in DER format) as input message.
@@ -358,7 +358,7 @@ Note to the RFC Editor: Please replace [this_document] with the RFC number to be
       <section>
         <name>Storage Efficiency</name>
         <t>
-          A CCR file compresses very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as CA public keys, and is consistently ordered.
+          A CCR file compresses very well due to its data layout characteristics: the content contains repetitive sequences, does not contain high entropy data such as CA public keys and signatures, and is consistently ordered.
           Readers and writers of CCR data are <bcp14>RECOMMENDED</bcp14> to support data compression using Gzip (<xref target="RFC1952"/>) in context of durable storage.
         </t>
       </section>
