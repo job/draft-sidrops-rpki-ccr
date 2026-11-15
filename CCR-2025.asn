@@ -20,9 +20,9 @@ IMPORTS
       pkcs9(9) smime(16) mod(0) id-mod-rpkiROA-2023(75) }
 
   CAS, PAS
-  FROM RPKI-ASPA-2023 -- in [draft-ietf-sidrops-aspa-profile]
+  FROM RPKI-ASPA-2026 -- in [draft-ietf-sidrops-aspa-profile]
     { iso(1) member-body(2) us(840) rsadsi(113549) pkcs(1)
-     pkcs-9(9) smime(16) modules(0) id-mod-rpki-aspa-2023(TBD2) }
+     pkcs-9(9) smime(16) modules(0) id-mod-rpki-aspa-2026(TBD2) }
 
   SubjectPublicKeyInfo
   FROM PKIX1Explicit-2009
